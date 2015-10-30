@@ -13,5 +13,18 @@
     <groupId>com.wanliang</groupId>
     <artifactId>tinyPlatform-common</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+        <!--<dependency>
+            <groupid>javax.mail</groupid>
+            <artifactid>javax.mail-api</artifactid>
+        </dependency>-->
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+        </dependency>
+    </dependencies>
 </project>
