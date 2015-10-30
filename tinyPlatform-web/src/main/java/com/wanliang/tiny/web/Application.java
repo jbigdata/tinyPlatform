@@ -1,12 +1,19 @@
 package com.wanliang.tiny.web;
 
+import com.wanliang.tiny.web.configuration.WebappConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 
 /**
  * Created by Administrator on 2015/10/30.
  */
+@Configuration
+@EnableAutoConfiguration
+@Import(WebappConfig.class)
 public class Application {
 
     private static final Logger logger = LoggerFactory.getLogger(Application.class);
