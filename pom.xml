@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.wanliang</groupId>
+    <artifactId>tinyPlatform</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>tinyPlatform-persistance</module>
+        <module>tinyPlatform-service</module>
+        <module>tinyPlatform-service-interface</module>
+        <module>tinyPlatform-web</module>
+        <module>tinyPlatform-common</module>
+    </modules>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://opensource.org/licenses/Apache-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <properties>
+        <spring-boot.version>1.7.2.RELEASE</spring-boot.version>
+        <spring.version>4.0.6.RELEASE</spring.version>
+        <bootstrap.version>2.3.2</bootstrap.version>
+        <jquery.version>1.11.0</jquery.version>
+        <angularjs.version>1.2.12</angularjs.version>
+        <angular-ui-router.version>0.2.10-1</angular-ui-router.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>
