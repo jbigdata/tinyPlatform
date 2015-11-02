@@ -48,12 +48,12 @@
         <spring-data-mongodb.version>1.6.2.RELEASE</spring-data-mongodb.version>
         <spring-data-redis.version>1.5.0.RELEASE</spring-data-redis.version>
         <spring-data-commons.version>1.10.0.RELEASE</spring-data-commons.version>
-
         <mybatis-spring.version>1.2.2</mybatis-spring.version>
         <mybatis.version>3.3.0</mybatis.version>
         <dom4j.version>1.6.1</dom4j.version>
-
         <redis-jedis.version>2.6.1</redis-jedis.version>
+        <!--<fastjson.version>1.2.7</fastjson.version>-->
+        <druid.version>1.0.16</druid.version>
     </properties>
     <dependencies>
         <dependency>
@@ -88,6 +88,15 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba</groupId>-->
+            <!--<artifactId>fastjson</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba</groupId>-->
+            <!--<artifactId>druid</artifactId>-->
+        <!--</dependency>-->
+
     </dependencies>
     <profiles>
         <profile>

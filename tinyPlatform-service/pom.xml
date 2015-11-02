@@ -14,8 +14,18 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.navinfo.platform</groupId>
-            <artifactId>opentsp-user-dal-mongo</artifactId>
+            <groupId>com.wanliang</groupId>
+            <artifactId>tinyPlatform-persistance</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.wanliang</groupId>
+            <artifactId>tinyPlatform-service-interface</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.wanliang</groupId>
+            <artifactId>tinyPlatform-common</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
