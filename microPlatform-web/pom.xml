@@ -12,7 +12,7 @@
     <groupId>com.wanliang</groupId>
     <artifactId>microPlatform-web</artifactId>
     <properties>
-        <start-class>com.wanliang.tiny.web.Application</start-class>
+        <start-class>com.wanliang.micro.web.Application</start-class>
         <docker.image.prefix>microPlatform-web</docker.image.prefix>
     </properties>
     <profiles>
