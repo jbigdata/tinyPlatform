@@ -9,15 +9,15 @@
         <version>1.2.7.RELEASE</version>
     </parent>
     <groupId>com.wanliang</groupId>
-    <artifactId>tinyPlatform</artifactId>
+    <artifactId>microPlatform</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>tinyPlatform-persistance</module>
-        <module>tinyPlatform-service</module>
-        <module>tinyPlatform-service-interface</module>
-        <module>tinyPlatform-web</module>
-        <module>tinyPlatform-common</module>
+        <module>microPlatform-persistance</module>
+        <module>microPlatform-service</module>
+        <module>microPlatform-service-interface</module>
+        <module>microPlatform-web</module>
+        <module>microPlatform-common</module>
     </modules>
     <licenses>
         <license>
@@ -125,8 +125,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>

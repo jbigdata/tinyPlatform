@@ -10,13 +10,13 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
     <groupId>com.wanliang</groupId>
-    <artifactId>tinyPlatform-service-interface</artifactId>
+    <artifactId>microPlatform-service-interface</artifactId>
     <dependencies>
-        <dependency>
-            <groupId>com.navinfo.platform</groupId>
-            <artifactId>opentsp-user-dal-mongo</artifactId>
-            <version>${project.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.navinfo.platform</groupId>-->
+            <!--<artifactId>opentsp-user-dal-mongo</artifactId>-->
+            <!--<version>${project.version}</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
@@ -27,7 +27,7 @@
         </dependency>
         <dependency>
             <groupId>com.wanliang</groupId>
-            <artifactId>tinyPlatform-persistance</artifactId>
+            <artifactId>microPlatform-persistance</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

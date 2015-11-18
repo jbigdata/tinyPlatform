@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
 
     <groupId>com.wanliang</groupId>
-    <artifactId>tinyPlatform-common</artifactId>
+    <artifactId>microPlatform-common</artifactId>
 
     <dependencies>
         <dependency>
