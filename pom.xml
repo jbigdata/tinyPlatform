@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.2.7.RELEASE</version>
+        <version>1.3.0.RELEASE</version>
     </parent>
     <groupId>com.wanliang</groupId>
     <artifactId>microPlatform</artifactId>
@@ -28,8 +28,8 @@
     </licenses>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-boot.version>1.2.7.RELEASE</spring-boot.version>
-        <spring.version>4.0.6.RELEASE</spring.version>
+        <spring-boot.version>1.3.0.RELEASE</spring-boot.version>
+        <spring.version>4.2.3.RELEASE</spring.version>
         <bootstrap.version>2.3.2</bootstrap.version>
         <jquery.version>1.11.0</jquery.version>
         <angularjs.version>1.2.12</angularjs.version>
@@ -44,7 +44,6 @@
         <self4j.version>1.7.7</self4j.version>
         <jackson.version>2.5.1</jackson.version>
 
-        <spring.version>4.1.6.RELEASE</spring.version>
         <spring-data-mongodb.version>1.6.2.RELEASE</spring-data-mongodb.version>
         <spring-data-redis.version>1.5.0.RELEASE</spring-data-redis.version>
         <spring-data-commons.version>1.10.0.RELEASE</spring-data-commons.version>

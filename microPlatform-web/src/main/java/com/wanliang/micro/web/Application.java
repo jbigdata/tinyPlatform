@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Import;
 @Configuration
 @ComponentScan(basePackageClasses = {ServiceScan.class,Application.class})
 @EnableAutoConfiguration
-@Import({WebappConfig.class,RedisConfiguration.class, DataSourceConfig.class})
+@Import({RedisConfiguration.class, DataSourceConfig.class})
 public class Application {
 
     private static final Logger logger = LoggerFactory.getLogger(Application.class);
