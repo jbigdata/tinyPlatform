@@ -14,11 +14,11 @@ import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
 /**
- * @author wupeng
+ * @author wanliang
  * @version 1.0
  * @date 2015-10-14
  * @modify
- * @copyright Navi Tsp
+ * @copyright micro
  */
 @Component
 public class MailSendBackend {

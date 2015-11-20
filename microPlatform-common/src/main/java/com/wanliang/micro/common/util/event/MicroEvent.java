@@ -5,7 +5,7 @@ package com.wanliang.micro.common.util.event;
  * @version 1.0
  * @date 2015/11/19
  * @modify
- * @copyright tinyPlatform
+ * @copyright microPlatform
  */
 public interface MicroEvent<T> {
 

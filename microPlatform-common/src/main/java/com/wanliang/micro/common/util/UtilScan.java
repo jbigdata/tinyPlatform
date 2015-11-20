@@ -1,11 +1,11 @@
 package com.wanliang.micro.common.util;
 
 /**
- * @author wupeng
+ * @author wanliang
  * @version 1.0
  * @date 2015-10-14
  * @modify
- * @copyright Navi Tsp
+ * @copyright micro
  */
 public class UtilScan {
 }

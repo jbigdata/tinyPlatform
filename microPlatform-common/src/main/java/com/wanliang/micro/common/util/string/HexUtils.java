@@ -3,11 +3,11 @@ package com.wanliang.micro.common.util.string;
 import java.io.UnsupportedEncodingException;
 
 /**
- * @author wupeng
+ * @author wanliang
  * @version 1.0
  * @date 2015-10-14
  * @modify
- * @copyright Navi Tsp
+ * @copyright micro
  */
 public class HexUtils {
     /**

@@ -1,11 +1,11 @@
 package com.wanliang.micro.common.util.constants;
 
 /**
- * @author wanlianbh
+ * @author wanliang
  * @version 1.0
  * @date 2015-10-10
  * @modify
- * @copyright Navi Tsp
+ * @copyright micro
  */
 public interface GlobalConstans {
 

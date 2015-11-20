@@ -3,11 +3,11 @@ package com.wanliang.micro.common.util.uuid;
 import java.util.UUID;
 
 /**
- * @author wupeng
+ * @author wanliang
  * @version 1.0
  * @date 2015-09-29
  * @modify
- * @copyright Navi Tsp
+ * @copyright micro
  */
 public class UUIDUtil {
 
