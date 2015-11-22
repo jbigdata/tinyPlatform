@@ -3,6 +3,8 @@ package com.wanliang.micro.web.controller.demo;
 import com.wanliang.micro.entity.demo.Address;
 import com.wanliang.micro.entity.demo.User;
 import com.wanliang.micro.service.demo.DemoService;
+import com.wanliang.micro.web.result.CommonResult;
+import com.wanliang.micro.web.result.ResultCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,11 +22,11 @@ public class DemoController {
 
     @RequestMapping("/test")
     @ResponseBody
-    public String putCache(){
+    public CommonResult<String> putCache(){
         demoService.findUser(1l,"wang","yunfei");
         demoService.findAddress(1l,"anhui","hefei");
         System.out.println("若下面没出现“无缓存的时候调用”字样且能打印出数据表示测试成功");
-        return "ok";
+        return CommonResult.newInstance(ResultCode.SUCCESS,String.class);
     }
     @RequestMapping("/test2")
     @ResponseBody

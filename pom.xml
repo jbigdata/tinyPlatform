@@ -17,6 +17,7 @@
         <module>microPlatform-service</module>
         <module>microPlatform-service-interface</module>
         <module>microPlatform-web</module>
+        <module>microPlatform-web-rest</module>
         <module>microPlatform-common</module>
     </modules>
     <licenses>
@@ -53,6 +54,8 @@
         <redis-jedis.version>2.6.1</redis-jedis.version>
         <!--<fastjson.version>1.2.7</fastjson.version>-->
         <druid.version>1.0.16</druid.version>
+        <!--<mongodb.version>1.3.0.RELEASE</mongodb.version>-->
+        <spring-security-oauth2.version>2.0.8.RELEASE</spring-security-oauth2.version>
     </properties>
     <dependencies>
         <dependency>
@@ -63,6 +66,22 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
+         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
@@ -92,6 +111,32 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.rapid-framework</groupId>
+            <artifactId>rapid-core</artifactId>
+            <version>4.0.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>4.3.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.3.6</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.3.1</version>
         </dependency>
         <!--<dependency>-->
             <!--<groupId>com.alibaba</groupId>-->
