@@ -1,300 +1,201 @@
 <#include "include/head.ftl">
 <#include "include/navbar.ftl">
-<#include "include/sidebar.ftl">
-<!-- main container -->
-<div class="content">
+<div class="container-fluid">
 
-    <!-- settings changer -->
-    <div class="skins-nav">
-        <a href="#" class="skin first_nav selected">
-            <span class="icon"></span><span class="text">Default skin</span>
-        </a>
-        <a href="#" class="skin second_nav" data-file="css/skins/dark.css">
-            <span class="icon"></span><span class="text">Dark skin</span>
-        </a>
+    <div class="row row-offcanvas row-offcanvas-left">
+
+        <div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation">
+
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="#">首页</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Analytics</a></li>
+                <li><a href="#">Export</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="">Nav item</a></li>
+                <li><a href="">Nav item again</a></li>
+                <li><a href="">One more nav</a></li>
+                <li><a href="">Another nav item</a></li>
+                <li><a href="">More navigation</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="">Nav item again</a></li>
+                <li><a href="">One more nav</a></li>
+                <li><a href="">Another nav item</a></li>
+            </ul>
+
+        </div><!--/span-->
+
+        <div class="col-sm-9 col-md-10 main">
+
+            <!--toggle sidebar button-->
+            <p class="visible-xs">
+                <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"><i class="glyphicon glyphicon-chevron-left"></i></button>
+            </p>
+
+            <h1 class="page-header">
+                Dashboard
+                <p class="lead">(<a href="http://www.bootply.com/128936">with off-canvas sidebar</a>)</p>
+            </h1>
+
+            <div class="row placeholders">
+                <div class="col-xs-6 col-sm-3 placeholder text-center">
+                    <img src="//placehold.it/200/6666ff/fff" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+                    <h4>Label</h4>
+                    <span class="text-muted">Something else</span>
+                </div>
+                <div class="col-xs-6 col-sm-3 placeholder text-center">
+                    <img src="//placehold.it/200/66ff66/fff" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+                    <h4>Label</h4>
+                    <span class="text-muted">Something else</span>
+                </div>
+                <div class="col-xs-6 col-sm-3 placeholder text-center">
+                    <img src="//placehold.it/200/6666ff/fff" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+                    <h4>Label</h4>
+                    <span class="text-muted">Something else</span>
+                </div>
+                <div class="col-xs-6 col-sm-3 placeholder text-center">
+                    <img src="//placehold.it/200/66ff66/fff" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+                    <h4>Label</h4>
+                    <span class="text-muted">Something else</span>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2 class="sub-header">Section title</h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Header</th>
+                        <th>Header</th>
+                        <th>Header</th>
+                        <th>Header</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1,001</td>
+                        <td>Lorem</td>
+                        <td>ipsum</td>
+                        <td>dolor</td>
+                        <td>sit</td>
+                    </tr>
+                    <tr>
+                        <td>1,002</td>
+                        <td>amet</td>
+                        <td>consectetur</td>
+                        <td>adipiscing</td>
+                        <td>elit</td>
+                    </tr>
+                    <tr>
+                        <td>1,003</td>
+                        <td>Integer</td>
+                        <td>nec</td>
+                        <td>odio</td>
+                        <td>Praesent</td>
+                    </tr>
+                    <tr>
+                        <td>1,003</td>
+                        <td>libero</td>
+                        <td>Sed</td>
+                        <td>cursus</td>
+                        <td>ante</td>
+                    </tr>
+                    <tr>
+                        <td>1,004</td>
+                        <td>dapibus</td>
+                        <td>diam</td>
+                        <td>Sed</td>
+                        <td>nisi</td>
+                    </tr>
+                    <tr>
+                        <td>1,005</td>
+                        <td>Nulla</td>
+                        <td>quis</td>
+                        <td>sem</td>
+                        <td>at</td>
+                    </tr>
+                    <tr>
+                        <td>1,006</td>
+                        <td>nibh</td>
+                        <td>elementum</td>
+                        <td>imperdiet</td>
+                        <td>Duis</td>
+                    </tr>
+                    <tr>
+                        <td>1,007</td>
+                        <td>sagittis</td>
+                        <td>ipsum</td>
+                        <td>Praesent</td>
+                        <td>mauris</td>
+                    </tr>
+                    <tr>
+                        <td>1,008</td>
+                        <td>Fusce</td>
+                        <td>nec</td>
+                        <td>tellus</td>
+                        <td>sed</td>
+                    </tr>
+                    <tr>
+                        <td>1,009</td>
+                        <td>augue</td>
+                        <td>semper</td>
+                        <td>porta</td>
+                        <td>Mauris</td>
+                    </tr>
+                    <tr>
+                        <td>1,010</td>
+                        <td>massa</td>
+                        <td>Vestibulum</td>
+                        <td>lacinia</td>
+                        <td>arcu</td>
+                    </tr>
+                    <tr>
+                        <td>1,011</td>
+                        <td>eget</td>
+                        <td>nulla</td>
+                        <td>Class</td>
+                        <td>aptent</td>
+                    </tr>
+                    <tr>
+                        <td>1,012</td>
+                        <td>taciti</td>
+                        <td>sociosqu</td>
+                        <td>ad</td>
+                        <td>litora</td>
+                    </tr>
+                    <tr>
+                        <td>1,013</td>
+                        <td>torquent</td>
+                        <td>per</td>
+                        <td>conubia</td>
+                        <td>nostra</td>
+                    </tr>
+                    <tr>
+                        <td>1,014</td>
+                        <td>per</td>
+                        <td>inceptos</td>
+                        <td>himenaeos</td>
+                        <td>Curabitur</td>
+                    </tr>
+                    <tr>
+                        <td>1,015</td>
+                        <td>sodales</td>
+                        <td>ligula</td>
+                        <td>in</td>
+                        <td>libero</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <a href="http://www.bootply.com/128936">Get the Source Code</a>
+
+        </div><!--/row-->
     </div>
-
-    <div class="container-fluid">
-
-        <!-- upper main stats -->
-        <div id="main-stats">
-            <div class="row-fluid stats-row">
-                <div class="span3 stat">
-                    <div class="data">
-                        <span class="number">2457</span>
-                        visits
-                    </div>
-                    <span class="date">Today</span>
-                </div>
-                <div class="span3 stat">
-                    <div class="data">
-                        <span class="number">3240</span>
-                        users
-                    </div>
-                    <span class="date">February 2014</span>
-                </div>
-                <div class="span3 stat">
-                    <div class="data">
-                        <span class="number">322</span>
-                        orders
-                    </div>
-                    <span class="date">This week</span>
-                </div>
-                <div class="span3 stat last">
-                    <div class="data">
-                        <span class="number">$2,340</span>
-                        sales
-                    </div>
-                    <span class="date">last 30 days</span>
-                </div>
-            </div>
-        </div>
-        <!-- end upper main stats -->
-
-        <div id="pad-wrapper">
-
-            <!-- statistics chart built with jQuery Flot -->
-            <div class="row-fluid chart">
-                <h4>
-                    Statistics
-                    <div class="btn-group pull-right">
-                        <button class="glow left">DAY</button>
-                        <button class="glow middle active">MONTH</button>
-                        <button class="glow right">YEAR</button>
-                    </div>
-                </h4>
-                <div class="span12">
-                    <div id="statsChart"></div>
-                </div>
-            </div>
-            <!-- end statistics chart -->
-
-            <!-- UI Elements section -->
-            <div class="row-fluid section ui-elements">
-                <h4>UI Elements</h4>
-                <div class="span5 knobs">
-                    <div class="knob-wrapper">
-                        <input type="text" value="50" class="knob" data-thickness=".3" data-inputcolor="#333" data-fgcolor="#30a1ec" data-bgcolor="#d4ecfd" data-width="150" />
-                        <div class="info">
-                            <div class="param">
-                                <span class="line blue"></span>
-                                Active users
-                            </div>
-                        </div>
-                    </div>
-                    <div class="knob-wrapper">
-                        <input type="text" value="75" class="knob second" data-thickness=".3" data-inputcolor="#333" data-fgcolor="#3d88ba" data-bgcolor="#d4ecfd" data-width="150" />
-                        <div class="info">
-                            <div class="param">
-                                <span class="line blue"></span>
-                                % disk space usage
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="span6 showcase">
-                    <div class="ui-sliders">
-                        <div class="slider slider-sample1 vertical-handler"></div>
-                        <div class="slider slider-sample2"></div>
-                        <div class="slider slider-sample3"></div>
-                    </div>
-                    <div class="ui-group">
-                        <a class="btn-flat inverse">Large Button</a>
-                        <a class="btn-flat gray">Large Button</a>
-                        <a class="btn-flat default">Large Button</a>
-                        <a class="btn-flat primary">Large Button</a>
-                    </div>
-
-                    <div class="ui-group">
-                        <a class="btn-flat icon">
-                            <i class="tool"></i> Icon button
-                        </a>
-                        <a class="btn-glow small inverse">
-                            <i class="shuffle"></i>
-                        </a>
-                        <a class="btn-glow small primary">
-                            <i class="setting"></i>
-                        </a>
-                        <a class="btn-glow small default">
-                            <i class="attach"></i>
-                        </a>
-                        <div class="ui-select">
-                            <select>
-                                <option selected="" />Dropdown
-                                <option />Custom selects
-                                <option />Pure css styles
-                            </select>
-                        </div>
-
-                        <div class="btn-group">
-                            <button class="glow left">LEFT</button>
-                            <button class="glow right">RIGHT</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end UI elements section -->
-
-            <!-- table sample -->
-            <!-- the script for the toggle all checkboxes from header is located in js/theme.js -->
-            <div class="table-products section">
-                <div class="row-fluid head">
-                    <div class="span12">
-                        <h4>Products <small>Table sample</small></h4>
-                    </div>
-                </div>
-
-                <div class="row-fluid filter-block">
-                    <div class="pull-right">
-                        <div class="ui-select">
-                            <select>
-                                <option />Filter users
-                                <option />Signed last 30 days
-                                <option />Active users
-                            </select>
-                        </div>
-                        <input type="text" class="search" />
-                        <a class="btn-flat new-product">+ Add product</a>
-                    </div>
-                </div>
-
-                <div class="row-fluid">
-                    <table class="table table-hover">
-                        <thead>
-                        <tr>
-                            <th class="span3">
-                                <input type="checkbox" />
-                                Product
-                            </th>
-                            <th class="span3">
-                                <span class="line"></span>Description
-                            </th>
-                            <th class="span3">
-                                <span class="line"></span>Status
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <!-- row -->
-                        <tr class="first">
-                            <td>
-                                <input type="checkbox" />
-                                <div class="img">
-                                    <img src="img/table-img.png" />
-                                </div>
-                                <a href="#">There are many variations </a>
-                            </td>
-                            <td class="description">
-                                if you are going to use a passage of Lorem Ipsum.
-                            </td>
-                            <td>
-                                <span class="label label-success">Active</span>
-                                <ul class="actions">
-                                    <li><i class="table-edit"></i></li>
-                                    <li><i class="table-settings"></i></li>
-                                    <li class="last"><i class="table-delete"></i></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <!-- row -->
-                        <tr>
-                            <td>
-                                <input type="checkbox" />
-                                <div class="img">
-                                    <img src="img/table-img.png" />
-                                </div>
-                                <a href="#">Internet tend</a>
-                            </td>
-                            <td class="description">
-                                There are many variations of passages.
-                            </td>
-                            <td>
-                                <ul class="actions">
-                                    <li><i class="table-edit"></i></li>
-                                    <li><i class="table-settings"></i></li>
-                                    <li class="last"><i class="table-delete"></i></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <!-- row -->
-                        <tr>
-                            <td>
-                                <input type="checkbox" />
-                                <div class="img">
-                                    <img src="img/table-img.png" />
-                                </div>
-                                <a href="#">Many desktop publishing </a>
-                            </td>
-                            <td class="description">
-                                if you are going to use a passage of Lorem Ipsum.
-                            </td>
-                            <td>
-                                <ul class="actions">
-                                    <li><i class="table-edit"></i></li>
-                                    <li><i class="table-settings"></i></li>
-                                    <li class="last"><i class="table-delete"></i></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <!-- row -->
-                        <tr>
-                            <td>
-                                <input type="checkbox" />
-                                <div class="img">
-                                    <img src="img/table-img.png" />
-                                </div>
-                                <a href="#">Generate Lorem </a>
-                            </td>
-                            <td class="description">
-                                There are many variations of passages.
-                            </td>
-                            <td>
-                                <span class="label label-info">Standby</span>
-                                <ul class="actions">
-                                    <li><i class="table-edit"></i></li>
-                                    <li><i class="table-settings"></i></li>
-                                    <li class="last"><i class="table-delete"></i></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <!-- row -->
-                        <tr>
-                            <td>
-                                <input type="checkbox" />
-                                <div class="img">
-                                    <img src="img/table-img.png" />
-                                </div>
-                                <a href="#">Internet tend</a>
-                            </td>
-                            <td class="description">
-                                There are many variations of passages.
-                            </td>
-                            <td>
-                                <ul class="actions">
-                                    <li><i class="table-edit"></i></li>
-                                    <li><i class="table-settings"></i></li>
-                                    <li class="last"><i class="table-delete"></i></li>
-                                </ul>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="pagination">
-                    <ul>
-                        <li><a href="#">&#8249;</a></li>
-                        <li><a class="active" href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">&#8250;</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- end table sample -->
-        </div>
-    </div>
-</div>
-
-</body>
-</html>
+</div><!--/.container-->
+<#include "include/footer.ftl">
