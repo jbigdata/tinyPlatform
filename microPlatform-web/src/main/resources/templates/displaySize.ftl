@@ -1,3 +1,4 @@
+<#assign base=request.contextPath />
 <#function displaySize size>
     <#assign sizeview="">
     <#if (size?string)!="">

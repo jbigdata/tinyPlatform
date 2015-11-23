@@ -12,6 +12,7 @@ Time: ${time?time}
 <br>
 Message: ${message}
 <br/>
+-----------------${base}------------------------
 
 <#assign x = "something">
 测试自定义方法：

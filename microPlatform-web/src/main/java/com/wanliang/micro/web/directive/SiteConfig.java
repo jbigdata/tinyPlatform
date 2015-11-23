@@ -10,7 +10,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import javax.servlet.MultipartConfigElement;
 
 /**
- * Created by joe on 11/2/14.
+ * @author wanliang
+ * @version 1.0
+ * @date 2015/11/22
+ * @modify
+ * @copyright microPlatform
  */
 @Configuration
 public class SiteConfig extends WebMvcConfigurerAdapter {

@@ -7,7 +7,11 @@ import freemarker.template.TemplateModelException;
 import java.util.List;
 
 /**
- * Created by hongpf on 15/5/5.
+ * @author wanliang
+ * @version 1.0
+ * @date 2015/11/22
+ * @modify
+ * @copyright microPlatform
  */
 
 public class UrlMethod implements TemplateMethodModelEx {

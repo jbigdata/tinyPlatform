@@ -49,7 +49,7 @@ public class TestController {
         return  "test" ;
     }
 
-    @RequestMapping("/")
+    @RequestMapping("/1111")
     public  String index (Map<String, Object> model){
         model.put("time", new Date());
         model.put("message", this.message);

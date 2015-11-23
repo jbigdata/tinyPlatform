@@ -10,7 +10,7 @@
         <p>We have these animals:<br>
            <u1><br/>
                test1:
-
+---------${base}---------------------------------
 
         <#-- 使用FTL指令 -->
         <#list animals?sort_by("price") as being>

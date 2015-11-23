@@ -12,10 +12,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by hongpf on 15/5/5.
- */
 
+/**
+ * @author wanliang
+ * @version 1.0
+ * @date 2015/11/22
+ * @modify
+ * @copyright microPlatform
+ */
 public class Utils {
     public static class Param {
         public static String getAsString(Map params, String name) {
