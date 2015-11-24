@@ -1,13 +1,10 @@
 <#include "include/head.ftl">
 <#include "include/navbar.ftl">
 <div class="container-fluid">
-
-    <div class="row row-offcanvas row-offcanvas-left">
-
-        <div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation">
-
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="#">首页</a></li>
+                <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
                 <li><a href="#">Reports</a></li>
                 <li><a href="#">Analytics</a></li>
                 <li><a href="#">Export</a></li>
@@ -24,45 +21,32 @@
                 <li><a href="">One more nav</a></li>
                 <li><a href="">Another nav item</a></li>
             </ul>
-
-        </div><!--/span-->
-
-        <div class="col-sm-9 col-md-10 main">
-
-            <!--toggle sidebar button-->
-            <p class="visible-xs">
-                <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"><i class="glyphicon glyphicon-chevron-left"></i></button>
-            </p>
-
-            <h1 class="page-header">
-                Dashboard
-                <p class="lead">(<a href="http://www.bootply.com/128936">with off-canvas sidebar</a>)</p>
-            </h1>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Dashboard</h1>
 
             <div class="row placeholders">
-                <div class="col-xs-6 col-sm-3 placeholder text-center">
-                    <img src="//placehold.it/200/6666ff/fff" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
                     <h4>Label</h4>
                     <span class="text-muted">Something else</span>
                 </div>
-                <div class="col-xs-6 col-sm-3 placeholder text-center">
-                    <img src="//placehold.it/200/66ff66/fff" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
                     <h4>Label</h4>
                     <span class="text-muted">Something else</span>
                 </div>
-                <div class="col-xs-6 col-sm-3 placeholder text-center">
-                    <img src="//placehold.it/200/6666ff/fff" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
                     <h4>Label</h4>
                     <span class="text-muted">Something else</span>
                 </div>
-                <div class="col-xs-6 col-sm-3 placeholder text-center">
-                    <img src="//placehold.it/200/66ff66/fff" class="center-block img-responsive img-circle" alt="Generic placeholder thumbnail">
+                <div class="col-xs-6 col-sm-3 placeholder">
+                    <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
                     <h4>Label</h4>
                     <span class="text-muted">Something else</span>
                 </div>
             </div>
-
-            <hr>
 
             <h2 class="sub-header">Section title</h2>
             <div class="table-responsive">
@@ -192,10 +176,7 @@
                     </tbody>
                 </table>
             </div>
-
-            <a href="http://www.bootply.com/128936">Get the Source Code</a>
-
-        </div><!--/row-->
+        </div>
     </div>
-</div><!--/.container-->
+</div>
 <#include "include/footer.ftl">
