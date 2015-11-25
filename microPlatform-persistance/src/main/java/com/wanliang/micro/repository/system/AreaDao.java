@@ -4,16 +4,14 @@
 package com.wanliang.micro.repository.system;
 
 
-import com.wanliang.micro.common.util.persistence.TreeDao;
-import com.wanliang.micro.common.util.persistence.annotation.MyBatisDao;
 import com.wanliang.micro.entity.system.Area;
+import com.wanliang.micro.persistence.TreeDao;
 
 /**
  * 区域DAO接口
  * @author ThinkGem
  * @version 2014-05-16
  */
-@MyBatisDao
 public interface AreaDao extends TreeDao<Area> {
 	
 }

@@ -3,9 +3,8 @@
  */
 package com.wanliang.micro.repository.system;
 
-import com.wanliang.micro.common.util.persistence.CrudDao;
-import com.wanliang.micro.common.util.persistence.annotation.MyBatisDao;
 import com.wanliang.micro.entity.system.Menu;
+import com.wanliang.micro.persistence.CrudDao;
 
 import java.util.List;
 
@@ -15,7 +14,6 @@ import java.util.List;
  * @author ThinkGem
  * @version 2014-05-16
  */
-@MyBatisDao
 public interface MenuDao extends CrudDao<Menu> {
 
 	public List<Menu> findByParentIdsLike(Menu menu);

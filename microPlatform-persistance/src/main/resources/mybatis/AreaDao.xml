@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wanliang.micro.repository.system.dao.AreaDao">
+<mapper namespace="com.wanliang.micro.repository.system.AreaDao">
     
 	<sql id="areaColumns">
 		a.id,
@@ -23,7 +23,7 @@
 		LEFT JOIN sys_office p ON p.id = a.parent_id
     </sql>
     
-	<select id="get" resultType="Area">
+	<select id="get" resultType="com.wanliang.micro.entity.system.Area">
 		SELECT
 			<include refid="areaColumns"/>
 		FROM sys_area a
@@ -31,7 +31,7 @@
 		WHERE a.id = #{id}
 	</select>
 	
-	<select id="findList" resultType="Area">
+	<select id="findList" resultType="com.wanliang.micro.entity.system.Area">
 		SELECT
 			<include refid="areaColumns"/>
 		FROM sys_area a
@@ -43,7 +43,7 @@
 		ORDER BY a.code
 	</select>
 	
-	<select id="findAllList" resultType="Area">
+	<select id="findAllList" resultType="com.wanliang.micro.entity.system.Area">
 		SELECT
 			<include refid="areaColumns"/>
 		FROM sys_area a
@@ -52,7 +52,7 @@
 		ORDER BY a.code
 	</select>
 	
-	<select id="findByParentIdsLike" resultType="Area">
+	<select id="findByParentIdsLike" resultType="com.wanliang.micro.entity.system.Area">
 		SELECT
 			a.id,
 			a.parent_id AS "parent.id",

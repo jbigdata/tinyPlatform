@@ -3,16 +3,14 @@
  */
 package com.wanliang.micro.repository.system;
 
-import com.wanliang.micro.common.util.persistence.TreeDao;
-import com.wanliang.micro.common.util.persistence.annotation.MyBatisDao;
 import com.wanliang.micro.entity.system.Office;
+import com.wanliang.micro.persistence.TreeDao;
 
 /**
  * 机构DAO接口
  * @author ThinkGem
  * @version 2014-05-16
  */
-@MyBatisDao
 public interface OfficeDao extends TreeDao<Office> {
 	
 }

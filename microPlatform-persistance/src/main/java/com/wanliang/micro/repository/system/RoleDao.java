@@ -4,16 +4,14 @@
 package com.wanliang.micro.repository.system;
 
 
-import com.wanliang.micro.common.util.persistence.CrudDao;
-import com.wanliang.micro.common.util.persistence.annotation.MyBatisDao;
 import com.wanliang.micro.entity.system.Role;
+import com.wanliang.micro.persistence.CrudDao;
 
 /**
  * 角色DAO接口
  * @author ThinkGem
  * @version 2013-12-05
  */
-@MyBatisDao
 public interface RoleDao extends CrudDao<Role> {
 
 	public Role getByName(Role role);
