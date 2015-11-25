@@ -7,7 +7,7 @@ import java.util.List;
 
 import javax.validation.constraints.NotNull;
 
-import com.wanliang.micro.common.util.persistence.TreeEntity;
+import com.wanliang.micro.persistence.TreeEntity;
 import org.hibernate.validator.constraints.Length;
 
 

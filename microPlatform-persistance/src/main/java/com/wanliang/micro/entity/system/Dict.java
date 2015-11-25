@@ -6,9 +6,9 @@ package com.wanliang.micro.entity.system;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAttribute;
 
+import com.wanliang.micro.persistence.DataEntity;
 import org.hibernate.validator.constraints.Length;
 
-import com.thinkgem.jeesite.common.persistence.DataEntity;
 
 /**
  * 字典Entity

@@ -5,10 +5,6 @@ package com.wanliang.micro.persistence;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.thinkgem.jeesite.common.utils.IdGen;
-import com.thinkgem.jeesite.modules.sys.entity.User;
-import com.thinkgem.jeesite.modules.sys.utils.UserUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.hibernate.validator.constraints.Length;
 
 import java.util.Date;
@@ -23,9 +19,9 @@ public abstract class DataEntity<T> extends BaseEntity<T> {
 	private static final long serialVersionUID = 1L;
 	
 	protected String remarks;	// 备注
-	protected User createBy;	// 创建者
+	protected String createBy;	// 创建者
 	protected Date createDate;	// 创建日期
-	protected User updateBy;	// 更新者
+	protected String updateBy;	// 更新者
 	protected Date updateDate;	// 更新日期
 	protected String delFlag; 	// 删除标记（0：正常；1：删除；2：审核）
 	
@@ -43,15 +39,15 @@ public abstract class DataEntity<T> extends BaseEntity<T> {
 	 */
 	@Override
 	public void preInsert(){
-		// 不限制ID为UUID，调用setIsNewRecord()使用自定义ID
-		if (!this.isNewRecord){
-			setId(IdGen.uuid());
-		}
-		User user = UserUtils.getUser();
-		if (StringUtils.isNotBlank(user.getId())){
-			this.updateBy = user;
-			this.createBy = user;
-		}
+//		// 不限制ID为UUID，调用setIsNewRecord()使用自定义ID
+//		if (!this.isNewRecord){
+//			setId(IdGen.uuid());
+//		}
+//		User user = UserUtils.getUser();
+//		if (StringUtils.isNotBlank(user.getId())){
+//			this.updateBy = user;
+//			this.createBy = user;
+//		}
 		this.updateDate = new Date();
 		this.createDate = this.updateDate;
 	}
@@ -61,10 +57,10 @@ public abstract class DataEntity<T> extends BaseEntity<T> {
 	 */
 	@Override
 	public void preUpdate(){
-		User user = UserUtils.getUser();
-		if (StringUtils.isNotBlank(user.getId())){
-			this.updateBy = user;
-		}
+//		User user = UserUtils.getUser();
+//		if (StringUtils.isNotBlank(user.getId())){
+//			this.updateBy = user;
+//		}
 		this.updateDate = new Date();
 	}
 	
@@ -78,11 +74,11 @@ public abstract class DataEntity<T> extends BaseEntity<T> {
 	}
 	
 	@JsonIgnore
-	public User getCreateBy() {
+	public String getCreateBy() {
 		return createBy;
 	}
 
-	public void setCreateBy(User createBy) {
+	public void setCreateBy(String createBy) {
 		this.createBy = createBy;
 	}
 
@@ -96,11 +92,11 @@ public abstract class DataEntity<T> extends BaseEntity<T> {
 	}
 
 	@JsonIgnore
-	public User getUpdateBy() {
+	public String getUpdateBy() {
 		return updateBy;
 	}
 
-	public void setUpdateBy(User updateBy) {
+	public void setUpdateBy(String updateBy) {
 		this.updateBy = updateBy;
 	}
 

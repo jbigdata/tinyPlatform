@@ -4,7 +4,9 @@
 package com.wanliang.micro.persistence;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.google.common.collect.Maps;
 import com.wanliang.micro.entity.system.User;
+import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 
 import javax.xml.bind.annotation.XmlTransient;
@@ -16,7 +18,6 @@ import java.util.Map;
  * @author ThinkGem
  * @version 2014-05-16
  */
-@SupTreeList
 public abstract class BaseEntity<T> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -56,7 +57,6 @@ public abstract class BaseEntity<T> implements Serializable {
 		this.id = id;
 	}
 
-	@SupCol(isUnique="true", isHide="true")
 	public String getId() {
 		return id;
 	}
@@ -69,7 +69,7 @@ public abstract class BaseEntity<T> implements Serializable {
 	@XmlTransient
 	public User getCurrentUser() {
 		if(currentUser == null){
-			currentUser = UserUtils.getUser();
+//			currentUser = UserUtils.getUser();
 		}
 		return currentUser;
 	}
@@ -132,21 +132,7 @@ public abstract class BaseEntity<T> implements Serializable {
 		this.isNewRecord = isNewRecord;
 	}
 
-	/**
-	 * 全局变量对象
-	 */
-	@JsonIgnore
-	public Global getGlobal() {
-		return Global.getInstance();
-	}
-	
-	/**
-	 * 获取数据库名称
-	 */
-	@JsonIgnore
-	public String getDbName(){
-		return Global.getConfig("jdbc.type");
-	}
+
 	
     @Override
     public boolean equals(Object obj) {

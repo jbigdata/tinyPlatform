@@ -3,7 +3,7 @@
  */
 package com.wanliang.micro.entity.system;
 
-import com.wanliang.micro.common.util.persistence.TreeEntity;
+import com.wanliang.micro.persistence.TreeEntity;
 import org.hibernate.validator.constraints.Length;
 
 

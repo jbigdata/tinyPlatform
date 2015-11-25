@@ -3,23 +3,20 @@
  */
 package com.wanliang.micro.entity.system;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
 import javax.validation.constraints.NotNull;
 
+import com.google.common.collect.Lists;
+import com.wanliang.micro.persistence.DataEntity;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.google.common.collect.Lists;
-import com.thinkgem.jeesite.common.config.Global;
-import com.thinkgem.jeesite.common.persistence.DataEntity;
-import com.thinkgem.jeesite.common.supcan.annotation.treelist.cols.SupCol;
-import com.thinkgem.jeesite.common.utils.Collections3;
-import com.thinkgem.jeesite.common.utils.excel.annotation.ExcelField;
-import com.thinkgem.jeesite.common.utils.excel.fieldtype.RoleListType;
 
 /**
  * 用户Entity
@@ -56,7 +53,7 @@ public class User extends DataEntity<User> {
 
 	public User() {
 		super();
-		this.loginFlag = Global.YES;
+		//this.loginFlag = Global.YES;
 	}
 	
 	public User(String id){
@@ -89,15 +86,12 @@ public class User extends DataEntity<User> {
 		this.loginFlag = loginFlag;
 	}
 
-	@SupCol(isUnique="true", isHide="true")
-	@ExcelField(title="ID", type=1, align=2, sort=1)
 	public String getId() {
 		return id;
 	}
 
 	@JsonIgnore
 	@NotNull(message="归属公司不能为空")
-	@ExcelField(title="归属公司", align=2, sort=20)
 	public Office getCompany() {
 		return company;
 	}
@@ -108,7 +102,6 @@ public class User extends DataEntity<User> {
 	
 	@JsonIgnore
 	@NotNull(message="归属部门不能为空")
-	@ExcelField(title="归属部门", align=2, sort=25)
 	public Office getOffice() {
 		return office;
 	}
@@ -118,7 +111,6 @@ public class User extends DataEntity<User> {
 	}
 
 	@Length(min=1, max=100, message="登录名长度必须介于 1 和 100 之间")
-	@ExcelField(title="登录名", align=2, sort=30)
 	public String getLoginName() {
 		return loginName;
 	}
@@ -138,13 +130,11 @@ public class User extends DataEntity<User> {
 	}
 
 	@Length(min=1, max=100, message="姓名长度必须介于 1 和 100 之间")
-	@ExcelField(title="姓名", align=2, sort=40)
 	public String getName() {
 		return name;
 	}
 	
 	@Length(min=1, max=100, message="工号长度必须介于 1 和 100 之间")
-	@ExcelField(title="工号", align=2, sort=45)
 	public String getNo() {
 		return no;
 	}
@@ -159,7 +149,6 @@ public class User extends DataEntity<User> {
 
 	@Email(message="邮箱格式不正确")
 	@Length(min=0, max=200, message="邮箱长度必须介于 1 和 200 之间")
-	@ExcelField(title="邮箱", align=1, sort=50)
 	public String getEmail() {
 		return email;
 	}
@@ -169,7 +158,6 @@ public class User extends DataEntity<User> {
 	}
 	
 	@Length(min=0, max=200, message="电话长度必须介于 1 和 200 之间")
-	@ExcelField(title="电话", align=2, sort=60)
 	public String getPhone() {
 		return phone;
 	}
@@ -179,7 +167,6 @@ public class User extends DataEntity<User> {
 	}
 
 	@Length(min=0, max=200, message="手机长度必须介于 1 和 200 之间")
-	@ExcelField(title="手机", align=2, sort=70)
 	public String getMobile() {
 		return mobile;
 	}
@@ -188,13 +175,11 @@ public class User extends DataEntity<User> {
 		this.mobile = mobile;
 	}
 
-	@ExcelField(title="备注", align=1, sort=900)
 	public String getRemarks() {
 		return remarks;
 	}
 	
 	@Length(min=0, max=100, message="用户类型长度必须介于 1 和 100 之间")
-	@ExcelField(title="用户类型", align=2, sort=80, dictType="sys_user_type")
 	public String getUserType() {
 		return userType;
 	}
@@ -203,12 +188,10 @@ public class User extends DataEntity<User> {
 		this.userType = userType;
 	}
 
-	@ExcelField(title="创建时间", type=0, align=1, sort=90)
 	public Date getCreateDate() {
 		return createDate;
 	}
 
-	@ExcelField(title="最后登录IP", type=1, align=1, sort=100)
 	public String getLoginIp() {
 		return loginIp;
 	}
@@ -218,7 +201,6 @@ public class User extends DataEntity<User> {
 	}
 
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	@ExcelField(title="最后登录日期", type=1, align=1, sort=110)
 	public Date getLoginDate() {
 		return loginDate;
 	}
@@ -275,7 +257,6 @@ public class User extends DataEntity<User> {
 	}
 
 	@JsonIgnore
-	@ExcelField(title="拥有角色", align=1, sort=800, fieldType=RoleListType.class)
 	public List<Role> getRoleList() {
 		return roleList;
 	}
@@ -286,7 +267,7 @@ public class User extends DataEntity<User> {
 
 	@JsonIgnore
 	public List<String> getRoleIdList() {
-		List<String> roleIdList = Lists.newArrayList();
+		List<String> roleIdList =new ArrayList();
 		for (Role role : roleList) {
 			roleIdList.add(role.getId());
 		}
@@ -294,7 +275,7 @@ public class User extends DataEntity<User> {
 	}
 
 	public void setRoleIdList(List<String> roleIdList) {
-		roleList = Lists.newArrayList();
+		roleList =new ArrayList();
 		for (String roleId : roleIdList) {
 			Role role = new Role();
 			role.setId(roleId);
@@ -306,7 +287,8 @@ public class User extends DataEntity<User> {
 	 * 用户拥有的角色名称字符串, 多个角色名称用','分隔.
 	 */
 	public String getRoleNames() {
-		return Collections3.extractToString(roleList, "name", ",");
+		//return Collections3.extractToString(roleList, "name", ",");
+		return  null;
 	}
 	
 	public boolean isAdmin(){

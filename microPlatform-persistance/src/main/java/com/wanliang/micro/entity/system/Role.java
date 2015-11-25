@@ -5,12 +5,11 @@ package com.wanliang.micro.entity.system;
 
 import java.util.List;
 
-import org.apache.commons.lang3.StringUtils;
+import com.google.common.collect.Lists;
+import com.wanliang.micro.persistence.DataEntity;
+import org.apache.commons.lang.StringUtils;
 import org.hibernate.validator.constraints.Length;
 
-import com.google.common.collect.Lists;
-import com.thinkgem.jeesite.common.config.Global;
-import com.thinkgem.jeesite.common.persistence.DataEntity;
 
 /**
  * 角色Entity
@@ -49,7 +48,7 @@ public class Role extends DataEntity<Role> {
 	public Role() {
 		super();
 		this.dataScope = DATA_SCOPE_SELF;
-		this.useable=Global.YES;
+	//	this.useable=Global.YES;
 	}
 	
 	public Role(String id){

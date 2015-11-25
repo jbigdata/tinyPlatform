@@ -3,13 +3,12 @@
  */
 package com.wanliang.micro.entity.system;
 
+import com.wanliang.micro.persistence.DataEntity;
+import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.builder.ReflectionToStringBuilder;
+
 import java.util.Date;
 import java.util.Map;
-
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-
-import com.thinkgem.jeesite.common.persistence.DataEntity;
-import com.thinkgem.jeesite.common.utils.StringUtils;
 
 /**
  * 日志Entity
@@ -136,7 +135,7 @@ public class Log extends DataEntity<Log> {
 		for (Map.Entry<String, String[]> param : ((Map<String, String[]>)paramMap).entrySet()){
 			params.append(("".equals(params.toString()) ? "" : "&") + param.getKey() + "=");
 			String paramValue = (param.getValue() != null && param.getValue().length > 0 ? param.getValue()[0] : "");
-			params.append(StringUtils.abbr(StringUtils.endsWithIgnoreCase(param.getKey(), "password") ? "" : paramValue, 100));
+			params.append(StringUtils.abbreviate(StringUtils.endsWithIgnoreCase(param.getKey(), "password") ? "" : paramValue, 100));
 		}
 		this.params = params.toString();
 	}
