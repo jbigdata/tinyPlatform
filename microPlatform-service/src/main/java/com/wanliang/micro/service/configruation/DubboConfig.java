@@ -45,7 +45,7 @@ public class DubboConfig {
     @Value("${dubbo.application.owner:wanliang}")
     private   String APPLICATION_OWNER ;
 
-    @Value("${dubbo.protocol.port:20881}")
+    @Value("${dubbo.protocol.port:20883}")
     private   Integer PROTOCOL_PORT;
 
     @Value("${dubbo.package.base:com.wanliang.micro.service}")
