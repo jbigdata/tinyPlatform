@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Import;
  * Created by Administrator on 2015/10/30.
  */
 @Configuration
-@ComponentScan(basePackageClasses = {ServiceScan.class,Application.class})
+@ComponentScan(basePackageClasses = {Application.class})
 @EnableAutoConfiguration
 @Import({RedisConfiguration.class, DataSourceConfig.class, DubboConfig.class})
 public class Application {

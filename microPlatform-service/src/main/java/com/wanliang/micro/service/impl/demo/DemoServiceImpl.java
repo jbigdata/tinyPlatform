@@ -1,10 +1,10 @@
 package com.wanliang.micro.service.impl.demo;
 
-import com.wanliang.micro.entity.demo.Address;
-import com.wanliang.micro.entity.demo.User;
+import com.alibaba.dubbo.config.annotation.Service;
+import com.wanliang.micro.model.demo.Address;
+import com.wanliang.micro.model.demo.User;
 import com.wanliang.micro.service.demo.DemoService;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.stereotype.Service;
 
 /**
  *  test service

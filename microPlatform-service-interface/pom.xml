@@ -25,10 +25,10 @@
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-redis</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.wanliang</groupId>
-            <artifactId>microPlatform-persistance</artifactId>
-            <version>${project.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.wanliang</groupId>-->
+            <!--<artifactId>microPlatform-persistance</artifactId>-->
+            <!--<version>${project.version}</version>-->
+        <!--</dependency>-->
     </dependencies>
 </project>

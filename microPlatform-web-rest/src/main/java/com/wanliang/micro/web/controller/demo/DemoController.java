@@ -1,7 +1,8 @@
 package com.wanliang.micro.web.controller.demo;
 
-import com.wanliang.micro.entity.demo.Address;
-import com.wanliang.micro.entity.demo.User;
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.wanliang.micro.model.demo.Address;
+import com.wanliang.micro.model.demo.User;
 import com.wanliang.micro.service.demo.DemoService;
 import com.wanliang.micro.web.result.CommonResult;
 import com.wanliang.micro.web.result.ResultCode;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/demo")
 public class DemoController {
 
-    @Autowired
+    @Reference
     DemoService demoService;
 
     @RequestMapping("/test")

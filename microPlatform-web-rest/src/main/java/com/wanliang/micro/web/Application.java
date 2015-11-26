@@ -1,6 +1,5 @@
 package com.wanliang.micro.web;
 
-import com.wanliang.micro.configuration.DataSourceConfig;
 import com.wanliang.micro.web.configuration.DubboConfig;
 import com.wanliang.micro.web.configuration.WebappConfig;
 import org.slf4j.Logger;

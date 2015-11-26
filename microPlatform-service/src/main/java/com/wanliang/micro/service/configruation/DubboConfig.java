@@ -18,9 +18,12 @@ package com.wanliang.micro.service.configruation;
 import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.ProtocolConfig;
 import com.alibaba.dubbo.config.RegistryConfig;
+import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.dubbo.config.spring.AnnotationBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 
@@ -30,42 +33,50 @@ import org.springframework.core.env.Environment;
  * @author Jinkai.Ma
  */
 @Configuration
+@ComponentScan(basePackages = {"com.wanliang.micro.service"}, includeFilters = {@ComponentScan.Filter(value = Service.class)})
 public class DubboConfig {
 
-    private static final String REGISTRY_ADDRESS = "dubbo.registry.address";
-    private static final String APPLICATION_NAME = "dubbo.application.name";
-    private static final String APPLICATION_OWNER = "dubbo.application.owner";
-    private static final String PROTOCOL_PORT = "dubbo.protocol.port";
+    @Value("${dubbo.registry.address:zookeeper://127.0.0.1:2181}")
+    private   String REGISTRY_ADDRESS ;
 
-    @Autowired
-    private Environment env;
+    @Value("${dubbo.application.name:micro}")
+    private   String APPLICATION_NAME ;
+
+    @Value("${dubbo.application.owner:wanliang}")
+    private   String APPLICATION_OWNER ;
+
+    @Value("${dubbo.protocol.port:20881}")
+    private   Integer PROTOCOL_PORT;
+
+    @Value("${dubbo.package.base:com.wanliang.micro.service}")
+    private static  String PACKAGE;
 
     @Bean
     public static AnnotationBean annotationBean() {
         AnnotationBean annotationBean = new AnnotationBean();
-        annotationBean.setPackage("com.wanliang.mirco.service");
+        annotationBean.setPackage("com.wanliang.micro.service");
         return annotationBean;
     }
 
     @Bean
     public ApplicationConfig applicationConfig() {
         ApplicationConfig applicationConfig = new ApplicationConfig();
-        applicationConfig.setName(env.getProperty(APPLICATION_NAME, "dubbo-monitor"));
-        applicationConfig.setOwner(env.getProperty(APPLICATION_OWNER));
+        applicationConfig.setName(APPLICATION_NAME);
+        applicationConfig.setOwner(APPLICATION_OWNER);
         return applicationConfig;
     }
 
     @Bean
     public RegistryConfig registryConfig() {
         RegistryConfig registryConfig = new RegistryConfig();
-        registryConfig.setAddress(env.getProperty(REGISTRY_ADDRESS));
+        registryConfig.setAddress(REGISTRY_ADDRESS);
         return registryConfig;
     }
 
     @Bean
     public ProtocolConfig protocolConfig() {
         ProtocolConfig protocolConfig = new ProtocolConfig("dubbo");
-        protocolConfig.setPort(Integer.parseInt(env.getProperty(PROTOCOL_PORT, "20880")));
+        protocolConfig.setPort(PROTOCOL_PORT);
         return protocolConfig;
     }
 }

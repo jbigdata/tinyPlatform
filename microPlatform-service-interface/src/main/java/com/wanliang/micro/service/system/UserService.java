@@ -1,5 +1,7 @@
 package com.wanliang.micro.service.system;
 
+import com.alibaba.dubbo.config.annotation.Reference;
+
 /**
  * @author wanliang
  * @version 1.0
