@@ -1,8 +1,8 @@
 package com.wanliang.micro.web.controller.demo;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.wanliang.micro.model.demo.Address;
-import com.wanliang.micro.model.demo.User;
+import com.wanliang.micro.result.demo.Address;
+import com.wanliang.micro.result.demo.User;
 import com.wanliang.micro.service.demo.DemoService;
 import com.wanliang.micro.web.result.CommonResult;
 import com.wanliang.micro.web.result.ResultCode;
@@ -26,6 +26,7 @@ public class DemoController {
     public CommonResult<String> putCache(){
         demoService.findUser(1l,"wang","yunfei");
         demoService.findAddress(1l,"anhui","hefei");
+        demoService.getAll();
         System.out.println("若下面没出现“无缓存的时候调用”字样且能打印出数据表示测试成功");
         return CommonResult.newInstance(ResultCode.SUCCESS,String.class);
     }

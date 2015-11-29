@@ -12,7 +12,7 @@ import com.wanliang.micro.persistence.CrudDao;
  * @author ThinkGem
  * @version 2013-12-05
  */
-public interface RoleDao extends CrudDao<Role> {
+public interface RoleRepository extends CrudDao<Role> {
 
 	public Role getByName(Role role);
 	

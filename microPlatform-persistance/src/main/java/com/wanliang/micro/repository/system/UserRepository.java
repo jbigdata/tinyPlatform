@@ -5,16 +5,18 @@ package com.wanliang.micro.repository.system;
 
 import com.wanliang.micro.entity.system.User;
 import com.wanliang.micro.persistence.CrudDao;
+import com.wanliang.micro.persistence.annotation.MyBatis;
 
 import java.util.List;
 
 
 /**
  * 用户DAO接口
- * @author ThinkGem
+ * @author wanliang
  * @version 2014-05-16
  */
-public interface UserDao extends CrudDao<User> {
+@MyBatis
+public interface UserRepository extends CrudDao<User> {
 	
 	/**
 	 * 根据登录名称查询用户

@@ -14,7 +14,7 @@ import java.util.List;
  * @author ThinkGem
  * @version 2014-05-16
  */
-public interface MenuDao extends CrudDao<Menu> {
+public interface MenuRepository extends CrudDao<Menu> {
 
 	public List<Menu> findByParentIdsLike(Menu menu);
 

@@ -10,11 +10,13 @@ import java.util.List;
 
 
 /**
- * 字典DAO接口
- * @author ThinkGem
- * @version 2014-05-16
+ * @author wanliang
+ * @version 1.0
+ * @date 2015/11/18
+ * @modify
+ * @copyright tinyPlatform
  */
-public interface DictDao extends CrudDao<Dict> {
+public interface DictRepository extends CrudDao<Dict> {
 
 	public List<String> findTypeList(Dict dict);
 	

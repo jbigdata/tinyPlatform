@@ -1,6 +1,8 @@
 package com.wanliang.micro.service.system;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.wanliang.micro.param.system.LoginParam;
+import com.wanliang.micro.result.system.LoginResult;
 
 /**
  * @author wanliang
@@ -11,5 +13,5 @@ import com.alibaba.dubbo.config.annotation.Reference;
  */
 public interface UserService {
 
-    public String login();
+    public LoginResult login(LoginParam param);
 }

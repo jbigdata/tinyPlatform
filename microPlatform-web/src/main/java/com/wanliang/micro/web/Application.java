@@ -1,7 +1,6 @@
 package com.wanliang.micro.web;
 
 import com.wanliang.micro.configuration.DataSourceConfig;
-import com.wanliang.micro.service.ServiceScan;
 import com.wanliang.micro.service.configruation.RedisConfiguration;
 import com.wanliang.micro.web.configuration.WebappConfig;
 import org.slf4j.Logger;
@@ -16,7 +15,7 @@ import org.springframework.context.annotation.Import;
  * Created by Administrator on 2015/10/30.
  */
 @Configuration
-@ComponentScan(basePackageClasses = {ServiceScan.class,Application.class})
+@ComponentScan(basePackageClasses = {Application.class})
 @EnableAutoConfiguration
 @Import({RedisConfiguration.class, DataSourceConfig.class})
 public class Application {

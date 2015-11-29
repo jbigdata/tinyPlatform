@@ -1,9 +1,11 @@
-package com.wanliang.micro.model.demo;
+package com.wanliang.micro.result.demo;
+
+import java.io.Serializable;
 
 /**
  * Created by Administrator on 2015/11/2.
  */
-public class User {
+public class User  implements Serializable {
     private Long id;
     private String firstName;
     private String lastName;

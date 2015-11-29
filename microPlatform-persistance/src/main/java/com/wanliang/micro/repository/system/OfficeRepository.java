@@ -3,15 +3,14 @@
  */
 package com.wanliang.micro.repository.system;
 
-
-import com.wanliang.micro.entity.system.Log;
-import com.wanliang.micro.persistence.CrudDao;
+import com.wanliang.micro.entity.system.Office;
+import com.wanliang.micro.persistence.TreeDao;
 
 /**
- * 日志DAO接口
+ * 机构DAO接口
  * @author ThinkGem
  * @version 2014-05-16
  */
-public interface LogDao extends CrudDao<Log> {
-
+public interface OfficeRepository extends TreeDao<Office> {
+	
 }

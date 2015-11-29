@@ -1,6 +1,8 @@
-package com.wanliang.micro.model.demo;
+package com.wanliang.micro.result.demo;
 
-public class Address {
+import java.io.Serializable;
+
+public class Address implements Serializable{
     private Long id;
     private String province;
     private String city;
