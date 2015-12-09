@@ -9,6 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="${base}/css/bootstrap.min.css" rel="stylesheet">
     <link href="${base}/css/dashboard.css" rel="stylesheet">
+    <link href="${base}/css/bootstrap-overrides.css" rel="stylesheet">
+
+
     <!--[if lt IE 9]>
     <!--<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>-->
     <#--<![endif]&ndash;&gt;-->
