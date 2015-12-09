@@ -2,12 +2,12 @@
 <#include "include/navbar.ftl">
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
+        <div class="col-sm-3 col-md-2 nav-tabs sidebar">
             <ul class="nav nav-sidebar">
                 <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Reports</a></li>
-                <li><a href="#">Analytics</a></li>
-                <li><a href="#">Export</a></li>
+                <li class=""><a href="#"> <i class="glyphicons glyphicon-apple"></i> 用户管理</a></li>
+                <li><a href="#"><i class="glyphicons glyphicon-user"></i>   菜单管理</a></li>
+                <li><a href="#"><i class="glyphicons glyphicon-user"></i> 权限管理</a></li>
             </ul>
             <ul class="nav nav-sidebar">
                 <li><a href="">Nav item</a></li>
