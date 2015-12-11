@@ -47,66 +47,7 @@
                     <span class="text-muted">Something else</span>
                 </div>
             </div>
-            <div class="span9 with-sidebar">
-                <div class="container">
-                    <form class="new_user_form inline-input">
-                        <div class="span12 field-box">
-                            <label>Name:</label>
-                            <input class="span9" type="text">
-                        </div>
-                        <div class="span12 field-box">
-                            <label>State:</label>
-                            <div class="ui-select span5">
-                                <select>
-                                    <option value="AK">Alaska
-                                    </option><option value="HI">Hawaii
-                                </option><option value="CA">California
-                                </option><option value="NV">Nevada
-                                </option><option value="OR">Oregon
-                                </option><option value="WA">Washington
-                                </option><option value="AZ">Arizona
-                                </option></select>
-                            </div>
-                        </div>
-                        <div class="span12 field-box">
-                            <label>Company:</label>
-                            <input class="span9" type="text">
-                        </div>
-                        <div class="span12 field-box">
-                            <label>Email:</label>
-                            <input class="span9" type="text">
-                        </div>
-                        <div class="span12 field-box">
-                            <label>Phone:</label>
-                            <input class="span9" type="text">
-                        </div>
-                        <div class="span12 field-box">
-                            <label>Website:</label>
-                            <input class="span9" type="text">
-                        </div>
-                        <div class="span12 field-box">
-                            <label>Address:</label>
-                            <div class="address-fields">
-                                <input class="span12" type="text" placeholder="Street address">
-                                <input class="span12 small" type="text" placeholder="City">
-                                <input class="span12 small" type="text" placeholder="State">
-                                <input class="span12 small last" type="text" placeholder="Postal Code">
-                            </div>
-                        </div>
-                        <div class="span12 field-box textarea">
-                            <label>Notes:</label>
-                            <textarea class="span9"></textarea>
-                            <span class="charactersleft">90 characters remaining. Field limited to 100 characters</span>
-                        </div>
-                        <div class="span11 field-box actions">
-                            <input type="button" class="btn-glow primary" value="Create user">
-                            <span>OR</span>
-                            <input type="reset" value="Cancel" class="reset">
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <input class="span5 inline-input" value="test">
+
             <h2 class="sub-header">Section title</h2>
             <div class="table-responsive">
                 <table class="table table-striped">

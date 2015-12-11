@@ -48,23 +48,21 @@
 
 <div class="row-fluid login-wrapper">
     <a href="index.html">
-        <img class="logo" src="images/logo-white.png" />
+        <img class="logo" src="${base}/images/logo-white.png" />
     </a>
-
     <div class="span4 box">
         <div class="content-wrap">
             <h6>用户登录</h6>
-            <input class="form-control" type="text" placeholder="邮箱/用户名/已验证手机号" />
-            <input class="form-control" type="password" placeholder="密码" />
+            <input class="form-control" name="username" type="text" placeholder="邮箱/用户名/已验证手机号" />
+            <input class="form-control" name="password" type="password" placeholder="密码" />
             <a href="#" class="forgot">忘记密码?</a>
             <div class="remember">
                 <input id="remember-me" type="checkbox" />
                 <label for="remember-me">自动登录</label>
             </div>
-            <a class="btn btn-primary btn-lg" href="index.html">登录</a>
+            <input type="submit" class="btn btn-primary btn-block" value="登 录"/>
         </div>
     </div>
-
     <div class="span4 no-account">
         <p>如果您还未加入我们?</p>
         <a href="signup.html">立即加入</a>
