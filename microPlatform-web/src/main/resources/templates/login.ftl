@@ -54,27 +54,27 @@
     <div class="span4 box">
         <div class="content-wrap">
             <h6>用户登录</h6>
-            <input class="form-control" type="text" placeholder="E-mail address" />
-            <input class="form-control" type="password" placeholder="Your password" />
-            <a href="#" class="forgot">Forgot password?</a>
+            <input class="form-control" type="text" placeholder="邮箱/用户名/已验证手机号" />
+            <input class="form-control" type="password" placeholder="密码" />
+            <a href="#" class="forgot">忘记密码?</a>
             <div class="remember">
                 <input id="remember-me" type="checkbox" />
-                <label for="remember-me">Remember me</label>
+                <label for="remember-me">自动登录</label>
             </div>
             <a class="btn btn-primary btn-lg" href="index.html">登录</a>
         </div>
     </div>
 
     <div class="span4 no-account">
-        <p>Don't have an account?</p>
-        <a href="signup.html">Sign up</a>
+        <p>如果您还未加入我们?</p>
+        <a href="signup.html">立即加入</a>
     </div>
 </div>
 
 <!-- scripts -->
 <script src="${base}/js/jquery.min.js"></script>
 <script src="${base}/js/bootstrap.min.js"></script>
-<script src="js/theme.js"></script>
+
 
 <!-- pre load bg imgs -->
 </body>
