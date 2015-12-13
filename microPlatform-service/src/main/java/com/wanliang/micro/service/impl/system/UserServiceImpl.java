@@ -29,11 +29,11 @@ public class UserServiceImpl implements UserService {
         User user=new User();
         user.setLoginName(param.getLoginName());
         user.setPassword(param.getPassword());
-        user= userRepository.getByLoginName(user);
+        user= userRepository.getByLoginName(param.getLoginName());
 
         LoginResult loginResult=new LoginResult();
         loginResult.setNickname(user.getName());
         loginResult.setToken(param.getType()+"_"+UUIDUtil.randomUUID());
-        return null;
+        return loginResult;
     }
 }

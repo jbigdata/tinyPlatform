@@ -23,7 +23,7 @@ public interface UserRepository extends CrudDao<User> {
 	 * @param
 	 * @return
 	 */
-	public User getByLoginName(User user);
+	public User getByLoginName(String loginName);
 
 	/**
 	 * 通过OfficeId获取用户列表，仅返回用户id和name（树查询用户时用）

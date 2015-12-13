@@ -1,7 +1,5 @@
 package com.wanliang.micro.web;
 
-import com.wanliang.micro.configuration.DataSourceConfig;
-import com.wanliang.micro.service.configruation.RedisConfiguration;
 import com.wanliang.micro.web.configuration.DubboConfig;
 import com.wanliang.micro.web.configuration.WebappConfig;
 import org.slf4j.Logger;
@@ -18,7 +16,7 @@ import org.springframework.context.annotation.Import;
 @Configuration
 @ComponentScan(basePackageClasses = {Application.class})
 @EnableAutoConfiguration
-@Import({RedisConfiguration.class, DataSourceConfig.class, DubboConfig.class})
+@Import({WebappConfig.class,  DubboConfig.class})
 public class Application {
 
     private static final Logger logger = LoggerFactory.getLogger(Application.class);

@@ -1,6 +1,5 @@
 package com.wanliang.micro.service;
 
-import com.wanliang.micro.MybatisScan;
 import com.wanliang.micro.configuration.DataSourceConfig;
 import com.wanliang.micro.service.configruation.DubboConfig;
 import com.wanliang.micro.service.configruation.RedisConfiguration;

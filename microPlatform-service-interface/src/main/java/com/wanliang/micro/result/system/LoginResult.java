@@ -14,6 +14,7 @@ public class LoginResult implements Serializable {
     private String userId;
     private String nickname;
     private String token;
+    private String redirect;
 
     public String getUserId() {
         return userId;

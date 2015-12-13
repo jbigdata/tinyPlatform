@@ -1,7 +1,11 @@
 package com.wanliang.micro.web.configuration;
 
 import com.wanliang.micro.web.directive.*;
+import freemarker.template.TemplateModelException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerView;
@@ -20,10 +24,16 @@ import java.util.Map;
 @Configuration
 public class FreeMarkerConfig {
 
+
+    private static final Logger LOG = LoggerFactory.getLogger(FreeMarkerConfig.class);
+
+
     @Autowired
     protected freemarker.template.Configuration configuration;
 
     private static final String CONTEXT_PATH = "base";
+    @Value("${spring..freemarker.settings.variables.siteName}")
+    private String siteName;
 
     @PostConstruct
     public void setSharedVariable() {
@@ -37,6 +47,12 @@ public class FreeMarkerConfig {
         configuration.setSharedVariable("block", new BlockDirective());
         configuration.setSharedVariable("override", new OverrideDirective());
         configuration.setSharedVariable("extends", new ExtendsDirective());
+        try {
+            configuration.setSharedVariable("siteName", siteName);
+        } catch (TemplateModelException e) {
+            LOG.error("load siteName error",e);
+        }
+
     }
 
 //    @Bean

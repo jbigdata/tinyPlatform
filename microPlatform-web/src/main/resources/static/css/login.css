@@ -1,5 +1,5 @@
 .login-bg {
-    background: url("../images/bgs/landscape.jpg") no-repeat center center fixed;
+    background: url("../images/bg.jpg") no-repeat center center fixed;
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/bgs/landscape.jpg', sizingMethod='scale');
     -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/bgs/landscape.jpg', sizingMethod='scale')";
     -webkit-background-size: cover;
