@@ -15,12 +15,12 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 /**
- * @author wanliang
- * @version 1.0
- * @date 2015/11/22
- * @modify
- * @copyright microPlatform
- */
+* @author wanliang
+* @version 1.0
+* @date 2015/11/22
+* @modify
+* @copyright microPlatform
+*/
 @Configuration
 public class FreeMarkerConfig {
 
@@ -47,6 +47,7 @@ public class FreeMarkerConfig {
         configuration.setSharedVariable("block", new BlockDirective());
         configuration.setSharedVariable("override", new OverrideDirective());
         configuration.setSharedVariable("extends", new ExtendsDirective());
+     //   configuration.setSharedVariable("_csrf",org.springframework.security.web.csrf.CsrfToken);
         try {
             configuration.setSharedVariable("siteName", siteName);
         } catch (TemplateModelException e) {
