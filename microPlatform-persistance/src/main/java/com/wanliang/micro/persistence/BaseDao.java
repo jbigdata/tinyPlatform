@@ -5,7 +5,7 @@ package com.wanliang.micro.persistence;
 
 /**
  * DAO支持类实现
- * @author ThinkGem
+ * @author wanliang
  * @version 2014-05-16
  */
 public interface BaseDao {

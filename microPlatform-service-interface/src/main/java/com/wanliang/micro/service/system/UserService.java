@@ -3,6 +3,9 @@ package com.wanliang.micro.service.system;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.wanliang.micro.param.system.LoginParam;
 import com.wanliang.micro.result.system.LoginResult;
+import com.wanliang.micro.result.system.UserResult;
+
+import java.util.Optional;
 
 /**
  * @author wanliang
@@ -14,4 +17,6 @@ import com.wanliang.micro.result.system.LoginResult;
 public interface UserService {
 
     public LoginResult login(LoginParam param);
+
+    Optional<UserResult> getUserByEmail(String email);
 }

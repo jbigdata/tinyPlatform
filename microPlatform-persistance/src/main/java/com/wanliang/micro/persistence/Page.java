@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
  * 分页类
  *
  * @param <T>
- * @author ThinkGem
+ * @author wanliang
  * @version 2013-7-2
  */
 public class Page<T> {

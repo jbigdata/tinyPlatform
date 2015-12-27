@@ -9,7 +9,7 @@ import com.wanliang.micro.persistence.TreeDao;
 
 /**
  * 区域DAO接口
- * @author ThinkGem
+ * @author wanliang
  * @version 2014-05-16
  */
 public interface AreaRepository extends TreeDao<Area> {

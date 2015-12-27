@@ -4,7 +4,7 @@
 package com.wanliang.micro.repository.system;
 
 import com.wanliang.micro.entity.system.Dict;
-import com.wanliang.micro.persistence.CrudDao;
+import com.wanliang.micro.persistence.BaseRepository;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import java.util.List;
  * @modify
  * @copyright tinyPlatform
  */
-public interface DictRepository extends CrudDao<Dict> {
+public interface DictRepository extends BaseRepository<Dict> {
 
 	public List<String> findTypeList(Dict dict);
 	

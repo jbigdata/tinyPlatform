@@ -44,7 +44,7 @@ public class DataSourceConfig {
 
     @Bean
     @Primary
-    @ConfigurationProperties(prefix = "datasource.primary")
+    @ConfigurationProperties(prefix = "micro.datasource")
     public DataSource dataSource() {
         logger.debug("Configuring Datasource");
         return new DruidDataSource();

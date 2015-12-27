@@ -25,7 +25,7 @@
                         <li><a href="#">One more separated link</a></li>
                     </ul>
                 </li>
-                <li><a href="#">退出系统</a></li>
+                <li><a href="${base}/logout">退出系统</a></li>
                 <li><a href="#">帮助</a></li>
             </ul>
             <form class="navbar-form navbar-right">

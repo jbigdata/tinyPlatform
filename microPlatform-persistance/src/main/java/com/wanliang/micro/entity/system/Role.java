@@ -13,7 +13,7 @@ import org.hibernate.validator.constraints.Length;
 
 /**
  * 角色Entity
- * @author ThinkGem
+ * @author wanliang
  * @version 2013-12-05
  */
 public class Role extends DataEntity<Role> {

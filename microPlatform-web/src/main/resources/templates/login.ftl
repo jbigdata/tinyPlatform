@@ -1,5 +1,4 @@
 <#assign base=request.contextPath />
-
 <!DOCTYPE html>
 <html class="login-bg">
 <head>
@@ -7,220 +6,155 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <!-- bootstrap -->
-    <link href="${base}/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${base}/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="${base}/css/bootstrapValidator.min.css" rel="stylesheet">
+    <#--<!-- bootstrap &ndash;&gt;-->
+    <#--<link href="${base}/css/bootstrap.min.css" rel="stylesheet">-->
+    <#--<link href="${base}/css/bootstrap-responsive.css" rel="stylesheet">-->
+    <#--<link href="${base}/css/bootstrapValidator.min.css" rel="stylesheet">-->
     <!-- this page specific styles -->
-    <link rel="stylesheet" href="${base}/css/login.css" type="text/css" media="screen"/>
-    <script src="${base}/js/bootstrapValidator.min.js"/>
-    <script src="${base}/js/jquery.min.js"></script>
-    <script src="${base}/js/bootstrap.min.js"></script>
+    <#--<link rel="stylesheet" href="${base}/css/login.css" type="text/css" media="screen"/>-->
+    <#--<script src="${base}/js/bootstrapValidator.min.js"/>-->
+    <#--<script src="${base}/js/jquery.min.js"></script>-->
+    <#--<script src="${base}/js/bootstrap.min.js"></script>-->
 
 
+    <link rel="stylesheet" href="${base}/css/bootstrap.css"/>
+    <link rel="stylesheet" href="${base}/css/bootstrapValidator.css"/>
+
+    <script type="text/javascript" src="${base}/js/jquery.min.js"></script>
+    <script type="text/javascript" src="${base}/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="${base}/js/bootstrapValidator.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">${siteName}</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">首页</a></li>
+                <li><a href="${base}/reg">加入我们</a></li>
+                <li><a href="#contact">帮助</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+<div class="container theme-showcase" role="main">
+    <div class="row-fluid login-wrapper">
+
+        <div class="col-md-6 col-md-offset-3">
+           <br>
+            <div class=" page-header center-block">
+                <h3>用户登录</h3>
+            </div>
+            <form id="defaultForm" method="post" class="form-horizontal" action="${base}/login">
+                <#--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
+                <div class="form-group">
+                     <div class="col-md-6 col-md-offset-3">
+                        <input type="text" class="form-control" name="loginName" placeholder="邮箱/用户名/已验证手机号" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="form-group">
+                     <div class="col-md-6 col-md-offset-3">
+                        <input type="password" class="form-control" placeholder="请输入密码" name="password" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="row">
+                            <div class="col-xs-8 col-sm-6">
+                                <input type="text" class="form-control l" placeholder="验证码" name="verification" />
+                            </div>
+                            <div class="col-xs-4 col-sm-6">
+                                <img id="vcodeImg" style="vertical-align: middle;" onclick="javascript:document.getElementById('vcodeImg').src='${base}/captcha.jpg?k={en7mni(z&p=ucenter_login&c=ef7d278eca6d25aa6aec7272d57f0a9a&t='+new Date().getTime() " title="点击更换" alt="验证图片" src="${base}/captcha.jpg" height="38" width="110">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-3 checkbox">
+                        <label>
+                            <input type="checkbox" id="remember-me"  value="true" /> 自动登录
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-3">
+                        <button type="submit" class="btn btn-primary btn-block">登录</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+</div>
     <script type="text/javascript">
         $(document).ready(function() {
-            // Generate a simple captcha
-
             $('#defaultForm').bootstrapValidator({
-//        live: 'disabled',
-                message: 'This value is not valid',
+                message: '请输入有效信息',
                 feedbackIcons: {
                     valid: 'glyphicon glyphicon-ok',
                     invalid: 'glyphicon glyphicon-remove',
                     validating: 'glyphicon glyphicon-refresh'
                 },
                 fields: {
-                    firstName: {
-                        group: '.col-lg-4',
+                    loginName: {
+                        message: '请输入账号',
                         validators: {
                             notEmpty: {
-                                message: 'The first name is required and cannot be empty'
-                            }
-                        }
-                    },
-                    lastName: {
-                        group: '.col-lg-4',
-                        validators: {
-                            notEmpty: {
-                                message: 'The last name is required and cannot be empty'
-                            }
-                        }
-                    },
-                    username: {
-                        message: 'The username is not valid',
-                        validators: {
-                            notEmpty: {
-                                message: 'The username is required and cannot be empty'
-                            },
-                            stringLength: {
-                                min: 6,
-                                max: 30,
-                                message: 'The username must be more than 6 and less than 30 characters long'
+                                message: '账号不允许为空'
                             },
                             regexp: {
-                                regexp: /^[a-zA-Z0-9_\.]+$/,
-                                message: 'The username can only consist of alphabetical, number, dot and underscore'
+                                regexp: /^[a-zA-Z0-9_@\.]+$/,
+                                message: '用户名只能包含字母,数字,点和下划线'
                             },
-                            remote: {
-                                type: 'POST',
-                                url: 'remote.php',
-                                message: 'The username is not available'
-                            },
-                            different: {
-                                field: 'password,confirmPassword',
-                                message: 'The username and password cannot be the same as each other'
-                            }
                         }
                     },
-                    email: {
+                    verification: {
+                        message: '请输入验证码',
                         validators: {
-                            emailAddress: {
-                                message: 'The input is not a valid email address'
+                            notEmpty: {
+                                message: '请输入验证码'
                             }
+                            <#--remote:{-->
+                                <#--type:"GET",-->
+                                <#--url:"${base}/checkVerification",-->
+                                <#--message:"验证码输入错误"-->
+                            <#--}-->
+
                         }
                     },
                     password: {
                         validators: {
                             notEmpty: {
-                                message: 'The password is required and cannot be empty'
+                                message: '请输入密码'
                             },
-                            identical: {
-                                field: 'confirmPassword',
-                                message: 'The password and its confirm are not the same'
-                            },
-                            different: {
-                                field: 'username',
-                                message: 'The password cannot be the same as username'
-                            }
-                        }
-                    },
-                    confirmPassword: {
-                        validators: {
-                            notEmpty: {
-                                message: 'The confirm password is required and cannot be empty'
-                            },
-                            identical: {
-                                field: 'password',
-                                message: 'The password and its confirm are not the same'
-                            },
-                            different: {
-                                field: 'username',
-                                message: 'The password cannot be the same as username'
-                            }
-                        }
-                    },
-                    birthday: {
-                        validators: {
-                            date: {
-                                format: 'YYYY/MM/DD',
-                                message: 'The birthday is not valid'
-                            }
-                        }
-                    },
-                    gender: {
-                        validators: {
-                            notEmpty: {
-                                message: 'The gender is required'
-                            }
-                        }
-                    },
-                    'languages[]': {
-                        validators: {
-                            notEmpty: {
-                                message: 'Please specify at least one language you can speak'
-                            }
-                        }
-                    },
-                    'programs[]': {
-                        validators: {
-                            choice: {
-                                min: 2,
-                                max: 4,
-                                message: 'Please choose 2 - 4 programming languages you are good at'
-                            }
-                        }
-                    },
-                    captcha: {
-                        validators: {
                             callback: {
-                                message: 'Wrong answer',
                                 callback: function(value, validator) {
-                                    var items = $('#captchaOperation').html().split(' '), sum = parseInt(items[0]) + parseInt(items[2]);
-                                    return value == sum;
+                                    // Check the password strength
+                                    if (value.length < 6) {
+                                        return {
+                                            valid: false,
+                                            message: '密码长度大于6位'
+                                        }
+                                    }
+                                    return true;
                                 }
                             }
                         }
                     }
                 }
             });
-
-            $('#resetBtn').click(function() {
-                $('#defaultForm').data('bootstrapValidator').resetForm(true);
-            });
         });
     </script>
-</head>
-<body>
-
-
-<!-- background switcher -->
-<#--<div class="bg-switch visible-desktop">-->
-<#--<div class="bgs">-->
-<#--<a href="#" data-img="landscape.jpg" class="bg active">-->
-<#--<img src="img/bgs/landscape.jpg" />-->
-<#--</a>-->
-<#--<a href="#" data-img="blueish.jpg" class="bg">-->
-<#--<img src="img/bgs/blueish.jpg" />-->
-<#--</a>-->
-<#--<a href="#" data-img="7.jpg" class="bg">-->
-<#--<img src="img/bgs/7.jpg" />-->
-<#--</a>-->
-<#--<a href="#" data-img="8.jpg" class="bg">-->
-<#--<img src="img/bgs/8.jpg" />-->
-<#--</a>-->
-<#--<a href="#" data-img="9.jpg" class="bg">-->
-<#--<img src="img/bgs/9.jpg" />-->
-<#--</a>-->
-<#--<a href="#" data-img="10.jpg" class="bg">-->
-<#--<img src="img/bgs/10.jpg" />-->
-<#--</a>-->
-<#--<a href="#" data-img="11.jpg" class="bg">-->
-<#--<img src="img/bgs/11.jpg" />-->
-<#--</a>-->
-<#--</div>-->
-<#--</div>-->
-
-<form id="defaultForm" method="post" class="form-horizontal" action="/login">
-<div class="row-fluid login-wrapper">
-        <a href="index.html">
-            <img class="logo" src="${base}/images/logo-white.png"/>
-        </a>
-
-        <div class="span4 box">
-            <div class="content-wrap">
-                <h6>用户登录</h6>
-                <input class="form-control" name="username" check-type="required" required-message="请输入用户名" type="text"
-                       placeholder="邮箱/用户名/已验证手机号"/>
-                <input class="form-control" name="password" check-type="required" required-message="请输入密码"
-                       type="password" placeholder="密码"/>
-                <a href="#" class="forgot">忘记密码?</a>
-
-                <div class="remember">
-                    <input id="remember-me" type="checkbox"/>
-                    <label for="remember-me">自动登录</label>
-                </div>
-                <input type="submit" id="submit1" class="btn btn-primary btn-block" value="登 录"/>
-            </div>
-        </div>
-        <div class="span4 no-account">
-            <p>如果您还未加入我们?</p>
-            <a href="signup.html">立即加入</a>
-        </div>
-    </div>
-
-</form>
-
 </body>
 </html>

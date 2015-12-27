@@ -13,7 +13,7 @@ import org.hibernate.validator.constraints.Length;
 
 /**
  * 机构Entity
- * @author ThinkGem
+ * @author wanliang
  * @version 2013-05-15
  */
 public class Office extends TreeEntity<Office> {

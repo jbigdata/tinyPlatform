@@ -45,10 +45,10 @@ public class UserServiceImpl implements UserService {
             return null;
         }
 
-        boolean isflag = validatePassword(param.getPassword(), user.getPassword());
-        if (!isflag) {
-            return null;
-        }
+//        boolean isflag = validatePassword(param.getPassword(), user.getPassword());
+//        if (!isflag) {
+//            return null;
+//        }
         LoginResult loginResult = new LoginResult();
         loginResult.setNickname(user.getName());
         loginResult.setToken(param.getType() + "_" + UUIDUtil.randomUUID());

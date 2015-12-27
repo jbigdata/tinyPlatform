@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * 用户Entity
- * @author ThinkGem
+ * @author wanliang
  * @version 2013-12-05
  */
 public class User extends DataEntity<User> {

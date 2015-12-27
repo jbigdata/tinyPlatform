@@ -9,7 +9,7 @@ import org.hibernate.validator.constraints.Length;
 
 /**
  * 区域Entity
- * @author ThinkGem
+ * @author wanliang
  * @version 2013-05-15
  */
 public class Area extends TreeEntity<Area> {

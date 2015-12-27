@@ -4,7 +4,7 @@
 package com.wanliang.micro.repository.system;
 
 import com.wanliang.micro.entity.system.User;
-import com.wanliang.micro.persistence.CrudDao;
+import com.wanliang.micro.persistence.BaseRepository;
 import com.wanliang.micro.persistence.annotation.MyBatis;
 
 import java.util.List;
@@ -16,7 +16,7 @@ import java.util.List;
  * @version 2014-05-16
  */
 @MyBatis
-public interface UserRepository extends CrudDao<User> {
+public interface UserRepository extends BaseRepository<User> {
 	
 	/**
 	 * 根据登录名称查询用户

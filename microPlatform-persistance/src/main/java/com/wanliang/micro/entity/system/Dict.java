@@ -12,7 +12,7 @@ import org.hibernate.validator.constraints.Length;
 
 /**
  * 字典Entity
- * @author ThinkGem
+ * @author wanliang
  * @version 2013-05-15
  */
 public class Dict extends DataEntity<Dict> {

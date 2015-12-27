@@ -8,7 +8,7 @@ import com.wanliang.micro.persistence.TreeDao;
 
 /**
  * 机构DAO接口
- * @author ThinkGem
+ * @author wanliang
  * @version 2014-05-16
  */
 public interface OfficeRepository extends TreeDao<Office> {

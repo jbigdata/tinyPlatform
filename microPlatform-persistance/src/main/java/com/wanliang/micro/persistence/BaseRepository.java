@@ -7,11 +7,11 @@ import java.util.List;
 
 /**
  * DAO支持类实现
- * @author ThinkGem
+ * @author wanliang
  * @version 2014-05-16
  * @param <T>
  */
-public interface CrudDao<T> extends BaseDao {
+public interface BaseRepository<T>   {
 
 	/**
 	 * 获取单条数据

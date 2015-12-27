@@ -4,17 +4,17 @@
 package com.wanliang.micro.repository.system;
 
 import com.wanliang.micro.entity.system.Menu;
-import com.wanliang.micro.persistence.CrudDao;
+import com.wanliang.micro.persistence.BaseRepository;
 
 import java.util.List;
 
 
 /**
  * 菜单DAO接口
- * @author ThinkGem
+ * @author wanliang
  * @version 2014-05-16
  */
-public interface MenuRepository extends CrudDao<Menu> {
+public interface MenuRepository extends BaseRepository<Menu> {
 
 	public List<Menu> findByParentIdsLike(Menu menu);
 

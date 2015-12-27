@@ -5,7 +5,7 @@ package com.wanliang.micro.repository.system;
 
 
 import com.wanliang.micro.entity.system.Log;
-import com.wanliang.micro.persistence.CrudDao;
+import com.wanliang.micro.persistence.BaseRepository;
 
 /**
  * @author wanliang
@@ -14,6 +14,6 @@ import com.wanliang.micro.persistence.CrudDao;
  * @modify
  * @copyright tinyPlatform
  */
-public interface LogRepository extends CrudDao<Log> {
+public interface LogRepository extends BaseRepository<Log> {
 
 }
