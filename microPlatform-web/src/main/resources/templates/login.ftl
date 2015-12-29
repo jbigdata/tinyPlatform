@@ -71,10 +71,10 @@
                 <div class="form-group">
                     <div class="col-md-6 col-md-offset-3">
                         <div class="row">
-                            <div class="col-xs-8 col-sm-6">
+                            <div class="col-xs-7 col-sm-6">
                                 <input type="text" class="form-control l" placeholder="验证码" name="verification" />
                             </div>
-                            <div class="col-xs-4 col-sm-6">
+                            <div class="col-xs-5 col-sm-6">
                                 <img id="vcodeImg" style="vertical-align: middle;" onclick="javascript:document.getElementById('vcodeImg').src='${base}/captcha.jpg?k={en7mni(z&p=ucenter_login&c=ef7d278eca6d25aa6aec7272d57f0a9a&t='+new Date().getTime() " title="点击更换" alt="验证图片" src="${base}/captcha.jpg" height="38" width="110">
                             </div>
                         </div>
