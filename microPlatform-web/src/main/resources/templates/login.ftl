@@ -84,7 +84,7 @@
                 <div class="form-group">
                     <div class="col-md-6 col-md-offset-3 checkbox">
                         <label>
-                            <input type="checkbox" id="remember-me"  value="true" /> 自动登录
+                            <input type="checkbox" id="remember-me" name="remember-me"  value="true" /> 自动登录
                         </label>
                     </div>
                 </div>
