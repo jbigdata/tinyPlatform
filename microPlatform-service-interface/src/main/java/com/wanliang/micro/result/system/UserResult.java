@@ -17,7 +17,7 @@ public class UserResult implements Serializable{
     private String companyId;	// 归属公司
     private String officeId;	// 归属部门
     private String loginName;// 登录名
-    private String passoword;
+    private String password;
     private String no;		// 工号
     private String name;	// 姓名
     private String email;	// 邮箱
@@ -69,12 +69,12 @@ public class UserResult implements Serializable{
         this.no = no;
     }
 
-    public String getPassoword() {
-        return passoword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPassoword(String passoword) {
-        this.passoword = passoword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getName() {

@@ -26,7 +26,6 @@ import java.awt.image.BufferedImage;
  * @copyright microPlatform
  */
 @Controller
-
 public class CaptchaController {
 
     @Autowired

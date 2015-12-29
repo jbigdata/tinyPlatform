@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * DubboConfig
  *
- * @author Jinkai.Ma
+ * @author wanliang
  */
 @Configuration
 //@ImportResource("classpath:dubbo-consumer.xml")

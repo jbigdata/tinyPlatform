@@ -70,8 +70,7 @@ public class UserServiceImpl implements UserService {
     }
 
 
-    @Override
-    public Optional<UserResult> getUserByEmail(String email) {
+    public UserResult getUserByEmail(String email) {
         logger.debug("Getting user by email={}", email.replaceFirst("@.*", "@***"));
         User user = userRepository.getByLoginName(email);
         if (user==null){
@@ -81,9 +80,8 @@ public class UserServiceImpl implements UserService {
         userResult.setLoginName(user.getLoginName());
         userResult.setMobile(user.getMobile());
         userResult.setEmail(user.getEmail());
-        userResult.setPassoword(user.getPassword());
+        userResult.setPassword(user.getPassword());
         userResult.setId(user.getId());
-        Optional<UserResult> optUser = Optional.of(userResult);
-        return optUser;
+        return userResult;
     }
 }

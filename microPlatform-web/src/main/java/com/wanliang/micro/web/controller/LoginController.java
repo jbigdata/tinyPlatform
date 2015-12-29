@@ -4,6 +4,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.wanliang.micro.param.system.LoginParam;
 import com.wanliang.micro.result.demo.User;
 import com.wanliang.micro.result.system.LoginResult;
+import com.wanliang.micro.result.system.UserResult;
 import com.wanliang.micro.service.demo.DemoService;
 import com.wanliang.micro.service.system.UserService;
 import com.wanliang.micro.web.result.CommonResult;
@@ -38,14 +39,14 @@ public class LoginController {
         return new ModelAndView("login", "error", error);
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String loginSubmit(LoginParam loginParam) {
-        LoginResult result = userService.login(loginParam);
-        if (result == null) {
-
-             return "/login";
-        }
-        //    demoService.getAll();
-        return "redirect:/system";
-    }
+//    @RequestMapping(value = "/login", method = RequestMethod.POST)
+//    public String loginSubmit(LoginParam loginParam) {
+//        LoginResult result = userService.login(loginParam);
+//        if (result == null) {
+//
+//             return "/login";
+//        }
+//        //    demoService.getAll();
+//        return "redirect:/system";
+//    }
 }

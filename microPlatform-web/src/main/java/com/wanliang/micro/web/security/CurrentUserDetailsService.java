@@ -26,7 +26,7 @@ public class CurrentUserDetailsService implements UserDetailsService {
         LOGGER.debug("Authenticating user with email={}", email.replaceFirst("@.*", "@***"));
         UserResult user = null;
         try {
-            user = userService.getUserByEmail(email).get();
+            user = userService.getUserByEmail(email);
         } catch (UsernameNotFoundException e) {
             new UsernameNotFoundException(String.format("User with email=%s was not found", email));
         }

@@ -18,5 +18,5 @@ public interface UserService {
 
     public LoginResult login(LoginParam param);
 
-    Optional<UserResult> getUserByEmail(String email);
+    UserResult getUserByEmail(String email);
 }
