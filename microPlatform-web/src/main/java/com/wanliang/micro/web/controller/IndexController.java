@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class IndexController {
     @RequestMapping(value = "/system",method = RequestMethod.GET)
     public String login(ModelAndView view){
+        System.out.println("-----------------------------");
         return "home";
     }
 }

@@ -11,9 +11,12 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.access.channel.ChannelProcessingFilter;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.RegexRequestMatcher;
 import org.springframework.security.web.util.matcher.RequestMatcher;
 
+import javax.servlet.Filter;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -30,15 +33,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private UserDetailsService userDetailsService;
-
-
+//
+//    @Autowired
+//    private AptchaFilter aptchaFilter;
+    /**
+     * 配置security
+     * @param http
+     * @throws Exception
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf()
                 .and()
                 .authorizeRequests()
                 .antMatchers("/", "/public/**", "/captcha.jpg").permitAll()
-                .antMatchers("/system/**").hasAuthority("ADMIN")
+                .antMatchers("/system/**","/system").hasAuthority("ADMIN")
+                .antMatchers("/front").hasAnyAuthority("USER")
                 .anyRequest().fullyAuthenticated()
                 .and()
                 .formLogin()
@@ -47,6 +57,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .usernameParameter("loginName")
                 .passwordParameter("password")
                 .permitAll()
+                .defaultSuccessUrl("/system")
                 .and()
                 .logout()
                 .logoutUrl("/logout")
@@ -54,7 +65,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/login")
                 .permitAll()
                 .and()
-                .rememberMe();
+                .rememberMe();//.and() .addFilterBefore(aptchaFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
     @Override
