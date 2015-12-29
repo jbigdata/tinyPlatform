@@ -30,7 +30,8 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -44,7 +45,8 @@
                 <li><a href="${base}/reg">加入我们</a></li>
                 <li><a href="#contact">帮助</a></li>
             </ul>
-        </div><!--/.nav-collapse -->
+        </div>
+        <!--/.nav-collapse -->
     </div>
 </nav>
 <div class="container theme-showcase" role="main">
@@ -52,29 +54,62 @@
 
         <div class="col-md-6 col-md-offset-3">
             <br>
+
             <div class=" page-header center-block">
-                <h3>用户登录</h3>
+                <h3>用户注册</h3>
             </div>
             <form id="defaultForm" method="post" class="form-horizontal" action="${base}/login">
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <div class="form-group">
-                    <div class="col-md-6 col-md-offset-3">
-                        <input type="text" class="form-control" name="loginName" placeholder="邮箱/用户名/已验证手机号" autocomplete="off" />
+                    <label for="inputEmail3" class="col-sm-2 control-label">用户名</label>
+
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">密码</label>
+
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="inputEmail3" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">确认密码</label>
+
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">邮箱</label>
+
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">电话</label>
+
+                    <div class="col-sm-10">
+                        <input type="phone" class="form-control" id="inputEmail3" placeholder="Email">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-6 col-md-offset-3">
-                        <input type="password" class="form-control" placeholder="请输入密码" name="password" />
+                        <input type="password" class="form-control" placeholder="请输入密码" name="password"/>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-6 col-md-offset-3">
                         <div class="row">
                             <div class="col-xs-8 col-sm-6">
-                                <input type="text" class="form-control l" placeholder="验证码" name="verification" />
+                                <input type="text" class="form-control l" placeholder="验证码" name="verification"/>
                             </div>
                             <div class="col-xs-4 col-sm-6">
-                                <img id="vcodeImg" style="vertical-align: middle;" onclick="javascript:document.getElementById('vcodeImg').src='${base}/captcha.jpg?k={en7mni(z&p=ucenter_login&c=ef7d278eca6d25aa6aec7272d57f0a9a&t='+new Date().getTime() " title="点击更换" alt="验证图片" src="${base}/captcha.jpg" height="38" width="110">
+                                <img id="vcodeImg" style="vertical-align: middle;"
+                                     onclick="javascript:document.getElementById('vcodeImg').src='${base}/captcha.jpg?k={en7mni(z&p=ucenter_login&c=ef7d278eca6d25aa6aec7272d57f0a9a&t='+new Date().getTime() "
+                                     title="点击更换" alt="验证图片" src="${base}/captcha.jpg" height="38" width="110">
                             </div>
                         </div>
 
@@ -84,13 +119,13 @@
                 <div class="form-group">
                     <div class="col-md-6 col-md-offset-3 checkbox">
                         <label>
-                            <input type="checkbox" id="remember-me" name="remember-me"  value="true" /> 自动登录
+                            <input type="checkbox" id="remember-me" name="remember-me" value="true"/> 自动登录
                         </label>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-6 col-md-offset-3">
-                        <button type="submit" class="btn btn-primary btn-block">登录</button>
+                        <button type="submit" class="btn btn-primary btn-block">下一步</button>
                     </div>
                 </div>
 
@@ -98,7 +133,7 @@
         </div>
     </div>
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#defaultForm').bootstrapValidator({
                 message: '请输入有效信息',
                 feedbackIcons: {
@@ -139,7 +174,7 @@
                                 message: '请输入密码'
                             },
                             callback: {
-                                callback: function(value, validator) {
+                                callback: function (value, validator) {
                                     // Check the password strength
                                     if (value.length < 6) {
                                         return {

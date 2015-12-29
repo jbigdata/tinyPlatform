@@ -41,7 +41,6 @@ public class CaptchaController {
         rsp.addHeader("Cache-Control", "post-check=0, pre-check=0");
         rsp.setHeader("Pragma", "no-cache");
         rsp.setContentType("image/jpeg");
-
         String capText = producer.createText();
         session.setAttribute(Constants.KAPTCHA_SESSION_KEY, capText);
 

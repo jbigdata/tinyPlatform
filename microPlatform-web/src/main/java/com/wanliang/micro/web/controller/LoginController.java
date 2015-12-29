@@ -70,4 +70,11 @@ public class LoginController {
         }
         return "redirect:/login?logout";
     }
+
+
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String register() {
+        return "/front/register";
+    }
+
 }

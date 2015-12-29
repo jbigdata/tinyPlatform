@@ -42,7 +42,7 @@
         <div id="navbar" class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">首页</a></li>
-                <li><a href="${base}/reg">加入我们</a></li>
+                <li><a href="${base}/register">加入我们</a></li>
                 <li><a href="#contact">帮助</a></li>
             </ul>
         </div><!--/.nav-collapse -->
@@ -75,7 +75,7 @@
                                 <input type="text" class="form-control l" placeholder="验证码" name="verification" />
                             </div>
                             <div class="col-xs-5 col-sm-6">
-                                <img id="vcodeImg" style="vertical-align: middle;" onclick="javascript:document.getElementById('vcodeImg').src='${base}/captcha.jpg?k={en7mni(z&p=ucenter_login&c=ef7d278eca6d25aa6aec7272d57f0a9a&t='+new Date().getTime() " title="点击更换" alt="验证图片" src="${base}/captcha.jpg" height="38" width="110">
+                                <img id="vcodeImg" style="vertical-align: middle;" onclick="javascript:document.getElementById('vcodeImg').src='${base}/captcha.jpg?k={en7mni(z&p=ucenter_login&c=ef7d278eca6d25aa6aec7272d57f0a9a&t='+new Date().getTime() " title="点击更换" alt="验证图片" src="${base}/captcha.jpg" height="35" width="110">
                             </div>
                         </div>
 

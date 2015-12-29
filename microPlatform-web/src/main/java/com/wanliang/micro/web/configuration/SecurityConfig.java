@@ -76,7 +76,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/", "/static/**", "/public/**", "/captcha.jpg").permitAll()
+                .antMatchers("/", "/static/**", "/public/**","/register", "/captcha.jpg").permitAll()
                 .antMatchers(IGNORE_URIS).permitAll()
                 .antMatchers(IGNORE_RESOURCES).permitAll()
                 .antMatchers("/system/**", "/system").hasAuthority("ADMIN")
