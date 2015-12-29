@@ -8,8 +8,13 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.util.matcher.RegexRequestMatcher;
+import org.springframework.security.web.util.matcher.RequestMatcher;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author wanliang
@@ -29,8 +34,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .antMatchers("/", "/public/**").permitAll()
+        http.csrf()
+                .and()
+                .authorizeRequests()
+                .antMatchers("/", "/public/**", "/captcha.jpg").permitAll()
                 .antMatchers("/system/**").hasAuthority("ADMIN")
                 .anyRequest().fullyAuthenticated()
                 .and()
@@ -47,7 +54,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/login")
                 .permitAll()
                 .and()
-                .rememberMe().and().csrf().disable();
+                .rememberMe();
     }
 
     @Override

@@ -56,7 +56,7 @@
                 <h3>用户登录</h3>
             </div>
             <form id="defaultForm" method="post" class="form-horizontal" action="${base}/login">
-                <#--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <div class="form-group">
                      <div class="col-md-6 col-md-offset-3">
                         <input type="text" class="form-control" name="loginName" placeholder="邮箱/用户名/已验证手机号" autocomplete="off" />

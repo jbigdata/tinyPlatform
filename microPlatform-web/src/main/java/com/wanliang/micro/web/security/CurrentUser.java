@@ -8,7 +8,7 @@ public class CurrentUser extends org.springframework.security.core.userdetails.U
     private UserResult user;
 
     public CurrentUser(UserResult user) {
-        super(user.getEmail(), user.getPassoword(), AuthorityUtils.createAuthorityList("ADMIN"));
+        super(user.getEmail(), user.getPassword(), AuthorityUtils.createAuthorityList("ADMIN"));
         this.user = user;
     }
 
