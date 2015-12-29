@@ -1,5 +1,7 @@
 package com.wanliang.micro.web.configuration;
 
+import com.wanliang.micro.web.security.AptchaFilter;
+import com.wanliang.micro.web.security.MicroAuthenticationSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Configuration;
@@ -12,6 +14,7 @@ import org.springframework.security.config.annotation.web.servlet.configuration.
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.access.channel.ChannelProcessingFilter;
+import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.RegexRequestMatcher;
 import org.springframework.security.web.util.matcher.RequestMatcher;
@@ -33,11 +36,38 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private UserDetailsService userDetailsService;
-//
-//    @Autowired
-//    private AptchaFilter aptchaFilter;
+
+    @Autowired
+    private MicroAuthenticationSuccessHandler microAuthenticationSuccessHandler;
+    /**
+     * 不需要拦截处理的URI
+     */
+    public static final String[] IGNORE_URIS = {
+            "/error/**",
+            "/kaptcha/**",
+            "/auth/**",
+            "/login",
+            "/signin/**",
+            "/signup/**"
+    };
+
+
+    /**
+     * 过滤资源
+     */
+    public static final String[] IGNORE_RESOURCES = {
+            "/bower_components/**",
+            "/**/*.css",
+            "/**/*.png",
+            "/**/*.gif",
+            "/**/*.jpg",
+            "/**/*.js"
+    };
+
+
     /**
      * 配置security
+     *
      * @param http
      * @throws Exception
      */
@@ -46,8 +76,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/", "/public/**", "/captcha.jpg").permitAll()
-                .antMatchers("/system/**","/system").hasAuthority("ADMIN")
+                .antMatchers("/", "/static/**", "/public/**", "/captcha.jpg").permitAll()
+                .antMatchers(IGNORE_URIS).permitAll()
+                .antMatchers(IGNORE_RESOURCES).permitAll()
+                .antMatchers("/system/**", "/system").hasAuthority("ADMIN")
                 .antMatchers("/front").hasAnyAuthority("USER")
                 .anyRequest().fullyAuthenticated()
                 .and()
@@ -57,6 +89,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .usernameParameter("loginName")
                 .passwordParameter("password")
                 .permitAll()
+                .successHandler(microAuthenticationSuccessHandler)
                 .defaultSuccessUrl("/system")
                 .and()
                 .logout()
@@ -65,17 +98,29 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/login")
                 .permitAll()
                 .and()
-                .rememberMe();//.and() .addFilterBefore(aptchaFilter, UsernamePasswordAuthenticationFilter.class);
+                .rememberMe().and().addFilterBefore(captchaFilter(), UsernamePasswordAuthenticationFilter.class);//.and() .addFilterBefore(aptchaFilter, UsernamePasswordAuthenticationFilter.class);
+    }
+
+    /**
+     * 自定义验证码
+     *
+     * @return
+     * @throws Exception
+     */
+    public AbstractAuthenticationProcessingFilter captchaFilter() throws Exception {
+        AptchaFilter captchaAuthenticationProcessingFilter = new AptchaFilter();
+        captchaAuthenticationProcessingFilter.setAuthenticationManager(authenticationManagerBean());
+        return captchaAuthenticationProcessingFilter;
     }
 
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService)
-            .passwordEncoder(new BCryptPasswordEncoder());
+                .passwordEncoder(new BCryptPasswordEncoder());
 
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-            String hashedPassword = passwordEncoder.encode("123456");
-             System.out.println(hashedPassword);
+        String hashedPassword = passwordEncoder.encode("123456");
+        System.out.println(hashedPassword);
     }
 
 }

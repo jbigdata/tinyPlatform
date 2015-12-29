@@ -1,4 +1,5 @@
 <#assign base=request.contextPath />
+<#import "../common/spring.ftl" as spring/>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,21 +1,20 @@
 <#assign base=request.contextPath />
-<#import "common/spring.ftl" as spring/>
 <!DOCTYPE html>
 <html class="login-bg">
 <head>
-    <title>${siteName} - <@spring.message "html.title.login" /></title>
+    <title>${siteName} - 登录</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <#--<!-- bootstrap &ndash;&gt;-->
-    <#--<link href="${base}/css/bootstrap.min.css" rel="stylesheet">-->
-    <#--<link href="${base}/css/bootstrap-responsive.css" rel="stylesheet">-->
-    <#--<link href="${base}/css/bootstrapValidator.min.css" rel="stylesheet">-->
+<#--<!-- bootstrap &ndash;&gt;-->
+<#--<link href="${base}/css/bootstrap.min.css" rel="stylesheet">-->
+<#--<link href="${base}/css/bootstrap-responsive.css" rel="stylesheet">-->
+<#--<link href="${base}/css/bootstrapValidator.min.css" rel="stylesheet">-->
     <!-- this page specific styles -->
-    <#--<link rel="stylesheet" href="${base}/css/login.css" type="text/css" media="screen"/>-->
-    <#--<script src="${base}/js/bootstrapValidator.min.js"/>-->
-    <#--<script src="${base}/js/jquery.min.js"></script>-->
-    <#--<script src="${base}/js/bootstrap.min.js"></script>-->
+<#--<link rel="stylesheet" href="${base}/css/login.css" type="text/css" media="screen"/>-->
+<#--<script src="${base}/js/bootstrapValidator.min.js"/>-->
+<#--<script src="${base}/js/jquery.min.js"></script>-->
+<#--<script src="${base}/js/bootstrap.min.js"></script>-->
 
 
     <link rel="stylesheet" href="${base}/css/bootstrap.css"/>
@@ -52,19 +51,19 @@
     <div class="row-fluid login-wrapper">
 
         <div class="col-md-6 col-md-offset-3">
-           <br>
+            <br>
             <div class=" page-header center-block">
                 <h3>用户登录</h3>
             </div>
             <form id="defaultForm" method="post" class="form-horizontal" action="${base}/login">
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <div class="form-group">
-                     <div class="col-md-6 col-md-offset-3">
+                    <div class="col-md-6 col-md-offset-3">
                         <input type="text" class="form-control" name="loginName" placeholder="邮箱/用户名/已验证手机号" autocomplete="off" />
                     </div>
                 </div>
                 <div class="form-group">
-                     <div class="col-md-6 col-md-offset-3">
+                    <div class="col-md-6 col-md-offset-3">
                         <input type="password" class="form-control" placeholder="请输入密码" name="password" />
                     </div>
                 </div>
@@ -97,7 +96,7 @@
 
             </form>
         </div>
-</div>
+    </div>
     <script type="text/javascript">
         $(document).ready(function() {
             $('#defaultForm').bootstrapValidator({
@@ -126,11 +125,11 @@
                             notEmpty: {
                                 message: '请输入验证码'
                             }
-                            <#--remote:{-->
-                                <#--type:"GET",-->
-                                <#--url:"${base}/checkVerification",-->
-                                <#--message:"验证码输入错误"-->
-                            <#--}-->
+                        <#--remote:{-->
+                        <#--type:"GET",-->
+                        <#--url:"${base}/checkVerification",-->
+                        <#--message:"验证码输入错误"-->
+                        <#--}-->
 
                         }
                     },
