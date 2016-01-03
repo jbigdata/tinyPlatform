@@ -4,6 +4,7 @@ import com.wanliang.micro.web.security.AptchaFilter;
 import com.wanliang.micro.web.security.MicroAuthenticationSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -15,6 +16,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.access.channel.ChannelProcessingFilter;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
+import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.RegexRequestMatcher;
 import org.springframework.security.web.util.matcher.RequestMatcher;
@@ -37,8 +39,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsService userDetailsService;
 
-    @Autowired
-    private MicroAuthenticationSuccessHandler microAuthenticationSuccessHandler;
     /**
      * 不需要拦截处理的URI
      */
@@ -76,7 +76,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/", "/static/**", "/public/**","/register", "/captcha.jpg").permitAll()
+                .antMatchers("/", "/static/**", "/public/**", "/captcha.jpg").permitAll()
                 .antMatchers(IGNORE_URIS).permitAll()
                 .antMatchers(IGNORE_RESOURCES).permitAll()
                 .antMatchers("/system/**", "/system").hasAuthority("ADMIN")
@@ -89,7 +89,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .usernameParameter("loginName")
                 .passwordParameter("password")
                 .permitAll()
-                .successHandler(microAuthenticationSuccessHandler)
+                .successHandler(savedRequestAwareAuthenticationSuccessHandler())
                 .defaultSuccessUrl("/system")
                 .and()
                 .logout()
@@ -123,4 +123,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         System.out.println(hashedPassword);
     }
 
+    @Bean
+    public SavedRequestAwareAuthenticationSuccessHandler
+    savedRequestAwareAuthenticationSuccessHandler() {
+
+        SavedRequestAwareAuthenticationSuccessHandler auth
+                = new SavedRequestAwareAuthenticationSuccessHandler();
+        auth.setTargetUrlParameter("targetUrl");
+        auth.setDefaultTargetUrl("/home");
+        return auth;
+    }
 }

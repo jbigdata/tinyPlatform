@@ -2,8 +2,9 @@ package com.wanliang.micro.web.security;
 
 import com.wanliang.micro.result.system.UserResult;
 import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.userdetails.User;
 
-public class CurrentUser extends org.springframework.security.core.userdetails.User {
+public class CurrentUser extends User {
 
     private UserResult user;
 

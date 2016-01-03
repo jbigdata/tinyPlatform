@@ -1,78 +1,68 @@
-<!DOCTYPE html>
-<#include "displaySize.ftl">
-<html>
-<head>
-    <title>Hello Spring Boot!</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-</head>
-<body>
-Date: ${time?date}
-<br>
-Time: ${time?time}
-<br>
-Message: ${message}
-<br/>
------------------${base}------------------------
+<#include "front/include/head.ftl">
+<#include "front/include/navbar.ftl">
+<br><br><br>
+<div class="container">
 
-<#assign x = "something">
-测试自定义方法：
-indexof met:${indexOf("met", x)}
-<br/>
-indexof foo : ${indexOf("foo", x)}
-<br/>
-测试默认值：
-${user!"Anonymous"}
-<br/>
+    <div class="row row-offcanvas row-offcanvas-right">
 
-staticMethod:
-${static("/sdfsd/sdfsd/sdfs")}
-<br/>
+        <div class="col-xs-12 col-sm-9">
+            <p class="pull-right visible-xs">
+                <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+            </p>
+            <div class="jumbotron">
+                <h1>Hello, world!</h1>
+                <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-lg-4">
+                    <h2>Heading</h2>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                </div><!--/.col-xs-6.col-lg-4-->
+                <div class="col-xs-6 col-lg-4">
+                    <h2>Heading</h2>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                </div><!--/.col-xs-6.col-lg-4-->
+                <div class="col-xs-6 col-lg-4">
+                    <h2>Heading</h2>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                </div><!--/.col-xs-6.col-lg-4-->
+                <div class="col-xs-6 col-lg-4">
+                    <h2>Heading</h2>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                </div><!--/.col-xs-6.col-lg-4-->
+                <div class="col-xs-6 col-lg-4">
+                    <h2>Heading</h2>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                </div><!--/.col-xs-6.col-lg-4-->
+                <div class="col-xs-6 col-lg-4">
+                    <h2>Heading</h2>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                </div><!--/.col-xs-6.col-lg-4-->
+            </div><!--/row-->
+        </div><!--/.col-xs-12.col-sm-9-->
 
-url方法：
-url("/sdfsd/sdfsd/sdfs",{"a":"1","b":"天"})
-${url("/sdfsd/sdfsd/sdfs",{"a":"1","b":"天"})}
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+            <div class="list-group">
+                <a href="#" class="list-group-item active">Link</a>
+                <a href="#" class="list-group-item">Link</a>
+                <a href="#" class="list-group-item">Link</a>
+                <a href="#" class="list-group-item">Link</a>
+                <a href="#" class="list-group-item">Link</a>
+                <a href="#" class="list-group-item">Link</a>
+                <a href="#" class="list-group-item">Link</a>
+                <a href="#" class="list-group-item">Link</a>
+                <a href="#" class="list-group-item">Link</a>
+                <a href="#" class="list-group-item">Link</a>
+            </div>
+        </div><!--/.sidebar-offcanvas-->
+    </div><!--/row-->
 
-<br/>
-<br/>
-演示自定义指令：
-<@upper>
-<br/>
-bar
-<#-- All kind of FTL is allowed here -->
-    <#list ["red", "green", "blue"] as color>
-    <br/>
-    ${color}
-    </#list>
-    baaz
-</@upper>
+</div><!--/.container-->
 
-<#assign x = 1>
-
-一个参数：
-<@repeat count=4>
-Test ${x}
-    <#assign x = x + 1>
-</@repeat>
-
-二个参数：
-<@repeat count=3 hr=true>
-Test
-</@repeat>
-
-循环变量：
-<@repeat count=3; cnt>
-${cnt}. Test
-</@repeat>
-
-displaySize:
-<div>${displaySize(1024*1024*1024*2+100)}
-</div>
-<div>${displaySize(1024*1024*3+100)}
-</div>
-<div>${displaySize(1024*5+100)}
-</div>
-<div>${displaySize(400)}
-</div>
-
-</body>
-</html>
+<#include "front/include/footer.ftl">

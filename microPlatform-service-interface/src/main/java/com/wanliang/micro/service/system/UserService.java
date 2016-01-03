@@ -14,9 +14,11 @@ import java.util.Optional;
  * @modify
  * @copyright microPlatform
  */
-public interface UserService {
+public interface UserService  {
 
     public LoginResult login(LoginParam param);
 
     UserResult getUserByEmail(String email);
+
+    public UserResult getUserById(String id);
 }

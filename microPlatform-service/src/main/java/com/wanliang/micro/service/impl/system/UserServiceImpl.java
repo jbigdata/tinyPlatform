@@ -80,8 +80,22 @@ public class UserServiceImpl implements UserService {
         userResult.setLoginName(user.getLoginName());
         userResult.setMobile(user.getMobile());
         userResult.setEmail(user.getEmail());
+        userResult.setName(user.getName());
         userResult.setPassword(user.getPassword());
         userResult.setId(user.getId());
+        return userResult;
+    }
+
+    public UserResult getUserById(String id){
+       User user= userRepository.get(id);
+        UserResult userResult=new UserResult();
+        userResult.setLoginName(user.getLoginName());
+        userResult.setMobile(user.getMobile());
+        userResult.setEmail(user.getEmail());
+        userResult.setName(user.getName());
+       // userResult.setPassword(user.getPassword());
+        userResult.setId(user.getId());
+        userResult.setPhoto(user.getPhoto());
         return userResult;
     }
 }

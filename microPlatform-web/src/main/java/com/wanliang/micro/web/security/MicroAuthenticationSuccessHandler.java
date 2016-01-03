@@ -27,6 +27,7 @@ public class MicroAuthenticationSuccessHandler implements AuthenticationSuccessH
             //TODO sanity and security check for itemId needed
             String redirectUrl ="/system" ;//"item/" + details.getItemId();
             response.sendRedirect(redirectUrl);
+
         //}
     //    throw new IllegalStateException("itemId in authentication details not found");
     }

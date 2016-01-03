@@ -59,16 +59,16 @@ public class KaptchaConfig  {
 
     @Bean
     public Config config(Properties properties){
-        properties.put("kaptcha.border",border);
-        properties.put("kaptcha.border.color",borderColor);
-        properties.put("kaptcha.textproducer.font.color",fontColor );
-        properties.put("kaptcha.obscurificator.impl",obscurificator);
-        properties.put("kaptcha.image.width",width);
-        properties.put("kaptcha.image.height",height);
-        properties.put("kaptcha.textproducer.font.size",fontSize);
-        properties.put("kaptcha.session.key",sessionKey);
+//        properties.put("kaptcha.border",border);
+//        properties.put("kaptcha.border.color",borderColor);
+//        properties.put("kaptcha.textproducer.font.color",fontColor );
+//        properties.put("kaptcha.obscurificator.impl",obscurificator);
+//        properties.put("kaptcha.image.width",width);
+//        properties.put("kaptcha.image.height",height);
+//        properties.put("kaptcha.textproducer.font.size",fontSize);
+//        properties.put("kaptcha.session.key",sessionKey);
         properties.put("kaptcha.textproducer.char.length",length);
-        properties.put("kaptcha.textproducer.font.names",fontNames);
+//        properties.put("kaptcha.textproducer.font.names",fontNames);
         Config config=new Config(properties);
         return config;
     }
