@@ -1,11 +1,11 @@
-<div class="col-sm-3 col-md-2 nav-tabs sidebar">
+<div id="sidebar-left"  class="col-sm-3 col-md-2 nav-tabs sidebar">
 
 <#list menuList as menu>
     <#if menu_index==0>
         <#list menuList as menu1>
             <#if menu.id==menu1.parentId>
                 <ul class="nav nav-sidebar">
-                    <li class="active"><a href="#"><i class="glyphicon glyphicon-home"></i> 首页 <span class="sr-only">(current)</span></a>
+                    <li class="active"><a href="${base}/system/main"><i class="glyphicon glyphicon-home"></i> 首页 <span class="sr-only">(current)</span></a>
                     </li>
                     <li class=""><a href="#"> <i class="glyphicon glyphicon-user"></i> 用户管理</a></li>
                     <li><a href="#"><i class="glyphicon glyphicon-list"></i> 菜单管理</a></li>
