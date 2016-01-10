@@ -1,4 +1,4 @@
- <ol class="breadcrumb">
+<ol class="breadcrumb">
     <li><a href="#">Home</a></li>
     <li><a href="#">Library</a></li>
     <li class="active">Data</li>
@@ -18,5 +18,32 @@
             <div class="tab-pane" id="messages">...</div>
             <div class="tab-pane" id="settings">...</div>
         </div>
-    </div><!-- /.col -->
+    </div>
+    <!-- /.col -->
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Header</th>
+            <th>Header</th>
+            <th>Header</th>
+            <th>Header</th>
+        </tr>
+        </thead>
+        <tbody>
+        <#list userList as user>
+
+        <tr>
+            <td>${user.id}</td>
+            <td>${user.name}</td>
+            <td>ipsum</td>
+            <td>dolor</td>
+            <td>sit</td>
+        </tr>
+        </#list>
+        </tbody>
+    </table>
 </div>

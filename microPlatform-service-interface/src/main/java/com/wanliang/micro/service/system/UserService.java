@@ -5,6 +5,7 @@ import com.wanliang.micro.param.system.LoginParam;
 import com.wanliang.micro.result.system.LoginResult;
 import com.wanliang.micro.result.system.UserResult;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -21,4 +22,6 @@ public interface UserService  {
     UserResult getUserByEmail(String email);
 
     public UserResult getUserById(String id);
+
+    public List<UserResult> findAll();
 }

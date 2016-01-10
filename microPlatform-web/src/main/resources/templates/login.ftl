@@ -80,7 +80,7 @@
                                         <input type="text" class="form-control l" placeholder="验证码" name="verification"/>
                                     </div>
                                     <div class="col-xs-5 col-sm-6">
-                                        <button type="button"   class="btn btn-primary btn-block" onclick="settime(this)" >获取短信</button>
+                                        <button type="button"   class="btn btn-primary btn-block" onclick="settime(this)" >获取验证码</button>
                                     </div>
                                 </div>
 
@@ -162,7 +162,7 @@
         function settime(obj) {
             if (countdown == 0) {
                 obj.removeAttribute("disabled");
-                obj.innerText="免费获取验证码";
+                obj.innerText="获取验证码";
                 countdown = 60;
                 return;
             } else {

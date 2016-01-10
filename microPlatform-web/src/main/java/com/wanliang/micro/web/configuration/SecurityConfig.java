@@ -64,6 +64,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/**/*.js"
     };
 
+    @Bean
+    public SavedRequestAwareAuthenticationSuccessHandler successRedirectHandler() {
+        SavedRequestAwareAuthenticationSuccessHandler successRedirectHandler =
+                new SavedRequestAwareAuthenticationSuccessHandler();
+        successRedirectHandler.setDefaultTargetUrl("/");
+        successRedirectHandler.setTargetUrlParameter("/");
+        System.out.println("-------------aaaaaaaaaaaaaaaaa----------------");
+        return successRedirectHandler;
+    }
 
     /**
      * 配置security
@@ -89,7 +98,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .usernameParameter("loginName")
                 .passwordParameter("password")
                 .permitAll()
-                .successHandler(savedRequestAwareAuthenticationSuccessHandler())
                 .defaultSuccessUrl("/system")
                 .and()
                 .logout()

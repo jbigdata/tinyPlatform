@@ -36,4 +36,16 @@ public class IndexController {
         modelMap.addAttribute("menuList",menuService.loadParentMenu(userParam));
         return "home";
     }
+
+    @RequestMapping(value = "/system/main",method = RequestMethod.GET)
+    public String main(ModelMap modelMap){
+
+        return "system/main";
+    }
+
+    @RequestMapping(value = "/user/profile",method = RequestMethod.GET)
+    public String profile(ModelMap modelMap){
+
+        return "system/user/profile";
+    }
 }

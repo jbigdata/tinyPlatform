@@ -33,17 +33,18 @@ $(document).ready(function () {
     });
     var ajax_url = location.hash.replace(/^#/, '');
     if (ajax_url.length < 1) {
-        ajax_url = 'ajax/dashboard.html';
+        ajax_url = '/system/main';
     }
     LoadAjaxContent(ajax_url);
     $('.main-menu').on('click', 'a', function (e) {
         var parents = $(this).parents('li');
         var li = $(this).closest('li.dropdown');
         var another_items = $('.main-menu li').not(parents);
-        another_items.find('a').removeClass('active');
-        another_items.find('a').removeClass('active-parent');
+        another_items.removeClass('active');
+        another_items.removeClass('active-parent');
         if ($(this).hasClass('dropdown-toggle') || $(this).closest('li').find('ul').length == 0) {
             $(this).addClass('active-parent');
+
             var current = $(this).next();
             if (current.is(':visible')) {
                 li.find("ul.dropdown-menu").slideUp('fast');
@@ -61,8 +62,9 @@ $(document).ready(function () {
             }
         }
         if ($(this).hasClass('active') == false) {
+            alert("3");
             $(this).parents("ul.dropdown-menu").find('a').removeClass('active');
-            $(this).addClass('active')
+            $(this).parentNode.addClass('active')
         }
         if ($(this).hasClass('ajax-link')) {
             e.preventDefault();

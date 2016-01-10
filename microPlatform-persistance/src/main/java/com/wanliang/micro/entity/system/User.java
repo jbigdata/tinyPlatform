@@ -41,6 +41,7 @@ public class User extends DataEntity<User> {
 	private String loginFlag;	// 是否允许登陆
 	private String photo;	// 头像
 
+
     public String getCompanyId() {
         return companyId;
     }

@@ -15,6 +15,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -97,5 +99,22 @@ public class UserServiceImpl implements UserService {
         userResult.setId(user.getId());
         userResult.setPhoto(user.getPhoto());
         return userResult;
+    }
+
+    public List<UserResult> findAll(){
+       List<User>  list= userRepository.findList(new User());
+        List<UserResult> resultList=new ArrayList<>();
+        for(User user:list){
+            UserResult userResult=new UserResult();
+            userResult.setLoginName(user.getLoginName());
+            userResult.setMobile(user.getMobile());
+            userResult.setEmail(user.getEmail());
+            userResult.setName(user.getName());
+            // userResult.setPassword(user.getPassword());
+            userResult.setId(user.getId());
+            userResult.setPhoto(user.getPhoto());
+            resultList.add(userResult);
+        }
+        return resultList;
     }
 }

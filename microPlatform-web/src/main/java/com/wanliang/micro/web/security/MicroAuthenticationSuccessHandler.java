@@ -2,6 +2,7 @@ package com.wanliang.micro.web.security;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
@@ -18,17 +19,19 @@ import java.io.IOException;
  * @copyright Navi  TSP
  */
 @Component
-public class MicroAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
+public class MicroAuthenticationSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
       //  CustomWebAuthenticationDetails details = (CustomWebAuthenticationDetails) authentication.getDetails();
       //  if(StringUtils.hasText(details.getItemId())) {
             //TODO sanity and security check for itemId needed
-            String redirectUrl ="/system" ;//"item/" + details.getItemId();
+            String redirectUrl ="/" ;//"item/" + details.getItemId();
             response.sendRedirect(redirectUrl);
 
         //}
     //    throw new IllegalStateException("itemId in authentication details not found");
     }
+
+
 }

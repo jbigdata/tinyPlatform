@@ -75,3 +75,103 @@ footer {
 .main .page-header {
   margin-top: 0;
 }
+
+
+.nav.main-menu, .nav.msg-menu {
+    margin:0 -15px;
+}
+.nav.main-menu > li > a, .nav.msg-menu > li > a {
+    text-align: center;
+    color:#f0f0f0;
+    min-height: 40px;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+}
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background:rgba(0, 0, 0, 0.1);
+}
+.nav.main-menu > li > a:hover, .nav.main-menu > li > a:focus, .nav.main-menu > li.active > a, .nav.main-menu .open > a, .nav.main-menu .open > a:hover, .nav.main-menu .open > a:focus, .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover, .dropdown-menu > li.active > a,
+.nav.msg-menu > li > a:hover, .nav.msg-menu > li > a:focus, .nav.msg-menu > li.active > a, .nav.msg-menu .open > a, .nav.msg-menu .open > a:hover, .nav.msg-menu .open > a:focus {
+    background:rgba(0, 0, 0, 0.1);
+    color:#f0f0f0;
+}
+.nav.main-menu a.active, .nav.msg-menu a.active {
+    background:rgba(0, 0, 0, 0.2);
+}
+.nav.main-menu a.active:hover, .nav.msg-menu a.active:hover {
+    background:rgba(0, 0, 0, 0.2);
+}
+.nav.main-menu a.active-parent, .nav.msg-menu a.active-parent {
+    background: rgba(0, 0, 0, 0.3);
+}
+.nav.main-menu a.active-parent:hover, .nav.msg-menu a.active-parent:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+.nav.main-menu > li > a > i, .nav.msg-menu > li > a > i {
+    font-size: 18px;
+    width: auto;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+}
+.main-menu .dropdown-menu {
+    position: absolute;
+    z-index: 2001;
+    left: 100%;
+    top: 0;
+    float: none;
+    margin: 0;
+    border: 0;
+    -webkit-border-radius: 0 4px 4px 0;
+    -moz-border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0;
+    padding: 0;
+    background: #6AA6D6 url(../img/devoops_pattern_b10.png) 0 0 repeat;
+    box-shadow: none;
+    visibility:hidden;
+}
+.main-menu .active-parent:hover + .dropdown-menu {
+    visibility:visible;
+}
+.main-menu .active-parent + .dropdown-menu:hover {
+    visibility:visible;
+}
+.main-menu .dropdown-menu > li > a {
+    padding:9px 15px 9px 40px;
+    color:#f0f0f0;
+}
+.main-menu .dropdown-menu > li:first-child > a {
+    -webkit-border-radius: 0 4px 0 0;
+    -moz-border-radius: 0 4px 0 0;
+    border-radius: 0 4px 0 0;
+}
+.main-menu .dropdown-menu > li:last-child > a {
+    -webkit-border-radius: 0 0 4px 0;
+    -moz-border-radius: 0 0 4px 0;
+    border-radius: 0 0 4px 0;
+}
+
+
+.article { overflow: hidden; border-top: solid 2px #fff; margin-bottom: 31px; }
+.article:hover {border-top: solid 2px #2fa4e7;}
+.article:hover h2 a { color: #2fa4e7 }
+.article:hover p.text { color: #343434; }
+.article .row { border-bottom: 1px solid #e5e5e5; padding: 10px 20px 10px 12px; margin-left:0px; margin-right:0px; }
+.article .row div { padding: 0px; }
+.article .row .text {font-family: "NSimSun";font-size: 12px;color: #aaa;line-height: 1.8;}
+.article h2 {font-size: 20px;font-size: 2rem;color: #474747;font-family: '\5FAE\8F6F\96C5\9ED1';margin: 15px 0 20px 0px;line-height: 1.5;}
+.article h2 em {font-style: normal;color: #060;}
+.article h2 a {color: #474747;text-decoration: none;overflow: hidden;}
+
+.article .metatag a {color: #333333;}
+.article .metatag .list-inline { display: inline-block; padding: 0 10px; margin-bottom: 0px; }
+.article .metatag .list-inline a { color: #737373; text-decoration: none;font-size: 12px;position: relative; font-size: 1.2rem;}
+.article .metatag .list-inline li:hover a { color: #2fa4e7;}
+.article .metatag .source {height: 20px;color: #b5b5b5;font-style: italic; margin-right: 20px;}
+.article .metatag .date {height: 20px;color: #b5b5b5;font-style: italic; margin-right: 20px;}
+.article .metatag .author {height: 20px; margin-right: 20px;}
+.article .metatag .cmt, .article .metatag .like, .article .metatag .view, .article .metatag .collect { margin: 0 5px; color:#979797; }
+.article .metatag .hadlike i { color: #ff0000; }
+.article .metatag a:hover { text-decoration: none; color: #2fa4e7; }
