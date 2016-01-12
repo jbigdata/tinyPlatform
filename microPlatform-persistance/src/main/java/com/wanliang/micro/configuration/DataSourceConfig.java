@@ -2,6 +2,10 @@ package com.wanliang.micro.configuration;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;
+import com.wanliang.micro.persistence.Page;
+import com.wanliang.micro.persistence.interceptor.PaginationInterceptor;
+import org.apache.ibatis.plugin.Interceptor;
+import org.apache.ibatis.plugin.Plugin;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
@@ -17,12 +21,14 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
+import org.springframework.data.annotation.TypeAlias;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 import java.io.IOException;
+import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
@@ -41,6 +47,7 @@ public class DataSourceConfig {
      */
     @Value("${microPlatform.mybatis.mapper.package}")
     private String mapperPackage;
+
 
     @Bean
     @Primary
@@ -63,7 +70,10 @@ public class DataSourceConfig {
     public SqlSessionFactoryBean sqlSessionFactoryBean(DataSource dataSource, MybatisResource resource){
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource);
+        sqlSessionFactoryBean.setTypeAliases(new Class[]{Page.class});
         sqlSessionFactoryBean.setMapperLocations(resource.getMapperResources());
+        //添加插件
+        sqlSessionFactoryBean.setPlugins(new Interceptor[]{new PaginationInterceptor()});
         return sqlSessionFactoryBean;
     }
 

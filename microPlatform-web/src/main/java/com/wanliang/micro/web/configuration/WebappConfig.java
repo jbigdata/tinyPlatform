@@ -42,7 +42,7 @@ public class WebappConfig extends WebMvcConfigurerAdapter {
 	@Bean
 	public LocaleResolver localeResolver() {
 		SessionLocaleResolver slr = new SessionLocaleResolver();
-		slr.setDefaultLocale(Locale.CHINA);
+		slr.setDefaultLocale(Locale.US);
 		return slr;
 	}
 
@@ -62,6 +62,7 @@ public class WebappConfig extends WebMvcConfigurerAdapter {
 	public ResourceBundleMessageSource messageSource() {
 		ResourceBundleMessageSource source = new ResourceBundleMessageSource();
 		source.setBasenames("i18n/messages");
+		source.setDefaultEncoding("utf-8");
 		source.setUseCodeAsDefaultMessage(true);
 		return source;
 	}

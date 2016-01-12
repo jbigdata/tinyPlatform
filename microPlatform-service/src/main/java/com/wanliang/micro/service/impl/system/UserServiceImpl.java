@@ -6,6 +6,7 @@ import com.wanliang.micro.common.util.security.Encodes;
 import com.wanliang.micro.common.util.uuid.UUIDUtil;
 import com.wanliang.micro.entity.system.User;
 import com.wanliang.micro.param.system.LoginParam;
+import com.wanliang.micro.persistence.Page;
 import com.wanliang.micro.repository.system.UserRepository;
 import com.wanliang.micro.result.system.LoginResult;
 import com.wanliang.micro.result.system.UserResult;
@@ -115,6 +116,20 @@ public class UserServiceImpl implements UserService {
             userResult.setPhoto(user.getPhoto());
             resultList.add(userResult);
         }
+        Page<User> page=new Page<>();
+        User user=new User();
+        user.setPage(page);
+        userRepository.findList(user);
         return resultList;
     }
+
+//    public Page<User> findUser(Page<User> page, UserParam user) {
+//        // 生成数据权限过滤条件（dsf为dataScopeFilter的简写，在xml中使用 ${sqlMap.dsf}调用权限SQL）
+//        user.getSqlMap().put("dsf", dataScopeFilter(user.getCurrentUser(), "o", "a"));
+//        // 设置分页参数
+//        user.setPage(page);
+//        // 执行分页查询
+//        page.setList(userRepository.findList(user));
+//        return page;
+//    }
 }

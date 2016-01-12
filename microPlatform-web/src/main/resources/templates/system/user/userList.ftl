@@ -21,29 +21,56 @@
     </div>
     <!-- /.col -->
 </div>
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Panel heading</div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>编号</th>
+                <th>用户名称</th>
+                <th>电话</th>
+                <th>邮箱</th>
+                <th>用户名</th>
+                <th>用户类型</th>
+            </tr>
+            </thead>
+            <tbody>
+            <#list userList as user>
 
-<div class="table-responsive">
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>Header</th>
-            <th>Header</th>
-            <th>Header</th>
-            <th>Header</th>
-        </tr>
-        </thead>
-        <tbody>
-        <#list userList as user>
+            <tr>
+                <td>${user.id!''}</td>
+                <td>${user.name!''}</td>
+                <td>${user.mobile!''}</td>
+                <td>${user.email!''}</td>
+                <td>${user.loginName!''}</td>
+                <td><span class="label label-default">普通用户</span></td>
 
-        <tr>
-            <td>${user.id}</td>
-            <td>${user.name}</td>
-            <td>ipsum</td>
-            <td>dolor</td>
-            <td>sit</td>
-        </tr>
-        </#list>
-        </tbody>
-    </table>
+            </tr>
+            </#list>
+            </tbody>
+        </table>
+    </div>
+
+
 </div>
+<nav>
+    <ul class="pagination">
+        <li>
+            <a href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li>
+            <a href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
