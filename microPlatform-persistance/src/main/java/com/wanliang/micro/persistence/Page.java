@@ -22,7 +22,7 @@ import java.util.regex.Pattern;
 public class Page<T> implements Serializable{
 
     private int pageNo = 1; // 当前页码
-    private int pageSize = 20; // 页面大小，设置为“-1”表示不进行分页（分页无效）
+    private int pageSize = 10; // 页面大小，设置为“-1”表示不进行分页（分页无效）
 
     private long count;// 总记录数，设置为“-1”表示不查询总数
 
@@ -93,6 +93,44 @@ public class Page<T> implements Serializable{
         }
         // 设置排序参数
         String orderBy = request.getParameter("orderBy");
+        if (StringUtils.isNotBlank(orderBy)){
+            this.setOrderBy(orderBy);
+        }
+    }
+
+    /**
+     *
+     * @param no 当前页码
+     * @param repage
+     * @param pageSize
+     * @param orderBy
+     * @param defaultPageSize
+     */
+    public Page(String no, String repage,String pageSize,String orderBy, int defaultPageSize){
+        // 设置页码参数（传递repage参数，来记住页码）
+        if (StringUtils.isNumeric(no)){
+            //   CookieUtils.setCookie(response, "pageNo", no);
+            this.setPageNo(Integer.parseInt(no));
+        }else if (repage!=null){
+            //      no = CookieUtils.getCookie(request, "pageNo");
+            if (StringUtils.isNumeric(no)){
+                this.setPageNo(Integer.parseInt(no));
+            }
+        }
+        // 设置页面大小参数（传递repage参数，来记住页码大小）
+        if (StringUtils.isNumeric(pageSize)){
+            //    CookieUtils.setCookie(response, "pageSize", size);
+            this.setPageSize(Integer.parseInt(pageSize));
+        }else if (repage!=null){
+            //      no = CookieUtils.getCookie(request, "pageSize");
+            if (StringUtils.isNumeric(pageSize)){
+                this.setPageSize(Integer.parseInt(pageSize));
+            }
+        }else if (defaultPageSize != -2){
+            this.pageSize = defaultPageSize;
+        }
+        // 设置排序参数
+        //  String orderBy = request.getParameter("orderBy");
         if (StringUtils.isNotBlank(orderBy)){
             this.setOrderBy(orderBy);
         }
@@ -258,7 +296,7 @@ public class Page<T> implements Serializable{
         sb.append(funcName+"("+pageNo+",this.value,'"+funcParam+"');\" onclick=\"this.select();\"/> 条，");
         sb.append("共 " + count + " 条"+(message!=null?message:"")+"</a></li>\n");
 
-        sb.insert(0,"<ul>\n").append("</ul>\n");
+        sb.insert(0,"<ul class=\"pagination\">\n").append("</ul>\n");
 
         sb.append("<div style=\"clear:both;\"></div>");
 

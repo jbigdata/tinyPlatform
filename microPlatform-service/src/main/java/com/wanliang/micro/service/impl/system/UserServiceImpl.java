@@ -6,8 +6,10 @@ import com.wanliang.micro.common.util.security.Encodes;
 import com.wanliang.micro.common.util.uuid.UUIDUtil;
 import com.wanliang.micro.entity.system.User;
 import com.wanliang.micro.param.system.LoginParam;
+import com.wanliang.micro.param.system.UserParam;
 import com.wanliang.micro.persistence.Page;
 import com.wanliang.micro.repository.system.UserRepository;
+import com.wanliang.micro.result.PageResult;
 import com.wanliang.micro.result.system.LoginResult;
 import com.wanliang.micro.result.system.UserResult;
 import com.wanliang.micro.service.system.UserService;
@@ -116,20 +118,42 @@ public class UserServiceImpl implements UserService {
             userResult.setPhoto(user.getPhoto());
             resultList.add(userResult);
         }
-        Page<User> page=new Page<>();
-        User user=new User();
-        user.setPage(page);
-        userRepository.findList(user);
         return resultList;
     }
 
-//    public Page<User> findUser(Page<User> page, UserParam user) {
-//        // 生成数据权限过滤条件（dsf为dataScopeFilter的简写，在xml中使用 ${sqlMap.dsf}调用权限SQL）
-//        user.getSqlMap().put("dsf", dataScopeFilter(user.getCurrentUser(), "o", "a"));
-//        // 设置分页参数
-//        user.setPage(page);
-//        // 执行分页查询
-//        page.setList(userRepository.findList(user));
-//        return page;
-//    }
+    public PageResult<UserResult> findUser(UserParam userParam) {
+        // 生成数据权限过滤条件（dsf为dataScopeFilter的简写，在xml中使用 ${sqlMap.dsf}调用权限SQL）
+        //  Page
+        //   user.getSqlMap().put("dsf", dataScopeFilter(user.getCurrentUser(), "o", "a"));
+
+        // 设置分页参数
+       // user.setPage(page);
+        // 执行分页查询
+       // page.setList(userRepository.findList(user));
+        User u=new User();
+        Page<User> page=new Page<>(userParam.getPageNo(),userParam.getRepage(),userParam.getPageSize(),userParam.getOrderBy(),-2);
+        u.setPage(page);
+        List<User> list=userRepository.findList(u);
+        page.setList(list);
+        List<UserResult> resultList=new ArrayList<>();
+        System.out.print(page);
+        for(User user:list){
+            UserResult userResult=new UserResult();
+            userResult.setLoginName(user.getLoginName());
+            userResult.setMobile(user.getMobile());
+            userResult.setEmail(user.getEmail());
+            userResult.setName(user.getName());
+            // userResult.setPassword(user.getPassword());
+            userResult.setId(user.getId());
+            userResult.setPhoto(user.getPhoto());
+            resultList.add(userResult);
+        }
+        PageResult<UserResult> pageResult=new PageResult<>();
+        pageResult.setData(resultList);
+        pageResult.setPageSize(page.getPageSize());
+        pageResult.setTotalNum(page.getCount());
+        pageResult.setTotalPage(page.getTotalPage());
+        pageResult.setHtml(page.getHtml());
+        return pageResult;
+    }
 }

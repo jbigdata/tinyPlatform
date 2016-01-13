@@ -1,5 +1,7 @@
 package com.wanliang.micro.param.system;
 
+import com.wanliang.micro.param.PageParam;
+
 import java.io.Serializable;
 
 /**
@@ -9,7 +11,7 @@ import java.io.Serializable;
  * @modify
  * @copyright microPlatform
  */
-public class UserParam implements Serializable{
+public class UserParam extends PageParam implements Serializable{
 
     private String id;
 

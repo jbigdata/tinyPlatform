@@ -1,6 +1,7 @@
 package com.wanliang.micro.web.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.wanliang.micro.param.system.UserParam;
 import com.wanliang.micro.service.system.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,8 +28,8 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value = "/list",method = RequestMethod.GET)
-    public String main(ModelMap modelMap){
-        modelMap.put("userList",userService.findAll());
+    public String main(ModelMap modelMap,UserParam userParam){
+        modelMap.put("page",userService.findUser(userParam));
         return "system/user/userList";
     }
 

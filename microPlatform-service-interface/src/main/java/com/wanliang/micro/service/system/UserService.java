@@ -1,12 +1,11 @@
 package com.wanliang.micro.service.system;
 
-import com.alibaba.dubbo.config.annotation.Reference;
 import com.wanliang.micro.param.system.LoginParam;
+import com.wanliang.micro.param.system.UserParam;
+import com.wanliang.micro.result.PageResult;
 import com.wanliang.micro.result.system.LoginResult;
 import com.wanliang.micro.result.system.UserResult;
 
-import java.util.List;
-import java.util.Optional;
 
 /**
  * @author wanliang
@@ -23,5 +22,5 @@ public interface UserService  {
 
     public UserResult getUserById(String id);
 
-    public List<UserResult> findAll();
+    public PageResult<UserResult> findUser(UserParam userParam);
 }

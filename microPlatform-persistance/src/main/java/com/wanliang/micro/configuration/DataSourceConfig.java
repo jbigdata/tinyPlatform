@@ -72,8 +72,10 @@ public class DataSourceConfig {
         sqlSessionFactoryBean.setDataSource(dataSource);
         sqlSessionFactoryBean.setTypeAliases(new Class[]{Page.class});
         sqlSessionFactoryBean.setMapperLocations(resource.getMapperResources());
+        PaginationInterceptor interceptor=new PaginationInterceptor();
+        interceptor.setProperties(new Properties());
         //添加插件
-        sqlSessionFactoryBean.setPlugins(new Interceptor[]{new PaginationInterceptor()});
+        sqlSessionFactoryBean.setPlugins(new Interceptor[]{interceptor});
         return sqlSessionFactoryBean;
     }
 
