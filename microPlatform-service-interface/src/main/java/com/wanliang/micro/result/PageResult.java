@@ -2,6 +2,7 @@ package com.wanliang.micro.result;
 
 import java.io.Serializable;
 import java.util.List;
+
 /**
  * @author wanliang
  * @version 1.0
@@ -9,63 +10,42 @@ import java.util.List;
  * @modify
  * @copyright Navi  TSP
  */
-public class PageResult<T>  implements Serializable {
+public class PageResult<T> implements Serializable {
 
-    private int totalPage;
-
-    private long totalNum;
-
-    private int pageSize;
-
+    private boolean success;
+    private long totalRows;
+    private int curPage;
     private List<T> data;
 
-    private String html;
-
-    public long getTotalNum() {
-        return totalNum;
+    public boolean isSuccess() {
+        return success;
     }
 
-    public void setTotalNum(long totalNum) {
-        this.totalNum = totalNum;
+    public void setSuccess(boolean success) {
+        this.success = success;
     }
 
-    public int getPageSize() {
-        return pageSize;
+    public long getTotalRows() {
+        return totalRows;
     }
 
-    public void setPageSize(int pageSize) {
-        this.pageSize = pageSize;
+    public void setTotalRows(long totalRows) {
+        this.totalRows = totalRows;
     }
 
-    public int getTotalPage() {
-        return totalPage;
+    public int getCurPage() {
+        return curPage;
     }
 
-    public void calculateTotalPage() {
-        this.setTotalPage(Long.valueOf((this.getTotalNum() % this.getPageSize() == 0) ?
-                (this.getTotalNum() / this.getPageSize()) :
-                (this.getTotalNum() / this.getPageSize() + 1))
-                .intValue());
-    }
-
-    public PageResult<T> setData(List<T> data) {
-      this.data=data;
-        return this;
+    public void setCurPage(int curPage) {
+        this.curPage = curPage;
     }
 
     public List<T> getData() {
         return data;
     }
 
-    public void setTotalPage(int totalPage) {
-        this.totalPage = totalPage;
-    }
-
-    public String getHtml() {
-        return html;
-    }
-
-    public void setHtml(String html) {
-        this.html = html;
+    public void setData(List<T> data) {
+        this.data = data;
     }
 }

@@ -12,17 +12,18 @@ import java.io.Serializable;
  */
 public class PageParam implements Serializable{
 
-    private String pageNo;
+    private String curPage;
     private String repage;
     private String pageSize;
-    private String orderBy;
+    private String sortName;
+    private String sortOrder;
 
-    public String getPageNo() {
-        return pageNo;
+    public String getCurPage() {
+        return curPage;
     }
 
-    public void setPageNo(String pageNo) {
-        this.pageNo = pageNo;
+    public void setCurPage(String curPage) {
+        this.curPage = curPage;
     }
 
     public String getRepage() {
@@ -41,11 +42,19 @@ public class PageParam implements Serializable{
         this.pageSize = pageSize;
     }
 
-    public String getOrderBy() {
-        return orderBy;
+    public String getSortName() {
+        return sortName;
     }
 
-    public void setOrderBy(String orderBy) {
-        this.orderBy = orderBy;
+    public void setSortName(String sortName) {
+        this.sortName = sortName;
+    }
+
+    public String getSortOrder() {
+        return sortOrder;
+    }
+
+    public void setSortOrder(String sortOrder) {
+        this.sortOrder = sortOrder;
     }
 }

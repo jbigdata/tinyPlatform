@@ -6,6 +6,7 @@
         <result column="company_id" property="companyId" jdbcType="VARCHAR"/>
         <result column="mobile" property="mobile" jdbcType="BIGINT"/>
         <result column="email" property="email" jdbcType="VARCHAR"/>
+        <result column="login_name" property="loginName" jdbcType="VARCHAR"/>
         <result column="password" property="password" jdbcType="VARCHAR"/>
         <result column="office_id" property="officeId" jdbcType="VARCHAR"/>
         <result column="no" property="no" jdbcType="VARCHAR"/>

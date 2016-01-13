@@ -131,7 +131,7 @@ public class UserServiceImpl implements UserService {
         // 执行分页查询
        // page.setList(userRepository.findList(user));
         User u=new User();
-        Page<User> page=new Page<>(userParam.getPageNo(),userParam.getRepage(),userParam.getPageSize(),userParam.getOrderBy(),-2);
+        Page<User> page=new Page<>(userParam.getCurPage(),userParam.getRepage(),userParam.getPageSize(),userParam.getSortName(),-2);
         u.setPage(page);
         List<User> list=userRepository.findList(u);
         page.setList(list);
@@ -150,10 +150,9 @@ public class UserServiceImpl implements UserService {
         }
         PageResult<UserResult> pageResult=new PageResult<>();
         pageResult.setData(resultList);
-        pageResult.setPageSize(page.getPageSize());
-        pageResult.setTotalNum(page.getCount());
-        pageResult.setTotalPage(page.getTotalPage());
-        pageResult.setHtml(page.getHtml());
+        pageResult.setSuccess(true);
+        pageResult.setTotalRows(page.getCount());
+        pageResult.setCurPage(page.getPageNo());
         return pageResult;
     }
 }

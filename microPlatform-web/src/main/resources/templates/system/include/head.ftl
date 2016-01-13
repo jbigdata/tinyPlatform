@@ -22,9 +22,9 @@
     <script src="${base}/js/ie10-viewport-bug-workaround.js"></script>
     <script src="${base}/js/ie-emulation-modes-warning.js"></script>
     <script src="${base}/js/jquery.bootpag.min.js"></script>
-    <link rel="stylesheet" href="${base}/plugin/bsgrid/grid_bootstrap.min.css"/>
-    <link rel="stylesheet" href="${base}/plugin/bsgrid/bsgrid.all.min.css"/>
-    <script type="text/javascript" src="${base}/plugin/bsgrid/grid.zh-CN.min.js"></script>
-    <script type="text/javascript" src="${base}/plugin/bsgrid/bsgrid.all.min.js"></script>
+    <#--<link rel="stylesheet" href="${base}/plugin/bsgrid/grid_bootstrap.min.css"/>-->
+    <link rel="stylesheet" href="${base}/plugin/bsgrid/css/bsgrid.all.min.css"/>
+    <script type="text/javascript" src="${base}/plugin/bsgrid/js/grid.zh-CN.min.js"></script>
+    <script type="text/javascript" src="${base}/plugin/bsgrid/js/bsgrid.all.min.js"></script>
 </head>
 <body>

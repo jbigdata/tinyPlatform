@@ -2,6 +2,8 @@ package com.wanliang.micro.web.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.wanliang.micro.param.system.UserParam;
+import com.wanliang.micro.result.PageResult;
+import com.wanliang.micro.result.system.UserResult;
 import com.wanliang.micro.service.system.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +12,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -23,15 +26,22 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("user")
 public class UserController {
 
-        private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
     @Reference
     private UserService userService;
 
-    @RequestMapping(value = "/list",method = RequestMethod.GET)
-    public String main(ModelMap modelMap,UserParam userParam){
-        modelMap.put("page",userService.findUser(userParam));
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public String main(ModelMap modelMap, UserParam userParam) {
         return "system/user/userList";
     }
+
+    @RequestMapping(value = "/userList")
+    @ResponseBody
+    public PageResult<UserResult> userList(ModelMap modelMap, UserParam userParam) {
+
+        return userService.findUser(userParam);
+    }
+
 
     // @PreAuthorize("@currentUserServiceImpl.canAccessUser(principal, #id)")
     @RequestMapping("/user/{id}")
