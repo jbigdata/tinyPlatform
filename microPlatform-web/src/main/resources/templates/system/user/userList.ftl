@@ -25,8 +25,8 @@
     <table class="table table-striped" id="searchTable">
         <thead>
         <tr>
-            <th w_index="id" width="5%;">编号</th>
-            <th w_index="name" width="5%;">名称</th>
+            <th  w_index="id"  width="5%;">编号</th>
+            <th w_index="name" w_sort="name"  width="5%;">名称</th>
             <th w_index="loginName" w_align="left" width="15%;">登录名</th>
             <th w_index="mobile" w_align="left" width="30%;">电话</th>
             <th w_index="email" width="15%;">邮箱地址</th>

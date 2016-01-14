@@ -2,8 +2,10 @@ package com.wanliang.micro.service.impl.system;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.wanliang.micro.entity.system.Menu;
+import com.wanliang.micro.entity.system.Role;
 import com.wanliang.micro.param.system.UserParam;
 import com.wanliang.micro.repository.system.MenuRepository;
+import com.wanliang.micro.repository.system.RoleRepository;
 import com.wanliang.micro.result.system.MenuResult;
 import com.wanliang.micro.service.impl.BaseServiceImpl;
 import com.wanliang.micro.service.system.MenuService;
@@ -26,26 +28,37 @@ public class MenuServiceImpl extends BaseServiceImpl<Menu> implements MenuServic
     @Autowired
     private MenuRepository menuRepository;
 
+    @Autowired
+    private RoleRepository roleRepository;
+
     @Override
     @Cacheable(value = "userMenucache",keyGenerator = "#user.getId()")
     public List<MenuResult> loadParentMenu(UserParam user){
-        List<Menu> menuList;
-        if (user.isAdmin()){
-            menuList = menuRepository.findAllList(new Menu());
-        }else{
-            Menu m = new Menu();
-            m.setUserId(user.getId());
-            menuList = menuRepository.findByUserId(m);
-        }
-        List<MenuResult> menuResults=new ArrayList<>();
-        for (Menu menu:menuList){
-            MenuResult menuResult=new MenuResult();
-            menuResult.setName(menu.getName());
-            menuResult.setHref(menu.getHref());
-            menuResult.setParentId(menu.getParentId());
-            menuResults.add(menuResult);
-        }
+        List<Menu> menuList=this.loadAllMenu();
+        List<MenuResult> menuResults = new ArrayList<>();
+        if (menuList == null) {
+            if (user.isAdmin()) {
+                menuList = menuRepository.findAllList(new Menu());
+            } else {
+                Menu m = new Menu();
+                m.setUserId(user.getId());
+                menuList = menuRepository.findByUserId(m);
+            }
 
+            for (Menu menu : menuList) {
+                MenuResult menuResult = new MenuResult();
+                menuResult.setName(menu.getName());
+                menuResult.setHref(menu.getHref());
+                menuResult.setParentId(menu.getParentId());
+                menuResults.add(menuResult);
+            }
+        }
         return menuResults;
     }
+
+    @Cacheable(value = "menucache")
+    private List<Menu> loadAllMenu(){
+      return   menuRepository.findAllList(new Menu());
+    }
+
 }

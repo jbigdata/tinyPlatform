@@ -45,4 +45,6 @@ public class BaseServiceImpl<T extends DataEntity> implements BaseService<T> {
     public List<T> query(T entity) {
         return baseRepository.findList(entity);
     }
+
+
 }
