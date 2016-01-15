@@ -10,7 +10,7 @@ import java.io.Serializable;
  * @copyright microPlatform
  */
 public class MenuResult implements Serializable{
-
+    private String id;
     private String parentId;	// 父级菜单
     private String parentIds; // 所有父级编号
     private String name; 	// 名称
@@ -101,5 +101,13 @@ public class MenuResult implements Serializable{
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

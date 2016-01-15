@@ -15,7 +15,9 @@ public class UserResult implements Serializable{
 
     private String id;
     private String companyId;	// 归属公司
+    private String companyName;
     private String officeId;	// 归属部门
+    private String officeName;
     private String loginName;// 登录名
     private String password;
     private String no;		// 工号
@@ -147,5 +149,21 @@ public class UserResult implements Serializable{
 
     public void setPhoto(String photo) {
         this.photo = photo;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public String getOfficeName() {
+        return officeName;
+    }
+
+    public void setOfficeName(String officeName) {
+        this.officeName = officeName;
     }
 }

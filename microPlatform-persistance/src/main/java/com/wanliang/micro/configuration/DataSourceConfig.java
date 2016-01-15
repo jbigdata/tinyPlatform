@@ -72,6 +72,8 @@ public class DataSourceConfig {
         sqlSessionFactoryBean.setDataSource(dataSource);
         sqlSessionFactoryBean.setTypeAliases(new Class[]{Page.class});
         sqlSessionFactoryBean.setMapperLocations(resource.getMapperResources());
+        sqlSessionFactoryBean.setTypeAliasesSuperType(com.wanliang.micro.persistence.BaseEntity.class);
+        sqlSessionFactoryBean.setTypeAliasesPackage("com.wanliang.micro.entity");
         PaginationInterceptor interceptor=new PaginationInterceptor();
         interceptor.setProperties(new Properties());
         //添加插件

@@ -32,11 +32,11 @@ public class MenuServiceImpl extends BaseServiceImpl<Menu> implements MenuServic
     private RoleRepository roleRepository;
 
     @Override
-    @Cacheable(value = "userMenucache",keyGenerator = "#user.getId()")
     public List<MenuResult> loadParentMenu(UserParam user){
         List<Menu> menuList=this.loadAllMenu();
+        user.setAdmin(false);
         List<MenuResult> menuResults = new ArrayList<>();
-        if (menuList == null) {
+
             if (user.isAdmin()) {
                 menuList = menuRepository.findAllList(new Menu());
             } else {
@@ -50,13 +50,28 @@ public class MenuServiceImpl extends BaseServiceImpl<Menu> implements MenuServic
                 menuResult.setName(menu.getName());
                 menuResult.setHref(menu.getHref());
                 menuResult.setParentId(menu.getParentId());
+                menuResult.setId(menu.getId());
+                menuResults.add(menuResult);
+            }
+        return menuResults;
+    }
+    @Override
+    public List<MenuResult> getMenus(String menuId){
+        List<Menu> menuList=this.loadAllMenu();
+        List<MenuResult> menuResults = new ArrayList<>();
+
+        for (Menu menu : menuList) {
+            if(menu.getParentIds().indexOf(menuId+",")!=-1&&!menuId.equals(menu.getId())&&"1".equals(menu.getIsShow())) {
+                MenuResult menuResult = new MenuResult();
+                menuResult.setName(menu.getName());
+                menuResult.setHref(menu.getHref());
+                menuResult.setParentId(menu.getParentId());
                 menuResults.add(menuResult);
             }
         }
         return menuResults;
     }
-
-    @Cacheable(value = "menucache")
+    @Cacheable(value = "menucache",keyGenerator = "loadAllMenu")
     private List<Menu> loadAllMenu(){
       return   menuRepository.findAllList(new Menu());
     }

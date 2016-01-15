@@ -1,10 +1,10 @@
-function LoadAjaxContent(url){
+function LoadAjaxContent(url) {
     $('.preloader').show();
     $.ajax({
         mimeType: 'text/html; charset=utf-8', // ! Need set mimeType only when run from local file
         url: url,
         type: 'GET',
-        success: function(data) {
+        success: function (data) {
             $('#ajax-content').html(data);
             $('.preloader').hide();
         },
@@ -12,6 +12,24 @@ function LoadAjaxContent(url){
             alert(errorThrown);
         },
         dataType: "html",
+        async: false
+    });
+}
+
+function LoadAjaxMenu(menuId) {
+    $.ajax({
+        mimeType: 'application/json; charset=utf-8', // ! Need set mimeType only when run from local file
+        url: '/system/menu/' + menuId,
+        type: 'GET',
+        success: function (data) {
+            for (var i = 0; i < data.length; i++) {
+                $("#left_nav").append("<li><a href=\"" + data[i].href + "\" class=\"active ajax-link\"><i class=\"glyphicon glyphicon-" + data[i].icon + "\"></i> <span class=\"hidden-xs\">" + data[i].name + "</span></a></li>");
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert(errorThrown);
+        },
+        dataType: "json",
         async: false
     });
 }
@@ -26,6 +44,13 @@ function LoadAjaxContent(url){
 //////////////////////////////////////////////////////
 //////////////////////////////////////////////////////
 $(document).ready(function () {
+    //左侧菜单加载
+    $('.top-menu').on('click', function (e) {
+        alert("aaaaa" + $(this).id);
+        LoadAjaxMenu(27);
+    });
+
+
     $('.show-sidebar').on('click', function (e) {
         e.preventDefault();
         $('div#main').toggleClass('sidebar-show');
@@ -127,11 +152,11 @@ $(document).ready(function () {
         $('#screensaver').addClass("show");
         ScreenSaver();
     });
-    $('body').on('click', 'a.close-link', function(e){
+    $('body').on('click', 'a.close-link', function (e) {
         e.preventDefault();
         CloseModalBox();
     });
-    $('#top-panel').on('click','a', function(e){
+    $('#top-panel').on('click', 'a', function (e) {
         if ($(this).hasClass('ajax-link')) {
             e.preventDefault();
             if ($(this).hasClass('add-full')) {
@@ -145,20 +170,13 @@ $(document).ready(function () {
             LoadAjaxContent(url);
         }
     });
-    $('#search').on('keydown', function(e){
-        if (e.keyCode == 13){
+    $('#search').on('keydown', function (e) {
+        if (e.keyCode == 13) {
             e.preventDefault();
             $('#content').removeClass('full-content');
             ajax_url = 'ajax/page_search.html';
             window.location.hash = ajax_url;
             LoadAjaxContent(ajax_url);
         }
-    });
-    $('#screen_unlock').on('mouseover', function(){
-        var header = 'Enter current username and password';
-        var form = $('<div class="form-group"><label class="control-label">Username</label><input type="text" class="form-control" name="username" /></div>'+
-        '<div class="form-group"><label class="control-label">Password</label><input type="password" class="form-control" name="password" /></div>');
-        var button = $('<div class="text-center"><a href="index.html" class="btn btn-primary">Unlock</a></div>');
-        OpenModalBox(header, form, button);
     });
 });

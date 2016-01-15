@@ -33,7 +33,6 @@
     <logger name="org.ibatis">
         <appender-ref ref="FILE"/>
     </logger>
-
     <root level="INFO">
         <appender-ref ref="STDOUT"/>
     </root>

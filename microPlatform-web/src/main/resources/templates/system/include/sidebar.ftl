@@ -1,6 +1,6 @@
 <div id="sidebar-left" class="col-sm-3 col-md-2 nav-tabs sidebar">
 
-    <ul class="nav nav-sidebar main-menu">
+    <ul class="nav nav-sidebar main-menu" id="nav">
         <li class="active" >
             <a href="${base}/system/main" class="active ajax-link">
                 <i class="glyphicon glyphicon-home"></i>

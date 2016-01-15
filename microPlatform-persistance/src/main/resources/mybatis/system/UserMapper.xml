@@ -1,61 +1,62 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wanliang.micro.repository.system.UserRepository">
+
 	<!-- <resultMap id="userResult" type="User">
-    <id property="id" column="id" />
-    <result property="company.id" column="company.id" />
-    <result property="office.id" column="office.id" />
-    <result property="loginName" column="login_name" />
-    <result property="password" column="password" />
-    <result property="no" column="no" />
-    <result property="name" column="name" />
-    <result property="email" column="email" />
-    <result property="phone" column="phone" />
-    <result property="mobile" column="mobile" />
-    <result property="userType" column="user_type" />
-    <result property="loginIp" column="login_ip" />
-    <result property="loginDate" column="login_date" />
-    <result property="remarks" column="remarks" />
-    <result property="loginFlag" column="loginFlag" />
-    <result property="photo" column="photo" />
-    <result property="createBy.id" column="createBy.id" />
-    <result property="createDate" column="create_date" />
-    <result property="updateBy.id" column="updateBy.id" />
-    <result property="updateDate" column="update_date" />
-    <result property="company.name" column="company.name" />
-    <result property="company.parentId" column="company.parentId" />
-    <result property="company.parentIds" column="company.parentIds" />
-    <result property="company.area.id" column="company.area.id" />
-    <result property="company.area.name" column="company.area.name" />
-    <result property="company.area.parentId" column="company.area.parentId" />
-    <result property="company.area.parentIds" column="company.area.parentIds" />
-    <result property="company.primaryPerson.id" column="company.primaryPerson.id" />
-    <result property="company.primaryPerson.name" column="company.primaryPerson.name" />
-    <result property="company.deputyPerson.id" column="company.deputyPerson.id" />
-    <result property="company.deputyPerson.name" column="company.deputyPerson.name" />
-    <result property="office.name" column="office.name" />
-    <result property="office.parentId" column="office.parentId" />
-    <result property="office.parentIds" column="office.parentIds" />
-    <result property="office.area.id" column="office.area.id" />
-    <result property="office.area.name" column="office.area.name" />
-    <result property="office.area.parentId" column="office.area.parentId" />
-    <result property="office.area.parentIds" column="office.area.parentIds" />
-    <result property="office.primaryPerson.id" column="office.primaryPerson.id" />
-    <result property="office.primaryPerson.name" column="office.primaryPerson.name" />
-    <result property="office.deputyPerson.id" column="office.deputyPerson.id" />
-    <result property="office.deputyPerson.name" column="office.deputyPerson.name" />
-    <collection property="roleList" ofType="Role">
-        <id property="id" column="roleList.id" />
-        <result property="office.id" column="roleList.office.id" />
-        <result property="name" column="roleList.name" />
-        <result property="enname" column="roleList.enname" />
-        <result property="roleType" column="roleList.roleType" />
-        <result property="dataScope" column="roleList.dataScope" />
-        <collection property="officeList" ofType="Office">
-            <id property="id" column="roleList.officeList.id" />
-        </collection>
-    </collection>
-</resultMap> -->
+		<id property="id" column="id" />
+		<result property="company.id" column="company.id" />
+		<result property="office.id" column="office.id" />
+		<result property="loginName" column="login_name" />
+		<result property="password" column="password" />
+		<result property="no" column="no" />
+		<result property="name" column="name" />
+		<result property="email" column="email" />
+		<result property="phone" column="phone" />
+		<result property="mobile" column="mobile" />
+		<result property="userType" column="user_type" />
+		<result property="loginIp" column="login_ip" />
+		<result property="loginDate" column="login_date" />
+		<result property="remarks" column="remarks" />
+		<result property="loginFlag" column="loginFlag" />
+		<result property="photo" column="photo" />
+		<result property="createBy.id" column="createBy.id" />
+		<result property="createDate" column="create_date" />
+		<result property="updateBy.id" column="updateBy.id" />
+		<result property="updateDate" column="update_date" />
+		<result property="company.name" column="company.name" />
+		<result property="company.parentId" column="company.parentId" />
+		<result property="company.parentIds" column="company.parentIds" />
+		<result property="company.area.id" column="company.area.id" />
+		<result property="company.area.name" column="company.area.name" />
+		<result property="company.area.parentId" column="company.area.parentId" />
+		<result property="company.area.parentIds" column="company.area.parentIds" />
+		<result property="company.primaryPerson.id" column="company.primaryPerson.id" />
+		<result property="company.primaryPerson.name" column="company.primaryPerson.name" />
+		<result property="company.deputyPerson.id" column="company.deputyPerson.id" />
+		<result property="company.deputyPerson.name" column="company.deputyPerson.name" />
+		<result property="office.name" column="office.name" />
+		<result property="office.parentId" column="office.parentId" />
+		<result property="office.parentIds" column="office.parentIds" />
+		<result property="office.area.id" column="office.area.id" />
+		<result property="office.area.name" column="office.area.name" />
+		<result property="office.area.parentId" column="office.area.parentId" />
+		<result property="office.area.parentIds" column="office.area.parentIds" />
+		<result property="office.primaryPerson.id" column="office.primaryPerson.id" />
+		<result property="office.primaryPerson.name" column="office.primaryPerson.name" />
+		<result property="office.deputyPerson.id" column="office.deputyPerson.id" />
+		<result property="office.deputyPerson.name" column="office.deputyPerson.name" />
+		<collection property="roleList" ofType="Role">
+			<id property="id" column="roleList.id" />
+			<result property="office.id" column="roleList.office.id" />
+			<result property="name" column="roleList.name" />
+			<result property="enname" column="roleList.enname" />
+			<result property="roleType" column="roleList.roleType" />
+			<result property="dataScope" column="roleList.dataScope" />
+			<collection property="officeList" ofType="Office">
+				<id property="id" column="roleList.officeList.id" />
+			</collection>
+		</collection>
+	</resultMap> -->
 
 	<sql id="userColumns">
 		a.id,
@@ -123,7 +124,7 @@
 	</sql>
 
 	<!-- 根据编号获得用户 -->
-	<select id="get" resultType="com.wanliang.micro.entity.system.User">
+	<select id="get" resultType="User">
 		SELECT
 		<include refid="userColumns"/><!-- ,
 			ro.office_id AS "roleList.officeList.id" -->
@@ -132,43 +133,21 @@
 		LEFT JOIN sys_role_office ro ON ro.role_id = r.id -->
 		WHERE a.id = #{id}
 	</select>
-	<select id="findUserByMobile" resultMap="com.wanliang.micro.entity.system.User" parameterType="java.lang.String">
-		select
-		<include refid="userColumns"/>
-		from sys_user
-		where mobile = #{mobile,jdbcType=VARCHAR}
-	</select>
-	<select id="findUserByEmail" resultMap="com.wanliang.micro.entity.system.User" parameterType="java.lang.String">
-		select
-		<include refid="userColumns"/>
-		from sys_user
-		where email = #{email,jdbcType=VARCHAR}
-	</select>
 
 	<!-- 根据登录名查询用户 -->
-	<select id="getByLoginName" resultType="com.wanliang.micro.entity.system.User" parameterType="java.lang.String">
+	<select id="getByLoginName" resultType="User" parameterType="java.lang.String">
 		SELECT
 		<include refid="userColumns"/><!-- ,
 			ro.office_id AS "roleList.officeList.id" -->
 		FROM sys_user a
-
+		<include refid="userJoins"/>
 		<!--
         LEFT JOIN sys_role_office ro ON ro.role_id = r.id -->
 		WHERE a.login_name = #{loginName} OR a.email = #{loginName}
 	</select>
-	<!--&lt;!&ndash; 根据登录名查询用户 &ndash;&gt;-->
-	<!--<select id="getByLoginName" resultType="User" parameterType="User">-->
-		<!--SELECT-->
-		<!--<include refid="userColumns"/>&lt;!&ndash; ,-->
-			<!--ro.office_id AS "roleList.officeList.id" &ndash;&gt;-->
-		<!--FROM sys_user a-->
-		<!--<include refid="userJoins"/>&lt;!&ndash;-->
-		<!--LEFT JOIN sys_role_office ro ON ro.role_id = r.id &ndash;&gt;-->
-		<!--WHERE a.login_name = #{loginName} AND a.del_flag = #{DEL_FLAG_NORMAL}-->
-	<!--</select>-->
 
 	<!-- 分页查询用户信息 -->
-	<select id="findList" resultType="com.wanliang.micro.entity.system.User">
+	<select id="findList" resultType="User">
 		SELECT
 		<include refid="userColumns"/>
 		FROM sys_user a
@@ -190,9 +169,9 @@
 			<if test="dbName == 'mysql'">CONCAT('%,', #{office.id}, ',%'))</if>
 		</if>
 		<!-- 如果不是超级管理员，则不显示超级管理员用户 -->
-		<if test="!currentUser.admin">
-			AND a.id != '1'
-		</if>
+		<!--<if test="!currentUser.admin">-->
+			<!--AND a.id != '1'-->
+		<!--</if>-->
 		<if test="loginName != null and loginName != ''">
 			AND a.login_name like
 			<if test="dbName == 'oracle'">'%'||#{loginName}||'%'</if>
@@ -218,7 +197,7 @@
 	</select>
 
 	<!-- 根据OfficeId获取用户（树查询用户时用） -->
-	<select id="findUserByOfficeId" resultType="com.wanliang.micro.entity.system.User" useCache="true">
+	<select id="findUserByOfficeId" resultType="User" useCache="true">
 		SELECT
 		a.id, a.name, a.login_name
 		FROM sys_user a
@@ -228,7 +207,7 @@
 	</select>
 
 	<!-- 查询全部用户 -->
-	<select id="findAllList" resultType="com.wanliang.micro.entity.system.User">
+	<select id="findAllList" resultType="User">
 		SELECT
 		<include refid="userColumns"/>
 		FROM sys_user a

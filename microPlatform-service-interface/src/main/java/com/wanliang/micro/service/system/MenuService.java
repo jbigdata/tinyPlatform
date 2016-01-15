@@ -16,4 +16,6 @@ import java.util.List;
 public interface MenuService  {
 
     public List<MenuResult> loadParentMenu(UserParam user);
+
+    public List<MenuResult> getMenus(String menuId);
 }

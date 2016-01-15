@@ -145,6 +145,8 @@ public class UserServiceImpl implements UserService {
             userResult.setName(user.getName());
             // userResult.setPassword(user.getPassword());
             userResult.setId(user.getId());
+            userResult.setCompanyName(user.getCompany().getName());
+            userResult.setOfficeName(user.getOffice().getName());
             userResult.setPhoto(user.getPhoto());
             resultList.add(userResult);
         }
@@ -155,4 +157,7 @@ public class UserServiceImpl implements UserService {
         pageResult.setCurPage(page.getPageNo());
         return pageResult;
     }
+
+
+
 }

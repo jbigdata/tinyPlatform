@@ -14,7 +14,7 @@
             <ul class="nav navbar-nav">
             <#list menuList as menu>
                 <#if menu.parentId=="1">
-                    <li><a href="#">${menu.name}</a></li>
+                    <li id="${menu.id}" class="top-menu"><a href="#">${menu.name}</a></li>
                 </#if>
             </#list>
 
