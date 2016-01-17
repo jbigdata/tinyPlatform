@@ -48,7 +48,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/auth/**",
             "/login",
             "/signin/**",
-            "/signup/**"
+            "/signup/**",
+            "/front/**"
     };
 
 
@@ -61,7 +62,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/**/*.png",
             "/**/*.gif",
             "/**/*.jpg",
-            "/**/*.js"
+            "/**/*.js",
+            "/**/*.woff",
+            "/**/*.woff2",
+            "/**/*.ttf"
     };
 
     @Bean
@@ -70,7 +74,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 new SavedRequestAwareAuthenticationSuccessHandler();
         successRedirectHandler.setDefaultTargetUrl("/");
         successRedirectHandler.setTargetUrlParameter("/");
-        System.out.println("-------------aaaaaaaaaaaaaaaaa----------------");
         return successRedirectHandler;
     }
 
@@ -85,10 +88,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/", "/static/**", "/public/**", "/captcha.jpg").permitAll()
+                .antMatchers("/","/bootstrap.html", "/static/**", "/public/**", "/captcha.jpg").permitAll()
                 .antMatchers(IGNORE_URIS).permitAll()
                 .antMatchers(IGNORE_RESOURCES).permitAll()
-                .antMatchers("/system/**", "/system").hasAuthority("ADMIN")
+                .antMatchers("/system/**","sys/**", "/system").hasAuthority("ADMIN")
                 .antMatchers("/front").hasAnyAuthority("USER")
                 .anyRequest().fullyAuthenticated()
                 .and()

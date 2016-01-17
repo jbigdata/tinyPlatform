@@ -1,199 +1,169 @@
-<#include "front/include/head.ftl">
+<#assign base=request.contextPath />
+<#import "common/spring.ftl" as spring/>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+
+    <title>${siteName} - <@spring.message "html.title.login" /></title>
+
+    <script src="${base}/js/jquery.min.js"></script>
+    <script src="${base}/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="${base}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${base}/css/icon.css" rel="stylesheet">
+
+   <!-- Custom styles for this template -->
+    <link href="css/offcanvas.css" rel="stylesheet">
+</head>
+
+<body>
+
 <#include "front/include/navbar.ftl">
-<br>
+
 <div class="container">
 
     <div class="row row-offcanvas row-offcanvas-right">
 
         <div class="col-xs-12 col-sm-9">
-            <div class="panel panel-default">
-                <div class="panel-heading">每日资讯<small><a href="" class="pull-right">更多&gt;&gt;</a></small></div>
-
-                     <article class="article box_white">
-                        <div class="row">
-
-                            <div>
-
-                                <h2><a href="1111" target="_blank" title="111">
-                                1.测试信息
-                                </a></h2>
-                                <p class="text">必须肯定的是，庭审直播在很大程度上体现了法治的精神，体现了公检法敢于直面挑战的担当。
-                                    对关注此案的公众来说，这也是一堂生动的“普法课”。直播将庭审放置于公众的显微镜下，先进的传播手段，
-                                    让公众见证了法庭辩论的魅力，也体现了我国司法改革的进步。<a href="" target="_blank" title="阅读全文">阅读全文</a></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-8 metatag">
-                                <i class="glyphicon glyphicon-th"></i>
-                                <span class="source" title="来源">网易</span>
-                                <i class="glyphicon glyphicon-calendar"></i>
-                                <span class="date" title="发布日期">2016-01-01</span>
-                                <i class="glyphicon glyphicon-user"></i>
-                                <span class="author" title="作者">测试用户</span>
-
-                            </div>
-                            <div class="col-md-4 metatag text-right">
-						<span class="view" title="阅读数">
-							<i class="glyphicon glyphicon-eye-open"></i>
-							阅读:<span>100</span>次
-						</span>
-                                <a href="/articles/4812#commentForm" class="cmt" target="_blank" title="评论数">
-                                    <i class="glyphicon glyphicon-comment"></i>
-                                    评论:<span>1</span>条
-                                </a>
-
-                                <a href="#" class="like" title="我喜欢" data-objid="4812" data-objtype="1" data-flag="0">
-                                    <i class="glyphicon glyphicon-heart-empty"></i>
-
-                                    <span class="likenum">0</span>人喜欢
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                <article class="article box_white">
-                    <div class="row">
-
-                        <div>
-
-                            <h2><a href="1111" target="_blank" title="111">
-                                1.测试信息
-                            </a></h2>
-                            <p class="text">必须肯定的是，庭审直播在很大程度上体现了法治的精神，体现了公检法敢于直面挑战的担当。
-                                对关注此案的公众来说，这也是一堂生动的“普法课”。直播将庭审放置于公众的显微镜下，先进的传播手段，
-                                让公众见证了法庭辩论的魅力，也体现了我国司法改革的进步。<a href="" target="_blank" title="阅读全文">阅读全文</a></p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8 metatag">
-                            <i class="glyphicon glyphicon-th"></i>
-                            <span class="source" title="来源">网易</span>
-                            <i class="glyphicon glyphicon-calendar"></i>
-                            <span class="date" title="发布日期">2016-01-01</span>
-                            <i class="glyphicon glyphicon-user"></i>
-                            <span class="author" title="作者">测试用户</span>
-
-                        </div>
-                        <div class="col-md-4 metatag text-right">
-						<span class="view" title="阅读数">
-							<i class="glyphicon glyphicon-eye-open"></i>
-							阅读:<span>100</span>次
-						</span>
-                            <a href="/articles/4812#commentForm" class="cmt" target="_blank" title="评论数">
-                                <i class="glyphicon glyphicon-comment"></i>
-                                评论:<span>1</span>条
-                            </a>
-
-                            <a href="#" class="like" title="我喜欢" data-objid="4812" data-objtype="1" data-flag="0">
-                                <i class="glyphicon glyphicon-heart-empty"></i>
-
-                                <span class="likenum">0</span>人喜欢
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="article box_white">
-                    <div class="row">
-
-                        <div>
-
-                            <h2><a href="1111" target="_blank" title="111">
-                                1.测试信息
-                            </a></h2>
-                            <p class="text">必须肯定的是，庭审直播在很大程度上体现了法治的精神，体现了公检法敢于直面挑战的担当。
-                                对关注此案的公众来说，这也是一堂生动的“普法课”。直播将庭审放置于公众的显微镜下，先进的传播手段，
-                                让公众见证了法庭辩论的魅力，也体现了我国司法改革的进步。<a href="" target="_blank" title="阅读全文">阅读全文</a></p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8 metatag">
-                            <i class="glyphicon glyphicon-th"></i>
-                            <span class="source" title="来源">网易</span>
-                            <i class="glyphicon glyphicon-calendar"></i>
-                            <span class="date" title="发布日期">2016-01-01</span>
-                            <i class="glyphicon glyphicon-user"></i>
-                            <span class="author" title="作者">测试用户</span>
-
-                        </div>
-                        <div class="col-md-4 metatag text-right">
-						<span class="view" title="阅读数">
-							<i class="glyphicon glyphicon-eye-open"></i>
-							阅读:<span>100</span>次
-						</span>
-                            <a href="/articles/4812#commentForm" class="cmt" target="_blank" title="评论数">
-                                <i class="glyphicon glyphicon-comment"></i>
-                                评论:<span>1</span>条
-                            </a>
-
-                            <a href="#" class="like" title="我喜欢" data-objid="4812" data-objtype="1" data-flag="0">
-                                <i class="glyphicon glyphicon-heart-empty"></i>
-
-                                <span class="likenum">0</span>人喜欢
-                            </a>
-                        </div>
-                    </div>
-                </article>
-                <!-- List group -->
-
-            </div>
             <p class="pull-right visible-xs">
-                <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+                <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">展开菜单</button>
             </p>
-            <div class="jumbotron">
-                <h1>Hello, world!</h1>
-                <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+            <div class="panel panel-default" id="lists">
+                <div class="panel-heading">每日资讯
+                    <small><a href="" class="pull-right"></a></small>
+                </div>
             </div>
-            <div class="row">
-                <div class="col-xs-6 col-lg-4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                </div><!--/.col-xs-6.col-lg-4-->
-                <div class="col-xs-6 col-lg-4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                </div><!--/.col-xs-6.col-lg-4-->
-                <div class="col-xs-6 col-lg-4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                </div><!--/.col-xs-6.col-lg-4-->
-                <div class="col-xs-6 col-lg-4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                </div><!--/.col-xs-6.col-lg-4-->
-                <div class="col-xs-6 col-lg-4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                </div><!--/.col-xs-6.col-lg-4-->
-                <div class="col-xs-6 col-lg-4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                </div><!--/.col-xs-6.col-lg-4-->
-            </div><!--/row-->
-        </div><!--/.col-xs-12.col-sm-9-->
+            <div class="alert alert-warning nodata" role="alert"></div>
+            <!--/row-->
+        </div>
+        <!--/.col-xs-12.col-sm-9-->
 
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
             <div class="list-group">
-                <a href="#" class="list-group-item active">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
+                <a href="#" class="list-group-item active">移动</a>
+                <a href="#" class="list-group-item">Docker</a>
+                <a href="#" class="list-group-item">开源</a>
+                <a href="#" class="list-group-item">云计算</a>
+                <a href="#" class="list-group-item">大数据</a>
+                <a href="#" class="list-group-item">架构师</a>
             </div>
-        </div><!--/.sidebar-offcanvas-->
-    </div><!--/row-->
+            <div class="sidebar-module sidebar-module-inset">
+                <h4>About</h4>
+                <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+            </div>
+        </div>
+        <!--/.sidebar-offcanvas-->
+    </div>
+    <!--/row-->
 
-</div><!--/.container-->
+    <hr>
 
-<#include "front/include/footer.ftl">
+    <footer>
+        <p>&copy; Company 2014</p>
+    </footer>
+
+</div>
+<!--/.container-->
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="${base}/js/offcanvas.js"></script>
+
+<script type="text/javascript">
+
+    i = 1; //设置当前页数
+    count = 1;
+    $(function () {
+        var totalpage = 6; //总页数，防止超过总页数继续滚动
+        var winH = $(window).height(); //页面可视区域高度
+
+        $(window).scroll(function () {
+            if (i < totalpage) { // 当滚动的页数小于总页数的时候，继续加载
+                var pageH = $(document.body).height();
+                var scrollT = $(window).scrollTop(); //滚动条top
+                var aa = (pageH - winH - scrollT) / winH;
+                if (aa < 0.01) {
+                    getJson(i)
+                }
+            } else { //否则显示无数据
+                showEmpty();
+            }
+        });
+        getJson(0); //加载第一页
+    });
+    function getJson(page) {
+        $(".nodata").show().html("<img src='http://www.sucaihuo.com/Public/images/loading.gif'/>");
+        $.getJSON("${base}/front/cms/list", {curPage: i}, function (datas) {
+            if (datas.data.length > 0) {
+                var str = "";
+                $.each(datas.data, function (index, data) {
+                    var str = "<article class=\"article box_white\">";
+                    str += "<div class=\"row\">";
+                    str += "<div>";
+                    str += "<h2><a href=\"1111\" target=\"_blank\" title=\"" + data.title + "\">";
+                    str += count + "." + data.title;
+                    str += "</a></h2>";
+
+                    str += "<p class=\"text\">" + data.description + "<a href=\"\" target=\"_blank\" title=\"阅读全文\">阅读全文</a></p>";
+                    str += "</div>";
+                    str += "</div>";
+                    str += "<div class=\"row\">";
+                    str += "<div class=\"col-md-4 metatag\">";
+                    str += "<i class=\"glyphicon glyphicon-th\"></i>";
+                    str += "<span class=\"source\" title=\"来源\">网易</span>";
+                    str += "<i class=\"glyphicon glyphicon-calendar\"></i>";
+                    str += "<span class=\"date\" title=\"发布日期\">2016-01-01</span>";
+                    str += "<i class=\"glyphicon glyphicon-user\"></i>";
+                    str += "<span class=\"author\" title=\"作者\">测试用户</span>";
+                    str += "</div>";
+                    str += "<div class=\"col-md-8 metatag text-right\">";
+                    str += "<span class=\"view\" title=\"阅读数\">";
+                   // str += "<i class=\"glyphicon glyphicon-eye-open\"></i>";
+                    str += "阅读:<span>" + data.hits + "</span>次";
+                    str += "</span>";
+                    str += "<a href=\"/articles/4812#commentForm\" class=\"cmt\" target=\"_blank\" title=\"评论数\">";
+                   // str += "<i class=\"glyphicon glyphicon-comment\"></i>";
+                    str += "评论:<span>1</span>条";
+                    str += "</a>";
+                    str += "<a href=\"#\" class=\"like\" title=\"我喜欢\" data-objid=\"4812\" data-objtype=\"1\" data-flag=\"0\">";
+                    str += "<i class=\"glyphicon glyphicon glyphicon-thumbs-up\"></i>";
+                    str += "<span class=\"likenum\">0</span>";
+                    str += "</a>";
+
+                    str += " 分享至: ";
+                    str += " <span aria-hidden=\"true\" class=\"social_picassa\"></span> ";
+                    str += " <span aria-hidden=\"true\" class=\"social_facebook\"></span> ";
+                    str += " <span aria-hidden=\"true\" class=\"social_googleplus\"></span> ";
+                    str += " <span aria-hidden=\"true\" class=\"social_twitter\"></span> ";
+                    str += " <span aria-hidden=\"true\" class=\"social_pinterest\"></span> ";
+
+                    str += "</div>";
+                    str += "</div>";
+                    str += "</div>";
+                    str += "</article>";
+
+                    $("#lists").append(str);
+                    count++;
+                });
+                $(".nodata").hide();
+            } else {
+                showEmpty();
+            }
+        });
+        i++;
+    }
+    function showEmpty() {
+        $(".nodata").show().html("没有了");
+    }
+</script>
+</body>
+</html>

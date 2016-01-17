@@ -22,8 +22,9 @@ function LoadAjaxMenu(menuId) {
         url: '/system/menu/' + menuId,
         type: 'GET',
         success: function (data) {
+            $("#left_nav").html("");
             for (var i = 0; i < data.length; i++) {
-                $("#left_nav").append("<li><a href=\"" + data[i].href + "\" class=\"active ajax-link\"><i class=\"glyphicon glyphicon-" + data[i].icon + "\"></i> <span class=\"hidden-xs\">" + data[i].name + "</span></a></li>");
+                $("#left_nav").append("<li class=\""+(i==0?"active":"")+"\"><a href=\"" + data[i].href + "\" class=\"active ajax-link\"><i class=\"glyphicon glyphicon-" + data[i].icon + "\"></i> <span class=\"hidden-xs\">" + data[i].name + "</span></a></li>");
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -44,13 +45,11 @@ function LoadAjaxMenu(menuId) {
 //////////////////////////////////////////////////////
 //////////////////////////////////////////////////////
 $(document).ready(function () {
+    LoadAjaxMenu(27);
     //左侧菜单加载
-    $('.top-menu').on('click', function (e) {
-        alert("aaaaa" + $(this).id);
-        LoadAjaxMenu(27);
+    $(".top-menu").click(function(){
+        LoadAjaxMenu($(this).attr("id"));
     });
-
-
     $('.show-sidebar').on('click', function (e) {
         e.preventDefault();
         $('div#main').toggleClass('sidebar-show');

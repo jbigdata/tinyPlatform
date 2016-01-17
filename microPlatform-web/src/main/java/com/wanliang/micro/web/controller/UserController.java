@@ -23,19 +23,19 @@ import org.springframework.web.servlet.ModelAndView;
  * @copyright microPlatform
  */
 @Controller
-@RequestMapping("user")
+@RequestMapping("/sys")
 public class UserController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
     @Reference
     private UserService userService;
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    @RequestMapping(value = "/user/index", method = RequestMethod.GET)
     public String main(ModelMap modelMap, UserParam userParam) {
         return "system/user/userList";
     }
 
-    @RequestMapping(value = "/userList")
+    @RequestMapping(value = "/user/userList")
     @ResponseBody
     public PageResult<UserResult> userList(ModelMap modelMap, UserParam userParam) {
 

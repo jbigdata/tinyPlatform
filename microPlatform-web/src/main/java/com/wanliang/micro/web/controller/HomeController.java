@@ -1,8 +1,15 @@
 package com.wanliang.micro.web.controller;
 
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.wanliang.micro.param.PageParam;
+import com.wanliang.micro.result.PageResult;
+import com.wanliang.micro.result.cms.ArticleResult;
+import com.wanliang.micro.service.cms.ArticleService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -14,9 +21,21 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class HomeController {
+
+    @Reference
+    private ArticleService articleService;
+
     @RequestMapping(value = "/",method = RequestMethod.GET)
     public String login(ModelAndView view){
         System.out.println("-----------------------------");
         return "index";
+    }
+
+
+    @RequestMapping(value = {"/front/cms/list"})
+    @ResponseBody
+    public PageResult<ArticleResult> list(PageParam param, Model model) {
+
+        return articleService.indexArticle(param);
     }
 }

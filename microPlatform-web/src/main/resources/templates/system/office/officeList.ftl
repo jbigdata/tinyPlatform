@@ -53,12 +53,10 @@
         <thead>
         <tr>
             <th w_index="id">编号</th>
-            <th w_index="companyName">所属公司</th>
-            <th w_index="officeName">所属部门</th>
-            <th w_index="name" w_sort="name">姓名</th>
-            <th w_index="loginName" w_align="left">登录名</th>
-            <th w_index="mobile" w_align="left">电话</th>
-            <th w_index="email">邮箱地址</th>
+            <th w_index="name" w_sort="name">机构名称</th>
+            <th w_index="areaName">归属区域</th>
+            <th w_index="code">机构编码</th>
+            <th w_index="type" w_align="left">机构类型</th>
             <th w_render="operate">操作</th>
         </tr>
         </thead>
@@ -70,7 +68,7 @@
     var gridObj;
     $(function () {
         gridObj = $.fn.bsgrid.init('searchTable', {
-            url: '/sys/user/userList?${_csrf.parameterName}=${_csrf.token}',
+            url: '/sys/office/list?${_csrf.parameterName}=${_csrf.token}',
             // autoLoad: false,
             pageSizeSelect: true,
             pagingLittleToolbar: true,
