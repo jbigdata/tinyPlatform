@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -14,10 +13,12 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="${base}/">首页</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <#list categorys as category>
+                <li><a href="${category.href!""}">${category.name}</a></li>
+            </#list>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Action</a></li>
                         <li><a href="#">Another action</a></li>
@@ -31,11 +32,13 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
             <#if !currentUser??>
-                <li><a href="${base}/register">加入我们</a></li>
+                <li><a href="${base}/register">免费注册</a></li>
+                <li><a href="${base}/login">登录</a></li>
             </#if>
             <#if currentUser??>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">${currentUser.user.email}<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">${currentUser.user.email}<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">设置</a></li>
                         <li><a href="${base}/user/${currentUser.id}">个人资料</a></li>

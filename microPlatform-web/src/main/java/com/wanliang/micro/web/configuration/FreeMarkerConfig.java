@@ -1,5 +1,7 @@
 package com.wanliang.micro.web.configuration;
 
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.wanliang.micro.service.cms.CategoryService;
 import com.wanliang.micro.web.directive.*;
 import freemarker.template.TemplateModelException;
 import org.slf4j.Logger;
@@ -35,6 +37,9 @@ public class FreeMarkerConfig {
     @Value("${spring..freemarker.settings.variables.siteName}")
     private String siteName;
 
+   // @Reference
+   // private CategoryService categoryService;
+
     @PostConstruct
     public void setSharedVariable() {
         configuration.setDateFormat("yyyy/MM/dd");
@@ -50,6 +55,7 @@ public class FreeMarkerConfig {
      //   configuration.setSharedVariable("_csrf",org.springframework.security.web.csrf.CsrfToken);
         try {
             configuration.setSharedVariable("siteName", siteName);
+        //    configuration.setSharedVariable("categorys",categoryService.loadCategory());
         } catch (TemplateModelException e) {
             LOG.error("load siteName error",e);
         }

@@ -2,6 +2,7 @@ package com.wanliang.micro.service.cms;
 
 import com.wanliang.micro.param.PageParam;
 import com.wanliang.micro.result.PageResult;
+import com.wanliang.micro.result.cms.ArticleDataResult;
 import com.wanliang.micro.result.cms.ArticleResult;
 
 /**
@@ -14,4 +15,5 @@ import com.wanliang.micro.result.cms.ArticleResult;
 public interface ArticleService {
 
     public PageResult<ArticleResult> indexArticle(PageParam pageParam);
+    public ArticleResult getArticle(String id);
 }

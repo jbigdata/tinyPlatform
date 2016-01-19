@@ -15,6 +15,7 @@ import com.wanliang.micro.repository.cms.ArticleDataRepository;
 import com.wanliang.micro.repository.cms.ArticleRepository;
 import com.wanliang.micro.repository.cms.CategoryRepository;
 import com.wanliang.micro.result.PageResult;
+import com.wanliang.micro.result.cms.ArticleDataResult;
 import com.wanliang.micro.result.cms.ArticleResult;
 import com.wanliang.micro.service.BaseService;
 import com.wanliang.micro.service.cms.ArticleService;
@@ -44,6 +45,7 @@ public class ArticleServiceImpl extends BaseServiceImpl<Article> implements Arti
     private CategoryRepository categoryRepository;
     @Autowired
     private ArticleRepository articleRepository;
+
 
     @Transactional(readOnly = false)
     public PageResult<ArticleResult> findPage(Page<Article> page, Article article, boolean isDataScopeFilter) {
@@ -85,9 +87,9 @@ public class ArticleServiceImpl extends BaseServiceImpl<Article> implements Arti
         List<Article> list=articleRepository.findList(article);
         page.setList(list);
         List<ArticleResult> resultList=new ArrayList<>();
-        System.out.print(page);
         for(Article article1:list){
             ArticleResult articleResult=new ArticleResult();
+            articleResult.setId(article1.getId());
             articleResult.setTitle(article1.getTitle());
             articleResult.setCategory(article1.getCategory().getId());
             articleResult.setDescription(article1.getDescription());
@@ -229,5 +231,27 @@ public class ArticleServiceImpl extends BaseServiceImpl<Article> implements Arti
 
         return page;
     }
+
+    @Override
+    public ArticleResult getArticle(String id){
+      Article article=  articleRepository.get(id);
+      ArticleData articleData=articleDataRepository.get(id);
+      ArticleResult result=new ArticleResult();
+      if(article!=null){
+          result.setTitle(article.getTitle());
+          result.setLink(article.getLink());
+          result.setDescription(article.getDescription());
+          result.setKeywords(article.getKeywords());
+          ArticleDataResult articleResult=new ArticleDataResult();
+          articleResult.setId(article.getId());
+          articleResult.setAllowComment(articleData.getAllowComment());
+          articleResult.setContent(articleData.getContent());
+          articleResult.setRelation(articleData.getRelation());
+          articleResult.setCopyfrom(articleData.getCopyfrom());
+          result.setArticleData(articleResult);
+      }
+        return result;
+    }
+
 
 }

@@ -11,7 +11,7 @@
     <meta name="author" content="">
     <link rel="icon" href="">
 
-    <title>${siteName} - <@spring.message "html.title.login" /></title>
+    <title>${siteName} - <@spring.message "html.title.index" /></title>
 
     <script src="${base}/js/jquery.min.js"></script>
     <script src="${base}/js/bootstrap.min.js"></script>
@@ -26,7 +26,7 @@
 
 <body>
 
-<#include "front/include/navbar.ftl">
+<#include "front/include/navbar.ftl" >
 
 <div class="container">
 
@@ -66,8 +66,11 @@
 
     <hr>
 
-    <footer>
-        <p>&copy; Company 2014</p>
+    <footer class="blog-footer">
+        <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+        <p>
+            <a href="#">Back to top</a>
+        </p>
     </footer>
 
 </div>
@@ -109,11 +112,11 @@
                     var str = "<article class=\"article box_white\">";
                     str += "<div class=\"row\">";
                     str += "<div>";
-                    str += "<h2><a href=\"1111\" target=\"_blank\" title=\"" + data.title + "\">";
+                    str += "<h2><a href=\"${base}/front/article/"+data.id+"\" target=\"_blank\" title=\"" + data.title + "\">";
                     str += count + "." + data.title;
                     str += "</a></h2>";
 
-                    str += "<p class=\"text\">" + data.description + "<a href=\"\" target=\"_blank\" title=\"阅读全文\">阅读全文</a></p>";
+                    str += "<p class=\"text\">" + data.description + "<a href=\"${base}/front/article/"+data.id+"\" target=\"_blank\" title=\"阅读全文\">阅读全文</a></p>";
                     str += "</div>";
                     str += "</div>";
                     str += "<div class=\"row\">";

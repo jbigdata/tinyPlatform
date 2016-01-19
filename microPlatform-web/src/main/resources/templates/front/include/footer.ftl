@@ -1,7 +1,8 @@
 
-
-<footer>
-    <p class="pull-right">©2014 Company</p>
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">Place sticky footer content here.</p>
+    </div>
 </footer>
 
 </body>

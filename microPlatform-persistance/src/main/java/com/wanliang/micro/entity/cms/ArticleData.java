@@ -9,7 +9,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 /**
  * 文章Entity
- * @author ThinkGem
+ * @author wanliang
  * @version 2013-01-15
  */
 public class ArticleData extends DataEntity<ArticleData> {

@@ -19,6 +19,7 @@ import java.util.List;
  */
 public class ArticleResult implements Serializable {
 
+    private String id;
     private String category;// 分类编号
     private String categoryName;
     private String title;    // 标题
@@ -42,6 +43,8 @@ public class ArticleResult implements Serializable {
     private String user;
 
     private String userName;
+
+    private ArticleDataResult articleData;
 
     public String getCategory() {
         return category;
@@ -185,6 +188,22 @@ public class ArticleResult implements Serializable {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public ArticleDataResult getArticleData() {
+        return articleData;
+    }
+
+    public void setArticleData(ArticleDataResult articleData) {
+        this.articleData = articleData;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
 
