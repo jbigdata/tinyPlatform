@@ -1,9 +1,6 @@
-package com.wanliang.micro.web.controller.cms;
+package com.wanliang.micro.web.controller.front.cms;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.wanliang.micro.param.system.UserParam;
-import com.wanliang.micro.result.PageResult;
-import com.wanliang.micro.result.system.UserResult;
 import com.wanliang.micro.service.cms.ArticleService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 /**

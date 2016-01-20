@@ -13,10 +13,11 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="${base}/">首页</a></li>
-            <#list categorys as category>
-                <li><a href="${category.href!""}">${category.name}</a></li>
-            </#list>
-
+            <#--<#if (categorys?size>0) >-->
+                <#--<#list categorys as category>-->
+                    <#--<li><a href="${category.href!""}">${category.name}</a></li>-->
+                <#--</#list>-->
+            <#--</#if>-->
 
 
 

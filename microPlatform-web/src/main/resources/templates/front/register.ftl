@@ -1,54 +1,5 @@
-<#assign base=request.contextPath />
-<!DOCTYPE html>
-<html class="login-bg">
-<head>
-    <title>${siteName} - 登录</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-<#--<!-- bootstrap &ndash;&gt;-->
-<#--<link href="${base}/css/bootstrap.min.css" rel="stylesheet">-->
-<#--<link href="${base}/css/bootstrap-responsive.css" rel="stylesheet">-->
-<#--<link href="${base}/css/bootstrapValidator.min.css" rel="stylesheet">-->
-    <!-- this page specific styles -->
-<#--<link rel="stylesheet" href="${base}/css/login.css" type="text/css" media="screen"/>-->
-<#--<script src="${base}/js/bootstrapValidator.min.js"/>-->
-<#--<script src="${base}/js/jquery.min.js"></script>-->
-<#--<script src="${base}/js/bootstrap.min.js"></script>-->
-
-
-    <link rel="stylesheet" href="${base}/css/bootstrap.css"/>
-    <link rel="stylesheet" href="${base}/css/bootstrapValidator.css"/>
-
-    <script type="text/javascript" src="${base}/js/jquery.min.js"></script>
-    <script type="text/javascript" src="${base}/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="${base}/js/bootstrapValidator.js"></script>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-</head>
-<body>
-
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">${siteName}</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse navbar-right">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">首页</a></li>
-                <li><a href="${base}/reg">加入我们</a></li>
-                <li><a href="#contact">帮助</a></li>
-            </ul>
-        </div>
-        <!--/.nav-collapse -->
-    </div>
-</nav>
+<#include "include/head.ftl">
+<#include "include/navbar.ftl">
 <div class="container theme-showcase" role="main">
     <div class="row-fluid login-wrapper">
 
@@ -58,78 +9,123 @@
             <div class=" page-header center-block">
                 <h3>用户注册</h3>
             </div>
-            <form id="defaultForm" method="post" class="form-horizontal" action="${base}/login">
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">用户名</label>
+            <ul id="myTabs" class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab"
+                                                          aria-controls="home" aria-expanded="true">普通注册</a></li>
+                <li role="presentation" class=""><a href="#profile" role="tab" id="profile-tab" data-toggle="tab"
+                                                    aria-controls="profile" aria-expanded="false">快捷注册</a></li>
 
-                    <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">密码</label>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+                <div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
+                    <p></p>
+                    <form id="defaultForm" method="post" class="form-horizontal" action="${base}/login">
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputEmail3" placeholder="Email">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">确认密码</label>
-
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">邮箱</label>
-
-                    <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">电话</label>
-
-                    <div class="col-sm-10">
-                        <input type="phone" class="form-control" id="inputEmail3" placeholder="Email">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-6 col-md-offset-3">
-                        <input type="password" class="form-control" placeholder="请输入密码" name="password"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-6 col-md-offset-3">
-                        <div class="row">
-                            <div class="col-xs-8 col-sm-6">
-                                <input type="text" class="form-control l" placeholder="验证码" name="verification"/>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-3">
+                                <input type="text" class="form-control" name="username" placeholder="邮箱/用户名/已验证手机号"
+                                       autocomplete="off"/>
                             </div>
-                            <div class="col-xs-4 col-sm-6">
-                                <img id="vcodeImg" style="vertical-align: middle;"
-                                     onclick="javascript:document.getElementById('vcodeImg').src='${base}/captcha.jpg?k={en7mni(z&p=ucenter_login&c=ef7d278eca6d25aa6aec7272d57f0a9a&t='+new Date().getTime() "
-                                     title="点击更换" alt="验证图片" src="${base}/captcha.jpg" height="38" width="110">
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-3">
+                                <input type="text" class="form-control" name="username" placeholder="昵称"
+                                       autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-3">
+                                <input type="password" class="form-control" placeholder="请输入密码" name="password"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-3">
+                                <input type="password" class="form-control" placeholder="请输入确认密码" name="password"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-3">
+                                <div class="row">
+                                    <div class="col-xs-7 col-sm-6">
+                                        <input type="text" class="form-control l" placeholder="验证码" name="verification"/>
+                                    </div>
+                                    <div class="col-xs-5 col-sm-6">
+                                        <img id="vcodeImg" style="vertical-align: middle;"
+                                             onclick="javascript:document.getElementById('vcodeImg').src='${base}/captcha.jpg?k={en7mni(z&p=ucenter_login&c=ef7d278eca6d25aa6aec7272d57f0a9a&t='+new Date().getTime() "
+                                             title="点击更换" alt="验证图片" src="${base}/captcha.jpg" height="35" width="110">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-3 checkbox">
+                                <label>
+                                    <input type="checkbox" id="remember-me" name="remember-me" value="true"/>   同意  隐私条款  和 <a  data-toggle="modal" data-target="#myModal"> 服务条款</a>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-3">
+                                <button type="submit" class="btn btn-primary btn-block">立即注册</button>
                             </div>
                         </div>
 
-                    </div>
+                    </form>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
+                    <p>
+                    <form id="defaultForm1" method="post" class="form-horizontal" action="${base}/login">
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-3">
+                                <input type="text" class="form-control" name="" placeholder="已验证手机号"
+                                       autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-3">
+                                <div class="row">
+                                    <div class="col-xs-7 col-sm-6">
+                                        <input type="text" class="form-control l" placeholder="验证码" name="verification"/>
+                                    </div>
+                                    <div class="col-xs-5 col-sm-6">
+                                        <button type="button"   class="btn btn-primary btn-block" onclick="settime(this)" >获取验证码</button>
+                                    </div>
+                                </div>
 
-                </div>
-                <div class="form-group">
-                    <div class="col-md-6 col-md-offset-3 checkbox">
-                        <label>
-                            <input type="checkbox" id="remember-me" name="remember-me" value="true"/> 自动登录
-                        </label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-6 col-md-offset-3">
-                        <button type="submit" class="btn btn-primary btn-block">下一步</button>
-                    </div>
-                </div>
+                            </div>
 
-            </form>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-3">
+                                <button type="submit" class="btn btn-primary btn-block">立即注册</button>
+                            </div>
+                        </div>
+
+                    </form>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
         </div>
     </div>
     <script type="text/javascript">
@@ -190,6 +186,21 @@
                 }
             });
         });
+
+        var countdown=60;
+        function settime(obj) {
+            if (countdown == 0) {
+                obj.removeAttribute("disabled");
+                obj.innerText="获取验证码";
+                countdown = 60;
+                return;
+            } else {
+                obj.setAttribute("disabled", true);
+                obj.innerText="重新发送(" + countdown + ")";
+                countdown--;
+            }
+            setTimeout(function() {
+                        settime(obj) }
+                    ,1000)
+        }
     </script>
-</body>
-</html>
