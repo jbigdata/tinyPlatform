@@ -52,6 +52,7 @@ public class FreeMarkerConfig {
         configuration.setSharedVariable("block", new BlockDirective());
         configuration.setSharedVariable("override", new OverrideDirective());
         configuration.setSharedVariable("extends", new ExtendsDirective());
+        configuration.setSharedVariable("title",new TitleDirective());
      //   configuration.setSharedVariable("_csrf",org.springframework.security.web.csrf.CsrfToken);
         try {
             configuration.setSharedVariable("siteName", siteName);
