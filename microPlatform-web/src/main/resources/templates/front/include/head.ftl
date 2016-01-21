@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html class="login-bg">
 <head>
-    <title>${siteName} - <@spring.message "html.title.login" /></title>
+    <title>${siteName} -<@title/> </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="${base}/css/bootstrap.min.css"/>
