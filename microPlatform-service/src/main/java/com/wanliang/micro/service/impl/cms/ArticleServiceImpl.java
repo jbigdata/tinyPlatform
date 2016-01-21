@@ -242,6 +242,8 @@ public class ArticleServiceImpl extends BaseServiceImpl<Article> implements Arti
           result.setLink(article.getLink());
           result.setDescription(article.getDescription());
           result.setKeywords(article.getKeywords());
+          result.setUserName(article.getUser().getName());
+          result.setCreateDate(article.getCreateDate());
           ArticleDataResult articleResult=new ArticleDataResult();
           articleResult.setId(article.getId());
           articleResult.setAllowComment(articleData.getAllowComment());

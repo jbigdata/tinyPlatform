@@ -1,6 +1,6 @@
 <#include "include/head.ftl">
 <#include "include/navbar.ftl">
-
+<br>
 <!-- Page Content -->
 <div class="container">
 
@@ -13,33 +13,23 @@
 
             <!-- Title -->
             <h1>${article.title}</h1>
-
             <!-- Author -->
             <p class="lead">
-                by <a href="#">${article.userName}</a>
+            <p><span class="glyphicon glyphicon-user"></span> ${article.userName!""}  &nbsp;<span class="glyphicon glyphicon-time"></span> ${article.createDate?string("yyyy-MM-dd")}</p>
             </p>
-
             <hr>
-
-            <!-- Date/Time -->
-            <p><span class="glyphicon glyphicon-time"></span> ${article.beginDate}</p>
-
-            <hr>
-
             <!-- Post Content -->
             <p class="lead">
             ${article.articleData.content}
-
             <!-- Blog Comments -->
-
             <!-- Comments Form -->
             <div class="well">
-                <h4>Leave a Comment:</h4>
+                <h4>发表评论:</h4>
                 <form role="form">
                     <div class="form-group">
                         <textarea class="form-control" rows="3"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">提交</button>
                 </form>
             </div>
 
