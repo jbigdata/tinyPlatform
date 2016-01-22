@@ -27,8 +27,12 @@ public class TitleDirective implements TemplateDirectiveModel {
                         TemplateDirectiveBody body) throws TemplateException, IOException {
         ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
         HttpServletRequest request = attr.getRequest();
+        String name=env.getMainTemplate().getName();
+        if(StringUtils.indexOf(name,"/")!=-1) {
+            name=StringUtils.substringAfterLast(name, "/");
+        }
         WebApplicationContext webAppContext = WebApplicationContextUtils.getRequiredWebApplicationContext(request.getServletContext());
-        String message = webAppContext.getMessage("html.title." + StringUtils.split(env.getMainTemplate().getName(), ".")[0], null, env.getLocale());
+        String message = webAppContext.getMessage("html.title." + StringUtils.split(name, ".")[0], null, env.getLocale());
         Writer out = env.getOut();
         out.write(message);
     }
