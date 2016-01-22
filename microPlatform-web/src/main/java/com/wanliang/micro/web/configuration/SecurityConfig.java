@@ -50,7 +50,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/signin/**",
             "/signup/**",
             "/front/**",
-            "/register"
+            "/register",
+            "/static/**"
     };
 
 
