@@ -20,8 +20,8 @@ public class HtmlUtil {
 
 
     public static void main(String[] args) throws IOException {
-        RestTemplate restTemplate=new RestTemplate();
-       String html= restTemplate.getForObject("http://news.163.com", String.class);
+      //  RestTemplate restTemplate=new RestTemplate();
+     //  String html= restTemplate.getForObject("http://news.163.com", String.class);
         Document doc = Jsoup.connect("http://news.163.com").get();
         System.out.println(doc.title());
        Element element= doc.body();
@@ -29,13 +29,15 @@ public class HtmlUtil {
         for (Element element1: elements){
             System.out.println(element1.attr("href"));
             System.out.println(element1.text());
-            Document doc1=Jsoup.connect(element1.attr("href")).get();
-            Element element2= doc1.body();
-      //      String title= element2.getElementById("h1title").text();
-           Element element3=element2.select("div[class=ep-time-soure cDGray]").get(0);
-            System.out.println("时间："+element3.text()+ "--"+ element3.child(0).text());
-            System.out.println("内容："+element2.getElementById("endText").html());
-            System.out.println("责任编辑："+element2.getElementsByClass("ep-editor").get(0).text());
+            if(element1.attr("href").indexOf("html")!=-1) {
+                Document doc1 = Jsoup.connect(element1.attr("href")).get();
+                Element element2 = doc1.body();
+                //      String title= element2.getElementById("h1title").text();
+                Element element3 = element2.select("div[class=ep-time-soure cDGray]").get(0);
+                System.out.println("时间：" + element3.text() + "--" + element3.child(0).text());
+                System.out.println("内容：" + element2.getElementById("endText").html());
+                System.out.println("责任编辑：" + element2.getElementsByClass("ep-editor").get(0).text());
+            }
         }
      //   System.out.println(html);
     }

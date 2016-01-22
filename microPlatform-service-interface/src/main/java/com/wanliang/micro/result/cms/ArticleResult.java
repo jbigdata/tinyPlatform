@@ -34,7 +34,7 @@ public class ArticleResult implements Serializable {
     private String posid;    // 推荐位，多选（1：首页焦点图；2：栏目页文章推荐；）
     private String customContentView;    // 自定义内容视图
     private String viewConfig;    // 视图参数
-
+    private Date createDate;
     //private ArticleData articleData;	//文章副表
 
     private Date beginDate;    // 开始时间
@@ -204,6 +204,14 @@ public class ArticleResult implements Serializable {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 }
 

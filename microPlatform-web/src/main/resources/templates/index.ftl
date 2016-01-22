@@ -11,7 +11,7 @@
     <meta name="author" content="">
     <link rel="icon" href="">
 
-    <title>${siteName} - <@spring.message "html.title.index" /></title>
+    <title>${siteName} - <@title /></title>
 
     <script src="${base}/js/jquery.min.js"></script>
     <script src="${base}/js/bootstrap.min.js"></script>
@@ -21,7 +21,7 @@
     <link href="${base}/css/icon.css" rel="stylesheet">
 
    <!-- Custom styles for this template -->
-    <link href="css/offcanvas.css" rel="stylesheet">
+    <link href="${base}/css/offcanvas.css" rel="stylesheet">
 </head>
 
 <body>
@@ -66,12 +66,7 @@
 
     <hr>
 
-    <footer class="blog-footer">
-        <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-        <p>
-            <a href="#">Back to top</a>
-        </p>
-    </footer>
+
 
 </div>
 <!--/.container-->
@@ -168,5 +163,5 @@
         $(".nodata").show().html("没有了");
     }
 </script>
-</body>
-</html>
+
+<#include "front/include/footer.ftl">

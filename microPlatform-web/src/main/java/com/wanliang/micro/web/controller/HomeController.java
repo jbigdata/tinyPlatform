@@ -36,6 +36,9 @@ public class HomeController {
     }
 
 
+   public  void load(){
+
+   }
     @RequestMapping(value = {"/front/cms/list"})
     @ResponseBody
     public PageResult<ArticleResult> list(PageParam param, Model model) {
